@@ -1,6 +1,13 @@
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
+
+AFRAME.registerComponent('foo', {
+  init: function () {
+		var sceneEl = document.querySelector('a-scene');
+		console.log(sceneEl.querySelector('#redBox'));  // Reference to the scene element.
+  }
+});
 	<a-scene  embedded arjs='sourceType: webcam;'>
 		<a-box id="redBox" class="clickable" color="red" position='0 0 0' material='opacity: 1;'></a-box>
 		<a-sphere class="clickable" color="blue"></a-sphere>
