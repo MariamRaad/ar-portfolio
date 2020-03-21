@@ -13,7 +13,7 @@
     
     <body style='margin : 0px; overflow: hidden;'>
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+        <a-scene embedded arjs='sourceType: webcam;'>
 
     <!-- 
         <a-assets>
@@ -24,7 +24,7 @@
         <a-box id="redBox" position='0 0.5 0' color="red" material='opacity: 0.5;'></a-box>
 	
 
-        <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type='barcode' value='6'>
+        <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type='hiro' value='6'>
             <a-entity
                 id="redBox-scaling"
                 scale="2">
