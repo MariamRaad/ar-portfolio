@@ -6,16 +6,16 @@
     <body style="margin : 0px; overflow: hidden;">
         <a-scene embedded arjs>
             <a-assets>
-                <img id="my-image" src="/assets/images/batman.jpg">
-              </a-assets>
+                <img id="my-image" src="assets/images/batman.jpg">
+            </a-assets>
             
-              <!-- Using the asset management system. -->
-              <a-image src="#my-image"></a-image>
+            <!-- Using the asset management system. -->
+            <a-image src="#my-image"></a-image>
              
 
         <a-marker preset="hiro">
             <a-entity
-            position="0 0 0"
+            position="0 0.5 0"
             image="#my-image"
             ></a-entity>
         </a-marker>
