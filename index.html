@@ -5,11 +5,18 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <body style="margin : 0px; overflow: hidden;">
         <a-scene embedded arjs>
+            <a-assets>
+                <img id="my-image" src="/assets/images/batman.jpg">
+              </a-assets>
+            
+              <!-- Using the asset management system. -->
+              <a-image src="#my-image"></a-image>
+             
+
         <a-marker preset="hiro">
             <a-entity
-            position="0 -1 0"
-            scale="0.05 0.05 0.05"
-            gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+            position="0 0 0"
+            image="#my-image"
             ></a-entity>
         </a-marker>
         <a-entity camera></a-entity>
