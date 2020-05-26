@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-    <!-- we import arjs version without NFT but with marker + location based support -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <head>
+        <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+        <!-- arjs version without NFT but with marker + location based support -->
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    </head>
+    
     <body style="margin : 0px; overflow: hidden;">
         <a-scene embedded arjs>
             <a-assets>
@@ -12,7 +15,7 @@
             <!-- Using the asset management system. -->
             <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image>
              
-            <!-- <a-marker-camera preset='hiro'></a-marker-camera> -->
+            <a-marker-camera preset='hiro'></a-marker-camera>
             <a-marker type="pattern" url="/assets/images/Markers/pattern-Logo_M.patt">
         </a-scene>
     </body>
