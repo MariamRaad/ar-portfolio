@@ -12,4 +12,4 @@ If it's not working, open this link in your browser: https://mariamraad.github.i
 
 <img src="/assets/images/QRCode_mitRahmen.svg" data-canonical-src="/assets/images/QRCode_mitRahmen.svg" width="200" height="400" />
 
-<img src="/assets/images/Markers/pattern-Logo_M.png" data-canonical-src="/assets/images/Markers/pattern-Logo_M.png" width="200" height="400" />
+<img src="/assets/images/Markers/pattern-Logo_M.png" data-canonical-src="/assets/images/Markers/pattern-Logo_M.png" width="400" height="400" />
