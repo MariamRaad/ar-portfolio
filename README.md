@@ -1,4 +1,4 @@
-# AR Portfolio
+# Augmented Reality Portfolio
 
 Scan the QR Code with your smartphones camera to discover my Augmented Reality Portfolio :)
 
