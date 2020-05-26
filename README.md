@@ -6,6 +6,6 @@ This is just a test :)
 
 <!--- ![Hiro](/assets/images/hiro.png) --->
 
-![QrCode](/assets/images/QRCode_mitRahmen.svg)
+<!--- ![QrCode](/assets/images/QRCode_mitRahmen.svg) --->
 
 <img src="/assets/images/QRCode_mitRahmen.svg" data-canonical-src="/assets/images/QRCode_mitRahmen.svg" width="200" height="400" />
