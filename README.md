@@ -6,4 +6,4 @@ This is just a test :)
 
 <!--- ![Hiro](/assets/images/hiro.png) --->
 
-!(/assets/images/QRCode_mitRahmen.svg)
+![QrCode](/assets/images/QRCode_mitRahmen.svg)
