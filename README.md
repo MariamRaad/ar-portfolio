@@ -1,6 +1,8 @@
 # AR Portfolio
 
-This is just a test :)
+Scan the QR Code with your smartphones camera to discover my Augmented Reality Portfolio :)
+
+If it's not working, open this link in your browser: https://mariamraad.github.io/ar-portfolio
 
 <!--- ![Batman](/assets/images/batman.jpg) --->
 
