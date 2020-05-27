@@ -6,7 +6,7 @@ If it's not working, open this link in your browser: https://mariamraad.github.i
 ___________
 ISSUE:
 for this project I wish that ARjs will work with this QR Code image.
-If not it should work with the last one (black M in hiro marker style).
+If not it should work with the last one (black/colored M in hiro marker style).
 ___________
 <!--- ![Batman](/assets/images/batman.jpg) --->
 <!---
