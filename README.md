@@ -9,9 +9,9 @@ for this project I wish that ARjs will work with this QR Code image.
 If not it should work with the last one (black M in hiro marker style).
 ___________
 <!--- ![Batman](/assets/images/batman.jpg) --->
-
+<!---
 ![Hiro](/assets/images/markers/hiro.png)
-
+--->
 <!--- ![QrCode](/assets/images/QRCode_mitRahmen.svg) --->
 
 <img src="/assets/images/QRCode_mitRahmen.svg" data-canonical-src="/assets/images/QRCode_mitRahmen.svg" width="200" height="400" />
