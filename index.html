@@ -77,18 +77,35 @@
                 <video  
                        src="/assets/videos/SafeNetKids.mp4"
                        preload="auto" 
-                       id="vid" 
-                       poster="assets/images/batman.jpg" 
-                       crossOrigin="anonymous" 
-                       type="video/mp4" 
-                       autoplay loop="true" 
-                       playsinline webkit-playsinline controls />
+                       id="vid"
+                       response-type="arraybuffer"
+                       loop
+                       crossorigin
+                       webkit-playsinline
+                       autoplay
+                       playsinline
+                 ></video>
             </a-assets>
             
+            <a-nft
+                videohandler
+                type="nft"
+                url=""
+                smooth="true"
+                smoothcount="10"
+                smoothtolerance="0.01"
+                smooththreshold="5"
+            >
+            
+                <a-video src="#vid" position="50 150 -100" width="2" height="1.5"></a-video
+            </a-nft>
+            
+            <!-- 
             <a-marker-camera preset="hiro">
                 <a-video src="#vid" position="0 0.5 0" rotation="270 0 0" play="true"></a-video>
             </a-marker-camera>
             <a-entity camera></a-entity>
+            -->
             
             <!-- Using the asset management system. -->
             <!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
