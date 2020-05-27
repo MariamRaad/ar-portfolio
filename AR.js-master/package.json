@@ -1,0 +1,51 @@
+{
+  "name": "ar.js",
+  "version": "3.1.0",
+  "description": "Efficient Augmented Reality for the Web",
+  "main": "./aframe/build/aframe-ar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "make build"
+  },
+  "files": [
+    "three.js/build",
+    "aframe/build",
+    "data",
+    "three.js/examples/basic.html",
+    "three.js/examples/vendor/three.js/build/three.min.js",
+    "aframe/examples/basic.html",
+    "aframe/examples/vendor/aframe/build/aframe.min.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AR-js-org/AR.js.git"
+  },
+  "keywords": [
+    "AR",
+    "VR",
+    "three.js",
+    "aframe",
+    "augmented reality",
+    "location based",
+    "image tracking",
+    "marker based"
+  ],
+  "author": "jeromeetienne@gmail.com",
+  "contributors": [
+    {
+      "name": "Nicolò Carpignoli",
+      "email": "nicolocarpignoli@gmail.com",
+      "url": "https://nicolocarpignoli.github.io/me"
+    },
+    {
+      "name": "Walter Perdan",
+      "email": "info@walterperdan.com",
+      "url": "https://www.walterperdan.com/"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AR-js-org/AR.js/issues"
+  },
+  "homepage": "https://github.com/AR-js-org/AR.js/"
+}
