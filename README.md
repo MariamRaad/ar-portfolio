@@ -6,7 +6,7 @@ If it's not working, open this link in your browser: https://mariamraad.github.i
 
 <!--- ![Batman](/assets/images/batman.jpg) --->
 
-![Hiro](/assets/images/markers/hiro.png width="200" height="400")
+![Hiro](/assets/images/markers/hiro.png)
 
 <!--- ![QrCode](/assets/images/QRCode_mitRahmen.svg) --->
 
