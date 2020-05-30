@@ -17,3 +17,5 @@ ___________
 <img src="/assets/images/QRCode_mitRahmen.svg" data-canonical-src="/assets/images/QRCode_mitRahmen.svg" width="200" height="400" />
 
 <img src="/assets/images/markers/pattern-Logo_M.png" data-canonical-src="/assets/images/markers/pattern-Logo_M.png" width="400" height="400" />
+
+<img src="/assets/images/markers/pattern-marker.png" data-canonical-src="/assets/images/markers/pattern-marker.png" width="400" height="400" />
