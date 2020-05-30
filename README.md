@@ -19,3 +19,5 @@ ___________
 <img src="/assets/images/markers/pattern-Logo_M.png" data-canonical-src="/assets/images/markers/pattern-Logo_M.png" width="400" height="400" />
 
 <img src="/assets/images/markers/pattern-marker.png" data-canonical-src="/assets/images/markers/pattern-marker.png" width="400" height="400" />
+
+<img src="/assets/images/markers/orange.png" data-canonical-src="/assets/images/markers/orange.png" width="400" height="400" />
