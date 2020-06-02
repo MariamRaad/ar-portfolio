@@ -3,7 +3,7 @@
 AFRAME.registerComponent('navigate-on-click', {
   schema: {
     url: {
-      default: ''
+      default: 'https://www.google.com/'
     }
   },
   init: function () {
