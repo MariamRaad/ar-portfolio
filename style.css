@@ -12,7 +12,11 @@ h1 {
 
 .topleft {
   position: absolute;
-  top: 8px;
-  left: 16px;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+  display: flex;
   font-size: 18px;
+  justify-content: center;
+  align-items: center;
 }
