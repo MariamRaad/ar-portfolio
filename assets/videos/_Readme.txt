@@ -13,6 +13,7 @@ I tried different sizes:
 
 In order to play videos on iOS the following code segments are needed:
 <meta name="apple-mobile-web-app-capable" content="yes">
+(found here: https://aframe.io/docs/1.0.0/primitives/a-video.html#sidebar visited 03.06.2020)
 
 <!-- Videohandler to let video autoplay when marker is tracked -->
         <script>
@@ -36,7 +37,7 @@ In order to play videos on iOS the following code segments are needed:
         </script>
 	
 
-
+	(found here: https://github.com/jeromeetienne/AR.js/issues/504 visited 03.06.2020)
 	<!-- Click-Function to pause and/or start a video -->
 	<!-- this is REQUIRED for iOS -->
 	<script>
