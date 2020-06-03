@@ -20,4 +20,4 @@ ___________--->
 
 <!--- <img src="/assets/images/markers/pattern-marker.png" data-canonical-src="/assets/images/markers/pattern-marker.png" width="200" height="200" /> --->
 
-<img src="/assets/images/markers/orange.png" data-canonical-src="/assets/images/markers/orange.png" width="200" height="200" />
+<img src="/assets/images/markers/orange.png" data-canonical-src="/assets/images/markers/orange.png" width="300" height="300" />
