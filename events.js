@@ -29,7 +29,6 @@ AFRAME.registerComponent('color-randomizer', {
 });
 
 AFRAME.registerComponent('markerhandler', {
-
     init: function() {
         const animatedMarker = document.querySelector("#animated-marker");
         const aEntity = document.querySelector("#animated-model");
@@ -45,25 +44,15 @@ AFRAME.registerComponent('markerhandler', {
         });
 }});
 
- //window.onload = function() {
-   AFRAME.registerComponent("videohandler", {
-     init: function() {
-       var marker = this.el;
-       this.vid = document.querySelector("#vid");
-       marker.addEventListener(
-         "markerFound",
-         function(){
-           this.vid.play();
-         }.bind(this)
-       );
-                                
-       marker.addEventListener(
-         "markerLost",
-         function() {
-           this.vid.pause();
-           this.vid.currentTime = 0;
-         }.bind(this)
-       );
-     }
-   });
- //};
+AFRAME.registerComponent('click', {
+  init: function() {
+    window.addEventListener('click', function () {
+      var video = document.querySelector('#vid');
+        if (video.paused == true) {
+          video.play();
+        } else {
+          video.pause();
+        }
+    }, false);
+  }
+}
