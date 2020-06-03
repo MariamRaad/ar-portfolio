@@ -25,13 +25,13 @@
         <script src="/events.js"></script>
         <script src="/cursor.js" defer></script> <!--the defer attribute tells the browser that the script is meant to be executed after the document has been parsed --> 
         
+	<!-- Videohandler to let video autoplay when marker is tracked -->
         <script>
         window.onload = function() {
             AFRAME.registerComponent('videohandler', {
                 init: function () {
                     var marker = this.el;
-
-                    this.vid = document.querySelector("#vid");
+		    this.vid = document.querySelector("#vid");
 
                     marker.addEventListener('markerFound', function () {
                         this.vid.play();
@@ -46,6 +46,8 @@
         };
         </script>
 	
+	<!-- Click-Function to pause and/or start a video -->
+	<!-- this is REQUIRED for iOS -->
 	<script>
             window.addEventListener('click', function () {
                 var video = document.querySelector('#vid');
