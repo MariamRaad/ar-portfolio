@@ -43,16 +43,3 @@ AFRAME.registerComponent('markerhandler', {
             }
         });
 }});
-
-AFRAME.registerComponent('click', {
-  init: function() {
-    window.addEventListener('click', function () {
-      var video = document.querySelector('#vid');
-        if (video.paused == true) {
-          video.play();
-        } else {
-          video.pause();
-        }
-    }, false);
-  }
-}
