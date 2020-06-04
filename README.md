@@ -26,4 +26,4 @@ ___________--->
 <!---
 <img src="/assets/images/markers/coloredMarker.png" data-canonical-src="/assets/images/markers/coloredMarker.png" width="300" height="300" /> --->
 
-<img src="/assets/images/markers/fullMarker.png" data-canonical-src="/assets/images/markers/fullMarker.png" width="300" height="300" />
+<img src="/assets/images/markers/fullMarker.svg" data-canonical-src="/assets/images/markers/fullMarker.svg" width="300" height="300" />
