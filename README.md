@@ -20,8 +20,8 @@ ___________--->
 
 <!--- <img src="/assets/images/QR.png" data-canonical-src="/assets/images/QR.png" width="200" height="200" /> --->
 
-<!--- <img src="/assets/images/markers/pattern-Logo_M.png" data-canonical-src="/assets/images/markers/pattern-Logo_M.png" width="200" height="200" /> --->
+<!--- <img src="/assets/images/markers/blackMarker.png" data-canonical-src="/assets/images/markers/blackMarker.png" width="200" height="200" /> --->
 
-<!--- <img src="/assets/images/markers/pattern-marker.png" data-canonical-src="/assets/images/markers/pattern-marker.png" width="200" height="200" /> --->
+<!--- <img src="/assets/images/markers/grayMarker.png" data-canonical-src="/assets/images/markers/grayMarker.png" width="200" height="200" /> --->
 
-<img src="/assets/images/markers/orange.png" data-canonical-src="/assets/images/markers/orange.png" width="300" height="300" />
+<img src="/assets/images/markers/coloredMarker.png" data-canonical-src="/assets/images/markers/coloredMarker.png" width="300" height="300" />
