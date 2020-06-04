@@ -1,8 +1,12 @@
 # Augmented Reality Portfolio
 
-Scan the QR Code with your smartphones camera to discover my Augmented Reality Portfolio :)
+Scan the QR Code with your smartphone camera to discover my Augmented Reality Portfolio :)
 
 If it's not working, open this link in your browser: https://mariamraad.github.io/ar-portfolio
+
+The application works best with:
+Android - Google Chrome or Firefox
+    iOS - Safari
 ___________
 <!---ISSUE:
 for this project I wish that ARjs will work with this QR Code image.
