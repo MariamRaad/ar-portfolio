@@ -4,10 +4,8 @@ Scan the QR Code with your smartphone camera to discover my Augmented Reality Po
 
 If it's not working, open this link in your browser: https://mariamraad.github.io/ar-portfolio
 
-The application works best with:
-
-Android - Google Chrome or Firefox
-
+The application works best with: <br/>
+Android - Google Chrome or Firefox <br/>
     iOS - Safari
 ___________
 <!---ISSUE:
