@@ -14,9 +14,8 @@ h1 {
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: 9999;
+  z-index: 1;
   display: flex;
-  font-size: 18px;
   justify-content: center;
   align-items: center;
 }
