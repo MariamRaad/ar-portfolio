@@ -66,31 +66,6 @@
     </head>
     
     <body style="margin : 0px; overflow: hidden;">
-        
-	 AFRAME.createAScene({
-    	 	id: 'scene1',
-    		onInit: function (scene) { // create anything in the functions
-        		scene.addAnEntity('a-box', {
-            			position: '0 1 -3',
-            			color: 'blue',
-            			'f-click-to-scene': 'scene: scene2'
-        		});
-    		},
-	});
-
-	AFRAME.createAScene({
-    		id: 'scene2',
-    		onInit: function (scene) { // create anything in the functions
-        		scene.addAnEntity('a-box', {
-            		position: '0 1 -3',
-            		color: 'red',
-            		'f-click-to-scene': 'scene: scene1'
-        		});
-    		},
-	});
-	AFRAME.loadScene('scene1'); // load the scene   
-	    
-	    
 	    
         <a-scene 
             vr-mode-ui="enabled: false;"
@@ -120,6 +95,29 @@
             </a-marker>
             <a-entity camera></a-entity>
             
+	    	AFRAME.createAScene({
+    	 	id: 'scene1',
+    		onInit: function (scene) { // create anything in the functions
+        		scene.addAnEntity('a-box', {
+            			position: '0 1 -3',
+            			color: 'blue',
+            			'f-click-to-scene': 'scene: scene2'
+        		});
+    		},
+	});
+
+	AFRAME.createAScene({
+    		id: 'scene2',
+    		onInit: function (scene) { // create anything in the functions
+        		scene.addAnEntity('a-box', {
+            		position: '0 1 -3',
+            		color: 'red',
+            		'f-click-to-scene': 'scene: scene1'
+        		});
+    		},
+	});
+	AFRAME.loadScene('scene1'); // load the scene
+		
         </a-scene>
         
     </body>
