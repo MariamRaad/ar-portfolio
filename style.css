@@ -6,16 +6,6 @@ body {
 }
 
 h1 {
-  font-style: italic;
-  color: #373fff;
-}
-
-.topleft {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-style: regular;
+  color: #000000;
 }
