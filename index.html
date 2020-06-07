@@ -36,24 +36,24 @@
 	AFRAME.registerComponent('scanOverlay', {
             init: function ()
             {
-              var elem = document.documentElement;
-              var marker = document.querySelector("#marker");
-              var fullbutton = document.querySelector("#fullscreen");
+              //var elem = document.documentElement;
+              //var marker = document.querySelector("#marker");
+              //var fullbutton = document.querySelector("#fullscreen");
               var Video_0 = document.querySelector("#Video_Asset_0");
               var scanOverlay = document.querySelector("#scanner");
-              scanOverlay.hidden = true;
+              scanOverlay.hidden = false;
               Video_0.pause();
 
               marker.addEventListener("markerFound", function (evt) {
             	markerFound = 1;
-            	scanOverlay.hidden = false;
-            	//Video_0.play();  //if video should start immediently on marker detection
+            	scanOverlay.hidden = true;
+            	Video_0.play();  //if video should start immediately on marker detection
               });
 
               marker.addEventListener("markerLost", function (evt) {
             	markerFound = 0;
             	Video_0.pause();
-            	scanOverlay.hidden = true;
+            	scanOverlay.hidden = false;
               });
 	});
 	/*	
