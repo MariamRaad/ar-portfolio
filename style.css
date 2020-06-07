@@ -9,3 +9,7 @@ h1 {
   font-style: regular;
   color: #000000;
 }
+
+h1.pagetitle {
+  display:none;
+}
