@@ -32,7 +32,14 @@
 	<!-- Videohandler to let video autoplay when marker is tracked -->
         <script>
 	var markerFound = 0;
-		
+	
+	function on() {
+  		document.getElementById("overlay").style.display = "block";
+	}
+
+	function off() {
+  		document.getElementById("overlay").style.display = "none";
+	} 
 		
 	window.onload = function() {
 	  AFRAME.registerComponent('scanOverlay', {
@@ -49,6 +56,7 @@
             	//scanOverlay.hidden = true;
 		//scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
 		scanOverlay = 0;
+		off();
             	Video_0.play();  //if video should start immediately on marker detection
               });
 
@@ -58,6 +66,7 @@
             	//scanOverlay.hidden = false;
 		//scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
 		scanOverlay = 1;
+		on();
               });		    
 	  });
 	}
@@ -108,6 +117,10 @@
 	<div style="position: absolute; margin-left:auto; margin-right:auto; text-align: center; top: 5px; z-index: 1;">    
 		<input type="image" id="scanner" width="250" height="500" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_groß.png"></input>
   	</div>
+
+ 	<div id="overlay">
+	    <input type="image" id="scanner" width="250" height="500" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_groß.png"></input>
+	</div> 
 	    
         <a-scene 
             vr-mode-ui="enabled: false;"
