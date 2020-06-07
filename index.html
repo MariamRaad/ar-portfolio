@@ -33,12 +33,11 @@
         <script>
 	var markerFound = 0;
 	
-	AFRAME.registerComponent('scanOverlay', {
-            init: function ()
-            {
+	window.onload = function() {
+	  AFRAME.registerComponent('scanOverlay', {
+            init: function () {
               var elem = document.documentElement;
-              //var marker = document.querySelector("#marker");
-              //var fullbutton = document.querySelector("#fullscreen");
+              var marker = document.querySelector("#marker");
               var Video_0 = document.querySelector("#Video_Asset_0");
               var scanOverlay = document.querySelector("#scanner");
               scanOverlay.hidden = false;
@@ -55,7 +54,8 @@
             	Video_0.pause();
             	scanOverlay.hidden = false;
               });
-	});
+	  });
+	}
 	/*	
         window.onload = function() {
             AFRAME.registerComponent('videohandler', {
