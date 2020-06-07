@@ -40,20 +40,24 @@
               var marker = document.querySelector("#marker");
               var Video_0 = document.querySelector("#Video_Asset_0");
               var scanOverlay = document.querySelector("#scanner");
-              scanOverlay.hidden = false;
+              //scanOverlay.hidden = false;
               Video_0.pause();
 
               marker.addEventListener("markerFound", function (evt) {
             	markerFound = 1;
-            	scanOverlay.hidden = true;
+            	//scanOverlay.hidden = true;
+		scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
+		scanOverlay = 0;
             	Video_0.play();  //if video should start immediately on marker detection
               });
 
               marker.addEventListener("markerLost", function (evt) {
             	markerFound = 0;
             	Video_0.pause();
-            	scanOverlay.hidden = false;
-              });
+            	//scanOverlay.hidden = false;
+		scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
+		scanOverlay = 1;
+              });		    
 	  });
 	}
 	/*	
