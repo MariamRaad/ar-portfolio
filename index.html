@@ -48,6 +48,8 @@
               var marker = document.querySelector("#marker");
               var Video_0 = document.querySelector("#Video_Asset_0");
               var scanOverlay = document.querySelector("#scanner");
+	      var on = document.getElementById("overlay").style.display = "block";
+	      var off = document.getElementById("overlay").style.display = "none";
               //scanOverlay.hidden = false;
               Video_0.pause();
 
@@ -56,7 +58,8 @@
             	//scanOverlay.hidden = true;
 		//scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
 		//scanOverlay = 0;
-		off();
+		off = 1;
+		on = 0;
             	Video_0.play();  //if video should start immediately on marker detection
               });
 
@@ -66,7 +69,8 @@
             	//scanOverlay.hidden = false;
 		//scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
 		//scanOverlay = 1;
-		on();
+		off = 0;
+		on = 1;
               });		    
 	  });
 	}
