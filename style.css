@@ -9,7 +9,7 @@ html, body{
 
 body {
   /* general styles */
-  /* position: relative; /* new */
+   position: absolute; /* new */
   font-family: "Lexend Deca", sans-serif; /* "Helvetica Neue", helvetica, arial, */
   /* margin: 2em; */
   padding: 20px;
@@ -26,9 +26,10 @@ body {
   height: 100%;
   z-index: 10;
   background-color: rgba(0,0,0,0.5); /*dim the background*/
+  text-align: center;
 }
 
-/* just some content with arbitrary styles for explanation purposes */
+/* scanner image */
 .modal {
     image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png);
     position: absolute;
