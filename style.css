@@ -13,6 +13,8 @@ body {
   font-family: "Lexend Deca", sans-serif; /* "Helvetica Neue", helvetica, arial, */
   /* margin: 2em; */
   padding: 20px;
+  margin: 0px; 
+  overflow: hidden;
 }
 
 
