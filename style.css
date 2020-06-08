@@ -20,7 +20,12 @@ body {
 
 div.bg {
   background-image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png);
-  background-color: black;
-  width: 250px; height: 500px;
+  background-color: black; /* Used if the image is unavailable */
+  background-position: center; /* Center the image */ 
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  width: 100%; 
+  height: 100%;
   padding: 20px;
+  z-index: 9999;
 }
