@@ -19,7 +19,7 @@ body {
 
 
 .overlay{
-  position: absolute; /* "fixed" needed for the overlay to extend when you scroll */
+  position: fixed; /* "fixed" needed for the overlay to extend when you scroll */
   top: 0;
   left: 0;
   width: 100%;
