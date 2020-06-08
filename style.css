@@ -17,3 +17,10 @@ body {
   background-color: rgba(0,0,0,0.5); /* Black background with opacity */
   z-index: 9999; /* Specify a stack order in case you're using a different order for other elements */
 }
+
+div.bg {
+  background-image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png);
+  background-color: black;
+  width: 250px; height: 500px;
+  padding: 20px;
+}
