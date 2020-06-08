@@ -29,10 +29,10 @@
         <script src="/events.js"></script>
         <script src="/cursor.js" defer></script> <!--the defer attribute tells the browser that the script is meant to be executed after the document has been parsed --> 
         
-	<!-- Videohandler to let video autoplay when marker is tracked -->
         <script>
 	var markerFound = 0;
 	
+	// Functions to set an Overlay
 	function on() {
   		document.getElementById("overlay").style.display = "flex"; //block
 	}
@@ -58,8 +58,8 @@
             	//scanOverlay.hidden = true;
 		//scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
 		//scanOverlay = 0;
-		off = 1;
-		on = 0;
+		off() = 1;
+		on() = 0;
             	Video_0.play();  //if video should start immediately on marker detection
               });
 
@@ -69,13 +69,14 @@
             	//scanOverlay.hidden = false;
 		//scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
 		//scanOverlay = 1;
-		off = 0;
-		on = 1;
+		off() = 0;
+		on() = 1;
               });		    
 	  });
 	}
 	
-	/*	
+	/*
+	<!-- Videohandler to let video autoplay when marker is tracked -->
         window.onload = function() {
             AFRAME.registerComponent('videohandler', {
                 init: function () {
@@ -113,11 +114,13 @@
     </head>
     
     <body style="margin: 0px; overflow: hidden;">
+	<!-- LOGO -->
     	<!-- <div style="position: absolute; top: 5px; left: 5px; width:100%; z-index: 1;">
     	    <input type="image" id="logo" width="104" height="40" src="https://mariamraad.github.io/ar-portfolio/assets/images/logo/Logo_MandR_Schrift.png"></input>
   	</div>
 	-->
 	
+	<!-- OVERLAY -->    
 	<!-- <div style='position: absolute; top: 10px; bottom: 10px; left: 10px; right: 5px; width:100%; height:100%; z-index: 1;'> --> 
 	<!-- <div style="position: absolute; margin-left:auto; margin-right:auto; text-align: center; top: 5px; z-index: 1;">    
 		<input type="image" id="scanner" width="250" height="500" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_groß.png"></input>
@@ -126,6 +129,7 @@
  	<div id="overlay" class="bg">
 	    <input type="image" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png"></input>
 	</div> 
+	
 	    
         <a-scene 
             vr-mode-ui="enabled: false;"
