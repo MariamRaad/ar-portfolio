@@ -1,31 +1,49 @@
 /* CSS files add styling rules to the content */
 
 body {
+  position: relative; */ new */
   font-family: "Lexend Deca", "Helvetica Neue", helvetica, arial, sans-serif;
   margin: 2em;
 }
 
+html, body{
+  min-height: 100%;
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.5); /*dim the background*/
+}
+
+/*
 #overlay {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  position: fixed; /* Sit on top of the page content 
+  display: none; /* Hidden by default 
+  width: 100%; /* Full width (cover the whole page) 
+  height: 100%; /* Full height (cover the whole page) 
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 9999; /* Specify a stack order in case you're using a different order for other elements */
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity 
+  z-index: 9999; /* Specify a stack order in case you're using a different order for other elements 
 }
+*/
 
+/*
 div.bg {
   background-image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png);
-  background-color: black; /* Used if the image is unavailable */
-  background-position: center; /* Center the image */ 
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  background-color: black; /* Used if the image is unavailable 
+  background-position: center; /* Center the image 
+  background-repeat: no-repeat; /* Do not repeat the image 
+  background-size: cover; /* Resize the background image to cover the entire container 
   width: 100%; 
   height: 100%;
   padding: 20px;
   z-index: 9999;
 }
+*/
