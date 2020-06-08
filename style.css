@@ -29,7 +29,7 @@ body {
 /* just some content with arbitrary styles for explanation purposes */
 .modal {
     image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png);
-    position: fixed;
+    position: absolute;
     width: 150px;
     height: 300px;
     line-height: 200px;
