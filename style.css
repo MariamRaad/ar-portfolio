@@ -1,16 +1,23 @@
 /* CSS files add styling rules to the content */
 
-body {
-  position: relative; */ new */
-  font-family: "Lexend Deca", "Helvetica Neue", helvetica, arial, sans-serif;
-  margin: 2em;
-}
-
+@import url(https://fonts.googleapis.com/css?family=Lexend+Deca)
+  
 html, body{
+  margin: 0;
   min-height: 100%;
 }
+
+body {
+  /* general styles */
+  position: relative; */ new */
+  font-family: "Lexend Deca", sans-serif; /* "Helvetica Neue", helvetica, arial, */
+  /* margin: 2em; */
+  padding: 20px;
+}
+
+
 .overlay{
-  position: absolute;
+  position: absolute; /* needed for the overlay to extend when you scroll */
   top: 0;
   left: 0;
   width: 100%;
