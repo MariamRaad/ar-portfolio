@@ -9,7 +9,7 @@ html, body{
 
 body {
   /* general styles */
-   position: absolute; /* new */
+  position: relative; /* new */
   font-family: "Lexend Deca", sans-serif; /* "Helvetica Neue", helvetica, arial, */
   /* margin: 2em; */
   padding: 20px;
@@ -19,7 +19,7 @@ body {
 
 
 .overlay{
-  position: absolute; /* needed for the overlay to extend when you scroll */
+  position: absolute; /* "fixed" needed for the overlay to extend when you scroll */
   top: 0;
   left: 0;
   width: 100%;
