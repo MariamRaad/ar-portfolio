@@ -32,7 +32,7 @@ body {
 /* scanner image */
 .modal {
     image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png);
-    position: absolute;
+    position: fixed;
     width: 150px;
     height: 300px;
     line-height: 200px;
