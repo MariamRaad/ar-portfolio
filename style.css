@@ -5,11 +5,6 @@ body {
   margin: 2em;
 }
 
-h1 {
-  font-style: regular;
-  color: #000000;
-}
-
 #overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
