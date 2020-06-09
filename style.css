@@ -32,6 +32,7 @@ body {
 .modal {
     /*background-image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneHintergrund_klein.png);*/
     position: fixed;
+    display: flex;
     top: 0;
     left: 0;
     width: 100%;
