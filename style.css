@@ -9,7 +9,7 @@ html, body{
 
 body {
   /* general styles */
-  position: relative; /* new */
+/*position: relative; /* new */
   font-family: "Lexend Deca", sans-serif; /* "Helvetica Neue", helvetica, arial, */
   /* margin: 2em; */
   padding: 20px;
@@ -30,7 +30,7 @@ body {
 }
 
 .container {
-  max-width: 960px;
+  max-width: 3000px;
   margin: 0 auto;
 }
 
@@ -42,8 +42,8 @@ body {
   /*background-image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneHintergrund_klein.png);*/
   width: 100%;
   padding-top: 199%;
-  background: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_mitHintergrund.png);
-  background-size: cover;
+  background: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_mitHintergrund.png) no-repeat center;
+  background-size: contain;
 }
 
 
