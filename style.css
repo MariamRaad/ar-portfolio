@@ -45,7 +45,7 @@ div {
 .bg-image{
   /*background-image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneHintergrund_klein.png);*/
   width: 100%;
-  padding-top: 199%;
+  padding-top: 50%;
   background: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_mitHintergrund.png) no-repeat center;
   background-size: contain;
 }
