@@ -17,6 +17,10 @@ body {
   overflow: hidden;
 }
 
+div {
+  display: block;
+}
+
 
 .overlay{
   position: fixed; /* "fixed" needed for the overlay to extend when you scroll */
