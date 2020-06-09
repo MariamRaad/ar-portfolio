@@ -9,18 +9,18 @@ html, body{
 }
 */
 
-body {
   /* general styles */
+body {
   position: relative; /* new */
   font-family: "Lexend Deca", sans-serif; /* "Helvetica Neue", helvetica, arial, */
   /* margin: 2em; */
-/*padding: 20px;*/
+  /*padding: 20px;*/
   margin: 0px; 
   overflow: hidden; /*"hidden" means overflow is clipped, and the rest of the content will be invisible*/
 }
 
 div {
-  display: flex;
+  display: block;
 }
 
 
