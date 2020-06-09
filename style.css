@@ -1,24 +1,26 @@
 /* CSS files add styling rules to the content */
 
 @import url(https://fonts.googleapis.com/css?family=Lexend+Deca)
-  
+ 
+/*
 html, body{
   margin: 0;
-  /*min-height: 100%;*/
+  /*min-height: 100%;
 }
+*/
 
 body {
   /* general styles */
-/*position: relative; /* new */
+  position: relative; /* new */
   font-family: "Lexend Deca", sans-serif; /* "Helvetica Neue", helvetica, arial, */
   /* margin: 2em; */
 /*padding: 20px;*/
-  margin: 0 auto; 
+  margin: 0px; 
   overflow: hidden; /*"hidden" means overflow is clipped, and the rest of the content will be invisible*/
 }
 
 div {
-  display: block;
+  display: flex;
 }
 
 
