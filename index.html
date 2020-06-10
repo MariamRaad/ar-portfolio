@@ -1,81 +1,88 @@
 <!DOCTYPE html>
 <html>
-   <head>
-        <!-- <title>AR Portfolio - Mariam Raad</title> -->
-	<!--  this is REQUIRED for iOS -->
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=2.0">
-        
-        <!-- AFrame -->
-        <!-- <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script> -->
-        <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@cd01cec35a01e03eb2d6a9272500a53de31d3828/dist/aframe-master.min.js"></script>
-        
-	<!-- aFrameByCode enables scene management -->
-	<!-- <script src="https://faace.github.io/aFrameByCode/dist/aFrameByCode.min.js"></script> -->
-	    
-        <!-- ARjs -->
-        <!-- Version without NFT/image tracking but with marker + location based support -->
-        <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> -->
-        <script src="https://raw.githack.com/AR-js-org/AR.js/3.1.0/aframe/build/aframe-ar.js"></script>
-        
-        <!-- Other Dependencies -->
-        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        
-        <!-- import the webpage's stylesheet -->
-        <link rel="stylesheet" href="https://mariamraad.github.io/ar-portfolio/style.css">
-        
-        <!-- import Scripts to add functionality -->
-        <script src="/events.js"></script>
-        <script src="/cursor.js" defer></script> <!--the defer attribute tells the browser that the script is meant to be executed after the document has been parsed --> 
-        
-        <script>
-	var markerFound = 0;
-	
-	// Functions to set an Overlay
-	function on() {
-  		document.getElementById("overlay").style.display = "flex"; //block
-	}
 
-	function off() {
-  		document.getElementById("overlay").style.display = "none";
-	} 
-		
-	window.onload = function() {
-	  AFRAME.registerComponent('scanOverlay', {
-            init: function () {
-              var elem = document.documentElement;
-              var marker = document.querySelector("#marker");
-              var Video_0 = document.querySelector("#Video_Asset_0");
-              var scanOverlay = document.querySelector("#scanner");
-	      var on = document.getElementById("overlay").style.display = "block";
-	      var off = document.getElementById("overlay").style.display = "none";
-              //scanOverlay.hidden = false;
-              Video_0.pause();
+<head>
+    <title>AR Portfolio - Mariam Raad</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon.png">
 
-              marker.addEventListener("markerFound", function (evt) {
-            	markerFound = 1;
-            	//scanOverlay.hidden = true;
-		//scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
-		//scanOverlay = 0;
-		off() = 1;
-		on() = 0;
-            	Video_0.play();  //if video should start immediately on marker detection
-              });
+    <!--  this is REQUIRED for iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- , minimum-scale=1.0, maximum-scale=2.0 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no">
 
-              marker.addEventListener("markerLost", function (evt) {
-            	markerFound = 0;
-            	Video_0.pause();
-            	//scanOverlay.hidden = false;
-		//scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
-		//scanOverlay = 1;
-		off() = 0;
-		on() = 1;
-              });		    
-	  });
-	}
-	
-	/*
+    <!-- AFrame -->
+    <!-- <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@cd01cec35a01e03eb2d6a9272500a53de31d3828/dist/aframe-master.min.js"></script>
+
+    <!-- aFrameByCode enables scene management -->
+    <!-- <script src="https://faace.github.io/aFrameByCode/dist/aFrameByCode.min.js"></script> -->
+
+    <!-- ARjs -->
+    <!-- Version without NFT/image tracking but with marker + location based support -->
+    <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/3.1.0/aframe/build/aframe-ar.js"></script>
+
+    <!-- Other Dependencies -->
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="https://mariamraad.github.io/ar-portfolio/style.css">
+    <!-- /style.css
+        
+    <!-- import Scripts to add functionality -->
+    <script src="/events.js"></script>
+    <script src="/cursor.js" defer></script>
+    <!--the "defer" attribute tells the browser that the script is meant to be executed after the document has been parsed -->
+
+    <script>
+        var markerFound = 0;
+
+        // Functions to set an Overlay
+        function on() {
+            document.getElementById("overlay").style.display = "flex"; //block
+        }
+
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        window.onload = function() {
+            AFRAME.registerComponent('scanOverlay', {
+                init: function() {
+                    var elem = document.documentElement;
+                    var marker = document.querySelector("#marker");
+                    var Video_0 = document.querySelector("#Video_Asset_0");
+                    var scanOverlay = document.querySelector("#scanner");
+                    var on = document.getElementById("overlay").style.display = "block";
+                    var off = document.getElementById("overlay").style.display = "none";
+                    //scanOverlay.hidden = false;
+                    Video_0.pause();
+
+                    marker.addEventListener("markerFound", function(evt) {
+                        markerFound = 1;
+                        //scanOverlay.hidden = true;
+                        //scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
+                        //scanOverlay = 0;
+                        off() = 1;
+                        on() = 0;
+                        Video_0.play(); //if video should start immediately on marker detection
+                    });
+
+                    marker.addEventListener("markerLost", function(evt) {
+                        markerFound = 0;
+                        Video_0.pause();
+                        //scanOverlay.hidden = false;
+                        //scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
+                        //scanOverlay = 1;
+                        off() = 0;
+                        on() = 1;
+                    });
+                }
+            });
+        }
+
+        /*
 	<!-- Videohandler to let video autoplay when marker is tracked -->
         window.onload = function() {
             AFRAME.registerComponent('videohandler', {
@@ -95,73 +102,57 @@
             });
         };
 	*/
-        </script>
-	
-	<!-- Click-Function to pause and/or start a video -->
-	<!-- this is REQUIRED for iOS -->
-	<script>
-		/*
-            window.addEventListener('click', function () {
-                var video = document.querySelector('#vid');
+    </script>
+
+    <!-- Click-Function to pause and/or start a video -->
+    <!-- this is REQUIRED for iOS -->
+    <script>
+        <!-- -->
+        /*
+        window.addEventListener('click', function () {
+            var video = document.querySelector('#vid');
                 if (video.paused == true) {
                     video.play();
                 } else {
                     video.pause();
                 }
-            }, false);
-	    */
-        </script>    
-    </head>
-    
-    <body> <!-- style="margin: 0px; overflow: hidden;" -->
-	<!-- LOGO -->
-    	<!-- <div style="position: absolute; top: 5px; left: 5px; width:100%; z-index: 1;">
+        }, false);
+        */
+    </script>
+</head>
+
+<body>
+    <!-- style="margin: 0px; overflow: hidden;" -->
+    <!-- LOGO -->
+    <!-- <div style="position: absolute; top: 5px; left: 5px; width:100%; z-index: 1;">
     	    <input type="image" id="logo" width="104" height="40" src="https://mariamraad.github.io/ar-portfolio/assets/images/logo/Logo_MandR_Schrift.png"></input>
   	</div>
 	-->
-	
-	<!-- OVERLAY -->    
-	<!-- <div style='position: absolute; top: 10px; bottom: 10px; left: 10px; right: 5px; width:100%; height:100%; z-index: 1;'> --> 
-	<!-- <div style="position: absolute; margin-left:auto; margin-right:auto; text-align: center; top: 5px; z-index: 1;">    
-		<input type="image" id="scanner" width="250" height="500" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_groß.png"></input>
-  	</div> //id="overlay" -->
 
- 	<!-- <div class="overlay"></div> -->
-	
-	<div class="container"> 
-            <!-- <input type="image" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_mitHintergrund.png"></input> -->
-	    <div class="bg-image"></div>
-	</div>
-	
-	
-	    
-        <a-scene 
-            vr-mode-ui="enabled: false;"
-            renderer="antialias: true; alpha: true; precision: mediump;"
-            embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8"
-        >
-            <a-assets>
-                <!-- <img id="my-image" src="https://mariamraad.github.io/ar-portfolio/assets/images/batman.jpg">
-                <!-- <video id="safenetkids" autoplay loop="true" playsinline="true" src="/assets/videos/SafeNetKids.mp4"></video> -->
-                <video  
-                       src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" 
-                       preload="auto" 
-                       id="Video_Asset_0"
-                       response-type="arraybuffer"
-                       loop
-                       crossorigin
-                       webkit-playsinline
-                       autoplay
-                       playsinline
-                 ></video>
-            </a-assets>
-            
-            <!-- <a-marker-camera preset='hiro'> -->           
-            <a-marker scanOverlay videohandler click id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2" registerevents>
-                 <a-video src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5"></a-video> <!-- play="true" -->
-                 <!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
-            </a-marker>
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+    <div class="scannerWrapper">
+        <!-- <input type="image" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_mitHintergrund.png"></input> -->
+        <!-- <div class="bg-image"></div> -->
+        <!-- <div class="scannerImage" type="image" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_mitHintergrund.png"></div> -->
+        <input class="scannerImage" type="image" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_mitHintergrund.png"></input>
+    </div>
+
+
+
+    <a-scene vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
+        <a-assets>
+            <!-- <img id="my-image" src="https://mariamraad.github.io/ar-portfolio/assets/images/batman.jpg"> -->
+            <!-- <video id="safenetkids" autoplay loop="true" playsinline="true" src="/assets/videos/SafeNetKids.mp4"></video> -->
+            <video src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" preload="auto" id="Video_Asset_0" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video>
+        </a-assets>
+
+        <!-- <a-marker-camera preset='hiro'> -->
+        <a-marker scanOverlay videohandler click id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2" registerevents>
+            <a-video src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5"></a-video>
+            <!-- play="true" -->
+            <!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
 </html>
