@@ -25,13 +25,35 @@ body {
 
 .scannerImage {
     background-image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_mitHintergrund.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 25%;
     height: 100%;
     /* width: 25%; */
 }
 
+
+/*
+.scannerWrapper {
+    position: fixed;
+    top: 0;
+    left: 37.5%;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 9999;
+}
+
+.scannerImage {
+    background-image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_mitHintergrund.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 25%;
+    height: 100%;
+    /* width: 25%; */
+
+
+}
 
 /*
 .scannerWrapper {
@@ -47,6 +69,5 @@ body {
     border: 3px solid rgb(147, 45, 45);
     z-index: 9999;
     /*z-index makes the image stick to the left and lets the image appear way bigger. consquences: when opening the app in a mobile browser the image redefines itself all the time and also the app reloads and crashes eventually*/
-
 
 /*}*/
