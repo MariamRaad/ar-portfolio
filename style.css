@@ -24,6 +24,6 @@ body {
     width: 25%;
     max-height: 25%;
     border: 3px solid rgb(147, 45, 45);
-    /*z-index: 9999;*/
+    z-index: 9999;
     /*z-index makes the image stick to the left and lets the image appear way bigger. consquences: when opening the app in a mobile browser the image redefines itself all the time and also the app reloads and crashes eventually*/
 }
