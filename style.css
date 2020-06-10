@@ -26,7 +26,7 @@ body {
 
 .scannerImage {
     background-image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_mitHintergrund.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 25%;
     height: 100%;
