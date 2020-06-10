@@ -16,13 +16,12 @@ body {
 .scannerWrapper {
     display: flex;
     justify-content: center;
-    width: 50%;
-    margin: 0 auto;
+    width: 100%;
     border: 3px solid #333;
 }
 
 .scannerImage {
-    width: 50%;
-    max-height: 50%;
-    margin: 0 auto;
+    width: 25%;
+    max-height: 25%;
+    border: 3px solid rgb(147, 45, 45);
 }
