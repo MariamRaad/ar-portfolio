@@ -19,7 +19,7 @@ body {
     left: 0;
     width: 25%; /*it doesn't change the overlay problem if the value is 100% here*/
     height: 100%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 .scannerImage {
