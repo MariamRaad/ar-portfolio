@@ -20,7 +20,6 @@ body {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    z-index: 9999;
 }
 
 .scannerImage {
@@ -29,6 +28,7 @@ body {
     background-repeat: no-repeat;*/
     width: 100%;
     height: 100%;
+    z-index: 9999;
     /* width: 25%; */
 }
 
