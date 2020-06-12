@@ -17,7 +17,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 15%;
+    width: 100%;
     /* height: auto; */
     margin: 0 auto;
 }
@@ -26,7 +26,7 @@ body {
     /* background-image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_mitHintergrund.png);
     background-size: contain;
     background-repeat: no-repeat;*/
-    width: 50%;
+    width: 10%;
     /* height: auto; */
     /* width: 25%; */
     z-index: 9999;
