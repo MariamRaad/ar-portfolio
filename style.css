@@ -27,7 +27,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;*/
     width: 50%;
-    height: 100%;
+    height: auto;
     z-index: 9999;
     /* width: 25%; */
     z-index: 9999;
