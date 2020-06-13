@@ -15,8 +15,8 @@ body {
 
 .scannerWrapper {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 25%;
+    left: 50%;
     width: 50%;
     /* height: auto; */
     margin: 0 auto;
