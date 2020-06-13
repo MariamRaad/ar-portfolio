@@ -16,7 +16,7 @@ body {
 .scannerWrapper {
     position: fixed;
     top: 30%;
-    left: 50%;
+    left: 35%;
     /* width: 25%; */
     /* height: auto; */
     margin: 0 auto;
@@ -26,7 +26,7 @@ body {
     /* background-image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_mitHintergrund.png);
     background-size: contain;
     background-repeat: no-repeat;*/
-    width: 50%;
+    width: 75%;
     /* height: auto; */
     /* width: 25%; */
     /* z-index: 9999; */
