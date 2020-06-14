@@ -2,8 +2,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Lexend+Deca);
 body {
-    /*position: relative;
-     new */
+    /* position: relative; */
     font-family: "Lexend Deca", sans-serif;
     /* "Helvetica Neue", helvetica, arial, */
     /* margin: 2em; */
@@ -23,10 +22,10 @@ body {
 }
 
 .scannerImage {
+    width: 75%;
     /* background-image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_mitHintergrund.png);
     background-size: contain;
     background-repeat: no-repeat;*/
-    width: 75%;
     /* height: auto; */
     /* width: 25%; */
     /* z-index: 9999; */
