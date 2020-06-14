@@ -2,11 +2,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Lexend+Deca);
 body {
-    /* position: relative; */
     font-family: "Lexend Deca", sans-serif;
-    /* "Helvetica Neue", helvetica, arial, */
-    /* margin: 2em; */
-    /*padding: 20px;*/
     margin: 0;
     overflow: hidden;
     /*"hidden" means overflow is clipped, and the rest of the content will be invisible*/
@@ -17,7 +13,7 @@ body {
     top: 5px; 
     left: 5px; 
     width: 100%; 
-    z-index: -1;
+    z-index: -1; /* needs to be in the back so that it doesn't overlay the title */
 }
 
 .logoImage {
@@ -29,17 +25,9 @@ body {
     position: fixed;
     top: 20%;
     left: 20%;
-    /* width: 25%; */
-    /* height: auto; */
     margin: 0 auto;
 }
 
 .scannerImage {
     width: 75%;
-    /* background-image: url(https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_mitHintergrund.png);
-    background-size: contain;
-    background-repeat: no-repeat;*/
-    /* height: auto; */
-    /* width: 25%; */
-    /* z-index: 9999; */
 }
