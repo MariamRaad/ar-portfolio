@@ -104,7 +104,8 @@
                 init: function () {
                     var marker = this.el;
 	            var scanOverlay = document.querySelector("#scanner");
-                    var on = document.getElementById("scanner").style.display = "block";
+		    var displayProperty = scanOverlay.style.display 
+                    var on = document.getElementById("scanner").style.display = displayProperty;
                     var off = document.getElementById("scanner").style.display = "none";
 		    this.vid = document.querySelector("#Video_Asset_0");
 
