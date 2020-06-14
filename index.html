@@ -127,6 +127,7 @@
     <!-- Click-Function to pause and/or start a video -->
     <!-- this is REQUIRED for iOS -->
     <script>
+	    //TODO: condition changing to: when markerIsFound AND clicked
         window.addEventListener('click', function () {
             var video = document.querySelector('#Video_Asset_0');
                 if (video.paused == true) {
