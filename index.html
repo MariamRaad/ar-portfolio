@@ -117,7 +117,7 @@
     <!-- this is REQUIRED for iOS -->
     <script>
         window.addEventListener('click', function () {
-            var video = document.querySelector('#vid');
+            var video = document.querySelector('#Video_Asset_0');
                 if (video.paused == true) {
                     video.play();
                 } else {
@@ -145,12 +145,12 @@
         <a-assets>
             <!-- <img id="my-image" src="https://mariamraad.github.io/ar-portfolio/assets/images/batman.jpg"> -->
             <!-- <video id="safenetkids" autoplay loop="true" playsinline="true" src="/assets/videos/SafeNetKids.mp4"></video> -->
-            <video src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" preload="auto" id="Video_Asset_0" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video>
+            <video id="Video_Asset_0" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video>
         </a-assets>
 
         <!-- <a-marker-camera preset='hiro'> -->
-        <a-marker scanOverlay videohandler click id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2" registerevents>
-            <a-video src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5"></a-video>
+        <a-marker videohandler click id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2" registerevents>
+            <a-video src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" play="true"></a-video>
             <!-- play="true" -->
             <!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
         </a-marker>
