@@ -89,13 +89,23 @@
 
     <script>
 	/* Videohandler to let video autoplay when marker is tracked */
+	
+	    // Functions to set an Overlay
+        function on() {
+            document.getElementById("scanner").style.display = "flex"; //block
+        }
+
+        function off() {
+            document.getElementById("scanner").style.display = "none";
+        }
+	    
         window.onload = function() {
             AFRAME.registerComponent('videohandler', {
                 init: function () {
                     var marker = this.el;
 	            var scanOverlay = document.querySelector("#scanner");
-                    var on = document.getElementById("overlay").style.display = "block";
-                    var off = document.getElementById("overlay").style.display = "none";
+                    var on = document.getElementById("scanner").style.display = "block";
+                    var off = document.getElementById("scanner").style.display = "none";
 		    this.vid = document.querySelector("#Video_Asset_0");
 
                     marker.addEventListener('markerFound', function () {
