@@ -65,8 +65,8 @@
                         //scanOverlay.hidden = true;
                         //scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
                         //scanOverlay = 0;
-                        off() = 1;
-                        on() = 0;
+                        scanOverlay.off() = 1;
+                        scanOverlay.on() = 0;
                         Video_0.play(); //if video should start immediately on marker detection
                     });
 
@@ -76,8 +76,8 @@
                         //scanOverlay.hidden = false;
                         //scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
                         //scanOverlay = 1;
-                        off() = 0;
-                        on() = 1;
+                        scanOverlay.off() = 0;
+                        scanOverlay.on() = 1;
                     });
                 }
             });
@@ -131,7 +131,7 @@
 	-->
 
     <div class="scannerWrapper">
-	<input type="image" id="scanOverlay" class="scannerImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneHintergrund_klein.png"/>
+	<input type="image" id="overlay" class="scannerImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneHintergrund_klein.png"/>
     </div>
 
 
