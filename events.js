@@ -7,8 +7,8 @@ AFRAME.registerComponent('videohandler', {
 	  const scanner = document.querySelector("#scanner");
 	  //var scanOverlay = document.querySelector("#scanner");
 	  //var displayProperty = scanOverlay.style.display 
-    	  var on = document.getElementById("scanner").style.display = displayProperty;
-	  console.log("displayProperty" + displayProperty);
+    	  var on = scanner.style.display = displayProperty; //document.getElementById("scanner")
+	  console.log(displayProperty);
     	  var off = document.getElementById("scanner").style.display = "none";
 	  //this.vid = document.querySelector("#Video_Asset_0");
     	  const video = document.querySelector("#Video_Asset_0");
