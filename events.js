@@ -5,13 +5,13 @@ AFRAME.registerComponent('videohandler', {
 	  //var marker = this.el;
     	  const new_marker = document.querySelector("#marker");
 	  const scanner = document.querySelector("#scanner");
+    	  const video = document.querySelector("#Video_Asset_0");
 	  //var scanOverlay = document.querySelector("#scanner");
 	  //var displayProperty = scanOverlay.style.display 
-    	  const on = document.getElementsByClassName("scannerImage").style.display = "block"; //document.getElementById("scanner")
-	  console.log(on);
-    	  const off = document.getElementsByClassName("scannerImage").style.display = "none";
+    	  //const on = document.getElementsByClassName("scannerImage").style.display = "block"; //document.getElementById("scanner")
+	  //console.log(on);
+    	  //const off = document.getElementsByClassName("scannerImage").style.display = "none";
 	  //this.vid = document.querySelector("#Video_Asset_0");
-    	  const video = document.querySelector("#Video_Asset_0");
 	  
 	  // Functions to set an Overlay
           function on() {
