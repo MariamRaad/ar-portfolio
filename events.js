@@ -15,11 +15,11 @@ AFRAME.registerComponent('videohandler', {
 	  
 	  // Functions to set an Overlay
           function on() {
-		  document.getElementById("scanner").style.display = "block";
+		  document.getElementById("scanner").style.visibility = "visible" ;
           }
 
           function off() {
-            	  document.getElementById("scanner").style.display = "none";
+            	  document.getElementById("scanner").style.visibility = "hidden";
           } 
 
     	  new_marker.addEventListener('markerFound', function () {
