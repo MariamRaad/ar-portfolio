@@ -19,6 +19,7 @@ body {
 .logoImage {
     width: 104px; 
     height: 40px; 
+    visibility: visible;
 }
 
 .scannerWrapper {
