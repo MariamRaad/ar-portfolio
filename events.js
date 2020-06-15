@@ -8,9 +8,19 @@ AFRAME.registerComponent('videohandler', {
 	  //var scanOverlay = document.querySelector("#scanner");
 	  //var displayProperty = scanOverlay.style.display 
     	  var on = document.getElementById("scanner").style.display = "displayProperty";
+	  console.log(on);
     	  var off = document.getElementById("scanner").style.display = "none";
 	  //this.vid = document.querySelector("#Video_Asset_0");
     	  const video = document.querySelector("#Video_Asset_0");
+	  
+	  // Functions to set an Overlay
+          function on() {
+		  document.getElementById("scanner").style.display = "block";
+          }
+
+          function off() {
+            	  document.getElementById("scanner").style.display = "none";
+          } 
 
     	  new_marker.addEventListener('markerFound', function () {
 		  scanner.off();
