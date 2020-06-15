@@ -7,19 +7,19 @@ AFRAME.registerComponent('videohandler', {
 	  const scanner = document.querySelector("#scanner");
 	  //var scanOverlay = document.querySelector("#scanner");
 	  //var displayProperty = scanOverlay.style.display 
-    	  const on = document.getElementById("scanner").style.display = "block"; //document.getElementById("scanner")
+    	  const on = document.getElementsByClassName("scannerImage").style.display = "block"; //document.getElementById("scanner")
 	  console.log(on);
-    	  const off = document.getElementById("scanner").style.display = "none";
+    	  const off = document.getElementsByClassName("scannerImage").style.display = "none";
 	  //this.vid = document.querySelector("#Video_Asset_0");
     	  const video = document.querySelector("#Video_Asset_0");
 	  
 	  // Functions to set an Overlay
           function on() {
-		  document.getElementById("scanner").style.visibility = "visible" ;
+		  document.getElementsByClassName("scannerImage").style.visibility = "visible" ;
           }
 
           function off() {
-            	  document.getElementById("scanner").style.visibility = "hidden";
+            	  document.getElementsByClassName("scannerImage").style.visibility = "hidden";
           } 
 
     	  new_marker.addEventListener('markerFound', function () {
