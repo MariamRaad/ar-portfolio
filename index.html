@@ -51,32 +51,25 @@
     </script>
 </head>
 
-<body>
-    <!-- style="margin: 0px; overflow: hidden;" -->
+<body> <!-- style="margin: 0px; overflow: hidden;" -->
     <!-- LOGO -->
     <div class="logoWrapper">
     	    <input id="logo" type="image" class="logoImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/logo/Logo_MandR_Schrift.png"></input>
   	</div>
-    
-
+	
     <div class="scannerWrapper">
 	<input id="scanner" type="image" class="scannerImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneHintergrund_klein.png"/>
     </div>
 
-
-
     <a-scene vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
         <a-assets>
             <!-- <img id="my-image" src="https://mariamraad.github.io/ar-portfolio/assets/images/batman.jpg"> -->
-            <!-- <video id="safenetkids" autoplay loop="true" playsinline="true" src="/assets/videos/SafeNetKids.mp4"></video> -->
             <video id="Video_Asset_0" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video>
         </a-assets>
 
-        <!-- <a-marker-camera preset='hiro' registerevents> emitevents="true" -->
+        <!-- <a-marker-camera preset='hiro' registerevents -->
         <a-marker videohandler click emitevents="true" cursor="rayOrigin: mouse" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2">
-            <!-- emitevents="true" -->
             <a-video src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" play="true"></a-video>
-            <!-- play="true" -->
             <!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
         </a-marker>
         <a-entity camera></a-entity>
