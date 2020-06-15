@@ -2,16 +2,16 @@
 
 AFRAME.registerComponent('videohandler', {
   init: function () {
-    	  const new_marker = document.querySelector("#marker");
+    	  const marker = document.querySelector("#marker");
 	  const scanner = document.querySelector("#scanner");
     	  const video = document.querySelector("#Video_Asset_0");
 
-    	  new_marker.addEventListener('markerFound', function () {
+    	  marker.addEventListener('markerFound', function () {
 		  scanner.hidden = true;
 	          this.video.play(); //this.vid.play();
     	  }.bind(this));
     
-	  new_marker.addEventListener('markerLost', function () {
+	  marker.addEventListener('markerLost', function () {
 		  scanner.hidden = false;
 		  this.video.pause(); //this.vid.pause();
 		  // this.vid.currentTime = 0;
