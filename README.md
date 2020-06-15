@@ -6,8 +6,8 @@ If it's not working, open this link in your browser: https://mariamraad.github.i
 And then scan the Marker to see the Augmented Reality content.
 
 The application works best with: <br/>
-Android - Google Chrome or Firefox <br/>
-    iOS - Safari
+Android (Version 10) - Google Chrome or Firefox <br/>
+    iOS (Version 13.5) - Safari
 ___________
 <!---ISSUE:
 for this project I wish that ARjs will work with this QR Code image.
