@@ -23,12 +23,14 @@ AFRAME.registerComponent('videohandler', {
           } 
 
     	  new_marker.addEventListener('markerFound', function () {
-		  scanner.off();
+		  //scanner.off();
+		  scanOverlay.hidden = true;
 	          video.play(); //this.vid.play();
     	  }.bind(this));
     
 	  new_marker.addEventListener('markerLost', function () {
-		  scanner.on();
+		  //scanner.on();
+		  scanOverlay.hidden = false;
 		  video.pause(); //this.vid.pause();
 		  // this.vid.currentTime = 0;
           }.bind(this));
