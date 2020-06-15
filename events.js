@@ -2,26 +2,26 @@
 
 AFRAME.registerComponent('videohandler', {
   init: function () {
-    //var marker = this.el;
-    const new_marker = document.querySelector("#marker");
-		const scanner = document.querySelector("#scanner");
+	  //var marker = this.el;
+    	  const new_marker = document.querySelector("#marker");
+	  const scanner = document.querySelector("#scanner");
 	  //var scanOverlay = document.querySelector("#scanner");
-		//var displayProperty = scanOverlay.style.display 
-    var on = document.getElementById("scanner").style.display = "displayProperty";
-    var off = document.getElementById("scanner").style.display = "none";
-		//this.vid = document.querySelector("#Video_Asset_0");
-    const video = document.querySelector("#Video_Asset_0");
+	  //var displayProperty = scanOverlay.style.display 
+    	  var on = document.getElementById("scanner").style.display = "displayProperty";
+    	  var off = document.getElementById("scanner").style.display = "none";
+	  //this.vid = document.querySelector("#Video_Asset_0");
+    	  const video = document.querySelector("#Video_Asset_0");
 
-    new_marker.addEventListener('markerFound', function () {
-	    scanner.off();
-			video.play(); //this.vid.play();
-    }.bind(this));
+    	  new_marker.addEventListener('markerFound', function () {
+		  scanner.off();
+	          video.play(); //this.vid.play();
+    	  }.bind(this));
     
-		new_marker.addEventListener('markerLost', function() {
+	  new_marker.addEventListener('markerLost', function() {
 		  scanner.on();
 		  video.pause(); //this.vid.pause();
-			// this.vid.currentTime = 0;
-		}.bind(this));
+		  // this.vid.currentTime = 0;
+          }.bind(this));
   }
  });
 
