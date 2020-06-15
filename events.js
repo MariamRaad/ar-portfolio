@@ -8,12 +8,12 @@ AFRAME.registerComponent('videohandler', {
 
     	  new_marker.addEventListener('markerFound', function () {
 		  scanner.hidden = true;
-	          video.play(); //this.vid.play();
+	          this.video.play(); //this.vid.play();
     	  }.bind(this));
     
 	  new_marker.addEventListener('markerLost', function () {
 		  scanner.hidden = false;
-		  video.pause(); //this.vid.pause();
+		  this.video.pause(); //this.vid.pause();
 		  // this.vid.currentTime = 0;
           }.bind(this));
   }
