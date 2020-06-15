@@ -17,7 +17,7 @@ AFRAME.registerComponent('videohandler', {
 	          video.play(); //this.vid.play();
     	  }.bind(this));
     
-	  new_marker.addEventListener('markerLost', function() {
+	  new_marker.addEventListener('markerLost', function () {
 		  scanner.on();
 		  video.pause(); //this.vid.pause();
 		  // this.vid.currentTime = 0;
