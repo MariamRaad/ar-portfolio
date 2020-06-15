@@ -36,97 +36,6 @@
     <!-- <script src="https://mariamraad.github.io/ar-portfolio/cursor.js" defer></script> -->
     <!-- the "defer" attribute tells the browser that the script is meant to be executed after the document has been parsed -->
 
-    <!--	
-    <script>
-        var markerFound = 0;
-
-        // Functions to set an Overlay
-        function on() {
-            document.getElementById("overlay").style.display = "flex"; //block
-        }
-
-        function off() {
-            document.getElementById("overlay").style.display = "none";
-        }
-
-        window.onload = function() {
-            AFRAME.registerComponent('scanOverlay', {
-                init: function() {
-                    var elem = document.documentElement;
-                    var marker = document.querySelector("#marker");
-                    var Video_0 = document.querySelector("#Video_Asset_0");
-                    var scanOverlay = document.querySelector("#scanner");
-                    var on = document.getElementById("overlay").style.display = "block";
-                    var off = document.getElementById("overlay").style.display = "none";
-                    //scanOverlay.hidden = false;
-                    Video_0.pause();
-
-                    marker.addEventListener("markerFound", function(evt) {
-                        markerFound = 1;
-                        //scanOverlay.hidden = true;
-                        //scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
-                        //scanOverlay = 0;
-                        scanOverlay.off() = 1;
-                        scanOverlay.on() = 0;
-                        Video_0.play(); //if video should start immediately on marker detection
-                    });
-
-                    marker.addEventListener("markerLost", function(evt) {
-                        markerFound = 0;
-                        Video_0.pause();
-                        //scanOverlay.hidden = false;
-                        //scanOverlay.setAttribute("src", "https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneRahmen_klein.png");
-                        //scanOverlay = 1;
-                        scanOverlay.off() = 0;
-                        scanOverlay.on() = 1;
-                    });
-                }
-            });
-        }
-       
-    </script>
-    -->
-
-    <script>
-	/* Videohandler to let video autoplay when marker is tracked */
-	
-	/*
-	// Functions to set an Overlay
-        function on() {
-            document.getElementById("scanner").style.display = "block";
-        }
-
-        function off() {
-            document.getElementById("scanner").style.display = "none";
-        }    
-        window.onload = function() {
-            AFRAME.registerComponent('videohandler', {
-                init: function () {
-                    var marker = this.el;
-        	    const new_marker = document.querySelector("#marker");
-		    const scanner = document.querySelector("#scanner");
-	            //var scanOverlay = document.querySelector("#scanner");
-		    //var displayProperty = scanOverlay.style.display 
-                    var on = document.getElementById("scanner").style.display = "displayProperty";
-                    var off = document.getElementById("scanner").style.display = "none";
-		    this.vid = document.querySelector("#Video_Asset_0");
-
-                    new_marker.addEventListener('markerFound', function () {
-			scanner.off();
-			this.vid.play();
-                    }.bind(this));
-    
-		    new_marker.addEventListener('markerLost', function() {
-			scanner.on();
-		    	this.vid.pause();
-			// this.vid.currentTime = 0;
-		    }.bind(this));
-                }
-            });
-        };
-	*/
-    </script>
-
     <!-- Click-Function to pause and/or start a video -->
     <!-- this is REQUIRED for iOS -->
     <script>
@@ -164,7 +73,7 @@
         </a-assets>
 
         <!-- <a-marker-camera preset='hiro' registerevents> emitevents="true" -->
-        <a-marker videohandler click registerevents  cursor="rayOrigin: mouse" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2">
+        <a-marker videohandler click emitevents="true" cursor="rayOrigin: mouse" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2">
             <!-- emitevents="true" -->
             <a-video src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" play="true"></a-video>
             <!-- play="true" -->
