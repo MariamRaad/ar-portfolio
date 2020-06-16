@@ -39,9 +39,10 @@
 	
 	<script>
 		
-        window.addEventListener('videohandler', function () {
-//AFRAME.registerComponent('videohandler', {
-  init: function () {
+        //window.addEventListener('videohandler', function () {
+	window.onload = function() {
+	AFRAME.registerComponent('videohandler', {
+  	init: function () {
     	  var marker = document.querySelector("#marker"); //const
 	  var scanner = document.querySelector("#scanner"); //const
     	  this.video = document.querySelector("#Video_Asset_0");
@@ -56,8 +57,9 @@
 		  this.video.pause(); //this.vid.pause();
 		  // this.vid.currentTime = 0;
           }.bind(this));
-  }
- });
+  	}
+      });
+    };
 	</script>
     <!-- Click-Function to pause and/or start a video -->
     <!-- this is REQUIRED for iOS -->
