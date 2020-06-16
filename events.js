@@ -2,8 +2,8 @@
 
 AFRAME.registerComponent('videohandler', {
   init: function () {
-    	  const marker = document.querySelector("#marker");
-	  const scanner = document.querySelector("#scanner");
+    	  var marker = document.querySelector("#marker"); //const
+	  var scanner = document.querySelector("#scanner"); //const
     	  this.video = document.querySelector("#Video_Asset_0");
 
     	  marker.addEventListener('markerFound', function () {
