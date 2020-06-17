@@ -1,6 +1,23 @@
 /* To add interactivity to the site with Javascript */
 
+AFRAME.registerComponent('videohandler', {
+  init: function () {
+    var marker = document.querySelector("#marker"); //const
+	  var scanner = document.querySelector("#scanner"); //const
+    var video = document.querySelector("#Video_Asset_0"); //this.video
 
+    marker.addEventListener('markerFound', function () {
+		  scanner.hidden = true;
+	    this.video.play(); //this.vid.play();
+    }.bind(this));
+    
+	  marker.addEventListener('markerLost', function () {
+		  scanner.hidden = false;
+		  this.video.pause(); //this.vid.pause();
+		  // this.vid.currentTime = 0;
+    }.bind(this));
+  }
+});
 
 AFRAME.registerComponent('navigate-on-click', {
   schema: {
