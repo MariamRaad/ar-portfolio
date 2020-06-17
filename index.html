@@ -37,27 +37,27 @@
     <!-- the "defer" attribute tells the browser that the script is meant to be executed after the document has been parsed -->
 
     <script>
-      window.addEventListener('videohandler', function () {
-      //window.onload = function() {
-	//AFRAME.registerComponent('videohandler', {
-  	  //init: function () {
+      //window.addEventListener('videohandler', function () {
+      window.onload = function() {
+	AFRAME.registerComponent('videohandler', {
+  	  init: function () {
     	    var marker = document.querySelector("#marker"); //const
 	    var scanner = document.querySelector("#scanner"); //const
-    	    var vid = document.querySelector("#Video_Asset_0"); //this.video
+    	    var video = document.querySelector("#Video_Asset_0"); //this.video
 
     	    marker.addEventListener('markerFound', function () {
 		  scanner.hidden = true;
-	          this.vid.play(); //this.vid.play();
+	          this.video.play(); //this.vid.play();
     	    }.bind(this));
     
 	    marker.addEventListener('markerLost', function () {
 		  scanner.hidden = false;
-		  this.vid.pause(); //this.vid.pause();
+		  this.video.pause(); //this.vid.pause();
 		  // this.vid.currentTime = 0;
             }.bind(this));
-  	  //}
-       //});
-    });
+  	  }
+       });
+    }
     </script>
 	
     <!-- Click-Function to pause and/or start a video -->
