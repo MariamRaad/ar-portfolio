@@ -16,6 +16,7 @@ In order to play videos on iOS the following code segments are needed:
 (found here: https://aframe.io/docs/1.0.0/primitives/a-video.html#sidebar visited 03.06.2020)
 
 <!-- Videohandler to let video autoplay when marker is tracked -->
+<!-- Code für direkt in HTML, nicht in extra JS Datei -->
         <script>
         window.onload = function() {
             AFRAME.registerComponent('videohandler', {
