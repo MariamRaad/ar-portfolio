@@ -1,5 +1,6 @@
 /* To add interactivity to the site with Javascript */
 
+/* Videohandler Function: to let video play when marker is tracked */
 AFRAME.registerComponent('videohandler', {
   init: function () {
     const marker = document.querySelector("#marker");
