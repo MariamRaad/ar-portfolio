@@ -31,7 +31,7 @@ AFRAME.registerComponent('clickhandlerVideo', {
           this.el.pause();
       }
     //}, false);
-   });
+   }, false);
 }});
 
 AFRAME.registerComponent('navigate-on-click', {
