@@ -20,6 +20,20 @@ AFRAME.registerComponent('videohandler', {
   }
 });
 
+AFRAME.registerComponent('clickhandlerVideo', {
+        init: function() {
+            this.el.addEventListener('click', () => {
+                alert('Clicked!')
+                //this.video = document.querySelector('#Video_Asset_0');
+                if (this.el.paused == true) {
+                    this.el.play();
+                } else {
+                    this.el.pause();
+                }
+        }, false);
+            });
+    }});
+
 AFRAME.registerComponent('navigate-on-click', {
   schema: {
     url: {
