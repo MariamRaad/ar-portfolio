@@ -101,7 +101,7 @@
 
         <!-- <a-marker-camera preset='hiro' registerevents   cursor="rayOrigin: mouse" -->
         <!-- cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;" raycaster="objects: [clickhandlerVideo];" -->
-        <a-marker scannerHandler clickHandler cursor="rayOrigin: mouse" raycaster="objects: .intersectable;" emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2">
+        <a-marker scannerHandler cursor="rayOrigin: mouse" raycaster="objects: .intersectable;" emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2">
 		<a-entity>
 			<!--
 			id="vidddeo" 
@@ -114,7 +114,7 @@
 			-->
 	        </a-entity>
 			
-		<a-video clickhandlerVideo class="intersectable" src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" play="true"></a-video>
+		<a-video clickHandler class="intersectable" src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" play="true"></a-video>
             	<!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
         </a-marker>
 	    
