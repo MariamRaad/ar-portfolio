@@ -22,13 +22,14 @@ AFRAME.registerComponent('videohandler', {
 
 AFRAME.registerComponent('clickhandlerVideo', {
   init: function() {
-    this.el = document.querySelector("#Video_Asset_0");
-    this.el.addEventListener('click', () => {
+    const video = document.querySelector("#vidddeo");
+    //this.el = document.querySelector("#Video_Asset_0");
+    this.video.addEventListener('click', () => {
       //alert('Clicked!')
-      if (this.el.paused == true) {
-          this.el.play();
+      if (this.video.paused == true) {
+          this.video.play();
       } else {
-          this.el.pause();
+          this.video.pause();
       }
     //}, false);
    }, false);
