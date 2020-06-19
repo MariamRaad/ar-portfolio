@@ -9,13 +9,13 @@ AFRAME.registerComponent('videohandler', {
 
     marker.addEventListener('markerFound', function () {
        scanner.hidden = true;
-       this.video.play(); //this.vid.play();
+       //this.video.play(); //this.vid.play();
     }.bind(this));
     
     marker.addEventListener('markerLost', function () {
        scanner.hidden = false;
-       this.video.pause(); //this.vid.pause();
-       // this.vid.currentTime = 0;
+       //this.video.pause(); //this.vid.pause();
+       // this.vid.currentTime = 0; //refresh video
     }.bind(this));
   }
 });
