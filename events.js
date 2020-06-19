@@ -22,9 +22,9 @@ AFRAME.registerComponent('videohandler', {
 
 AFRAME.registerComponent('clickhandlerVideo', {
   init: function() {
+    this.el = document.querySelector("#Video_Asset_0");
     this.el.addEventListener('click', () => {
-      alert('Clicked!')
-      //this.video = document.querySelector('#Video_Asset_0');
+      //alert('Clicked!')
       if (this.el.paused == true) {
           this.el.play();
       } else {
