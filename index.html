@@ -100,8 +100,8 @@
         </a-assets>
 
         <!-- <a-marker-camera preset='hiro' registerevents   cursor="rayOrigin: mouse" -->
-        <!-- cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;" raycaster="objects: [clickhandlerVideo]; raycaster="objects: .intersectable" -->
-        <a-marker scannerHandler emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2">
+        <!-- cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;" raycaster="objects: [clickhandler]; raycaster="objects: .intersectable" -->
+        <a-marker scannerhandler emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2">
 		<a-entity>
 			<!--
 			id="vidddeo" 
@@ -114,7 +114,7 @@
 			-->
 			
 			
-			<a-video clickHandler class="intersectable" src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" play="true"></a-video>
+			<a-video clickhandler src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" play="true"></a-video>
             	
 	        </a-entity>
 			
@@ -123,7 +123,7 @@
 	    
 	<!-- static camera that moves according to the device movemenents -->
         <a-entity camera>
-	    <a-entity cursor="rayOrigin: mouse;fuse: false;" raycaster="objects: .intersectable;"></a-entity>
+	    <a-entity cursor="rayOrigin: mouse;fuse: false;" raycaster="objects: [clickhandler];"></a-entity>
 	</a-entity>
 	    
     </a-scene>
