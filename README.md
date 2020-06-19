@@ -1,5 +1,7 @@
 # Augmented Reality Portfolio
 
+*This Project is currently under construction, so the Application might not work correctly when trying it out*
+
 Scan the QR Code and then the Marker with your smartphone camera to discover my Augmented Reality Portfolio :)
 
 If it's not working, open this link in your browser: https://mariamraad.github.io/ar-portfolio </br>
