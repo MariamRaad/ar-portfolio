@@ -1,7 +1,7 @@
 /* To add interactivity to the site with Javascript */
 
 /* Videohandler Function: to let video play when marker is tracked */
-AFRAME.registerComponent('videohandler', {
+AFRAME.registerComponent('scannerHandler', {
   init: function () {
     const marker = document.querySelector("#marker");
     const scanner = document.querySelector("#scanner");
@@ -20,9 +20,9 @@ AFRAME.registerComponent('videohandler', {
   }
 });
 
-AFRAME.registerComponent('clickhandlerVideo', {
+AFRAME.registerComponent('clickHandler', {
   init: function() {
-    const video = document.querySelector("#vidddeo");
+    this.video = document.querySelector("#Video_Asset_0");
     //this.el = document.querySelector("#Video_Asset_0");
     this.video.addEventListener('click', () => {
       //alert('Clicked!')
