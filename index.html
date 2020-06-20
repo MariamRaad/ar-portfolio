@@ -77,7 +77,7 @@
                 	allow_clicks = false
           	}) 
 
-	    document.querySelector("#Video_Asset_0")
+	    document.querySelector("#videoScreen")
       		.addEventListener('click', (evt) => {
            	   if (allow_clicks){
                		window.location="https://cybersift.io"
@@ -174,8 +174,8 @@
 
         <!-- <a-marker-camera preset='hiro' registerevents   cursor="rayOrigin: mouse" -->
         <!-- cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;" raycaster="objects: [clickhandler]; raycaster="objects: .intersectable" -->
-	<!-- scannerhandler -->
-        <a-marker markerhandler  emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2">
+	<!-- scannerhandler markerhandler-->
+        <a-marker emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2">
 		<a-entity>
 			<!--
 			id="vidddeo" 
