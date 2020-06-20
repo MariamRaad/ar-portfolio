@@ -66,8 +66,6 @@
     <!-- this is REQUIRED for iOS -->
     <script>
 	    	var scene
-		var AR-Object01
-		var AR-Object02
 		var AR-VideoScreen
 
 		AFRAME.registerComponent('markerhandler', {
@@ -78,17 +76,13 @@
   			},
 
   			tick: function(t, dt) {
-				if (document.querySelector("#hiroMarker").object3D.visible == true && playing == false) {
-      				// MARKER IS PRESENT
+				if (document.querySelector("#marker").object3D.visible == true && playing == false) {
+      				//MARKER IS PRESENT
      				//alert("MARKER IS PRESENT")
 
-  				scene = document.querySelector('#a-scene');
-  	  			AR-Object01 = document.querySelector('#Object01');
-    				AR-Object02 = document.querySelector('#Object02');
-      				AR-VideoScreen =  document.querySelector('#videoScreen');
+  				scene = document.querySelector('#scene1');
+      				AR-VideoScreen =  document.querySelector('#Video_Asset_0');
 
-      				AR-Object01.addEventListener('click', function () { console.log("object01 clickable in AR") });
-      				AR-Object02.addEventListener('click', function () { console.log("object02 clickable in AR") });
       				videoScreen.addEventListener('click', function () { playPauseVideo(); console.log("Video Play Toggle") });
       				playing = true;
 				}
@@ -143,7 +137,7 @@
 	<input id="scanner" type="image" class="scannerImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneHintergrund_Text.png"/>
     </div>
 	
-    <a-scene cursor="fuse: false; rayOrigin: mouse" raycaster="objects: [clickhandler]" vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
+    <a-scene id="scene1" cursor="fuse: false; rayOrigin: mouse" raycaster="objects: [clickhandler]" vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
        
 	<!-- <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .intersectable;"></a-entity> -->
 	
