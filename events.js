@@ -20,6 +20,7 @@ AFRAME.registerComponent('scannerhandler', {
   }
 });
 
+/*
 var video1 = document.querySelector("#Video_Asset_0");
 
 AFRAME.registerComponent("clickhandler", {
@@ -30,6 +31,7 @@ AFRAME.registerComponent("clickhandler", {
     });
   }
 });
+*/
 
 /*
 AFRAME.registerComponent('clickhandler', {
