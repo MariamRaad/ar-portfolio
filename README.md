@@ -1,6 +1,6 @@
 # Augmented Reality Portfolio
 
-*This project is currently under construction, so the Application might not work correctly when trying it out*
+*This project is currently Work In Progress, so the Application might not work correctly when trying it out*
 ___________
 
 Scan the QR Code and then the Marker with your smartphone camera to discover my Augmented Reality Portfolio :)
