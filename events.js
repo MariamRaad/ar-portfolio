@@ -20,6 +20,18 @@ AFRAME.registerComponent('scannerhandler', {
   }
 });
 
+var video1 = document.querySelector("#Video_Asset_0");
+
+AFRAME.registerComponent("clickhandler", {
+  init: function() {
+    this.el.addEventListener('click', function(evt) {
+    console.log("CLICK ON");
+    video1.play();
+    });
+  }
+});
+
+/*
 AFRAME.registerComponent('clickhandler', {
   init: function() {
     this.video = document.querySelector("#Video_Asset_0");
@@ -34,6 +46,7 @@ AFRAME.registerComponent('clickhandler', {
     //}, false);
    }, false);
 }});
+*/
 
 AFRAME.registerComponent('navigate-on-click', {
   schema: {
