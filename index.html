@@ -81,7 +81,7 @@
      				//alert("MARKER IS PRESENT")
 
   				scene = document.querySelector('#scene1');
-      				AR-VideoScreen =  document.querySelector('#Video_Asset_0');
+      				AR-VideoScreen =  document.querySelector('#videoScreen');
 
       				videoScreen.addEventListener('click', function () { playPauseVideo(); console.log("Video Play Toggle") });
       				playing = true;
@@ -148,7 +148,8 @@
 
         <!-- <a-marker-camera preset='hiro' registerevents   cursor="rayOrigin: mouse" -->
         <!-- cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;" raycaster="objects: [clickhandler]; raycaster="objects: .intersectable" -->
-        <a-marker scannerhandler emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2">
+	<!-- scannerhandler -->
+        <a-marker markerhandler  emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2">
 		<a-entity>
 			<!--
 			id="vidddeo" 
@@ -160,8 +161,8 @@
 			play="true"
 			-->
 			
-			
-			<a-video clickhandler src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" ></a-video> <!--play="true" -->
+			<!-- clickhandler -->
+			<a-video id="videoScreen" src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" ></a-video> <!--play="true" -->
             	
 	        </a-entity>
 			
