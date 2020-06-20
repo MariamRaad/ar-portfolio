@@ -67,6 +67,7 @@
     <script>
 	    	var scene
 		var AR-VideoScreen
+	        var scanner = document.querySelector("#scanner");
 
 		AFRAME.registerComponent('markerhandler', {
 			init: function() {
@@ -79,17 +80,21 @@
 				if (document.querySelector("#marker").object3D.visible == true && playing == false) {
       				//MARKER IS PRESENT
      				//alert("MARKER IS PRESENT")
+       				scanner.hidden = true;
 
   				scene = document.querySelector('#scene1');
       				AR-VideoScreen =  document.querySelector('#videoScreen');
 
-      				videoScreen.addEventListener('click', function () { playPauseVideo(); console.log("Video Play Toggle") });
+      				videoScreen.addEventListener('click', function () { 
+					playPauseVideo(); 
+					console.log("Video Play Toggle") 
+				});
       				playing = true;
 				}
 				} else {
       				// MARKER IS HIDDEN, do nothing (up to you)
+       				scanner.hidden = false;
     			}
-
 		});
 
 		function playPauseVideo(){
