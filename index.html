@@ -65,11 +65,14 @@
     <!-- Click-Function to pause and/or start a video -->
     <!-- this is REQUIRED for iOS -->
     <script>
+	    var video = document.querySelector("Video_Asset_0");
+	    
 	    AFRAME.registerComponent('clickhandler', {
         	init: function() {
             	   this.el.addEventListener('click', () => {
-                   	alert('Clicked!')
-               		window.location="https://cybersift.io"
+                   	//alert('Clicked!')
+               		//window.location="https://www.google.com/"
+			this.video.play();
                });
             }});
 	    
@@ -169,10 +172,10 @@
     	    <input id="logo" type="image" class="logoImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/logo/Logo_MandR_Schrift.png"></input>
   	</div>
 	
-    <!-- Scanner Bild -->	
+    <!-- Scanner Bild 	
     <div class="scannerWrapper">
 	<input id="scanner" type="image" class="scannerImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneHintergrund_Text.png"/>
-    </div>
+    </div>-->
 	
     <a-scene id="scene1" cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;' raycaster="objects: [clickhandler];"vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
        
