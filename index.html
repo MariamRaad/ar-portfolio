@@ -65,6 +65,20 @@
     <!-- Click-Function to pause and/or start a video -->
     <!-- this is REQUIRED for iOS -->
     <script>
+	var video1 = document.querySelector("#Video_Asset_0");
+	
+	AFRAME.registerComponent("clickhandler", {
+  		init: function() {
+    			this.el.addEventListener('click', function(evt) {
+    			console.log("CLICK ON");
+			    video1.play();
+    			});
+  		}
+	});    
+	    
+	    
+	    
+	    
 	    //TODO: condition changing to: when markerIsFound AND clicked
 	    /*
         window.addEventListener('click', function () {
