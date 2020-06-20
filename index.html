@@ -65,6 +65,47 @@
     <!-- Click-Function to pause and/or start a video -->
     <!-- this is REQUIRED for iOS -->
     <script>
+	    	var scene
+		var AR-Object01
+		var AR-Object02
+		var AR-VideoScreen
+
+		AFRAME.registerComponent('markerhandler', {
+			init: function() {
+
+    			// Set up the tick throttling. Will check if marker is active every 500ms
+   			this.tick = AFRAME.utils.throttleTick(this.tick, 500, this);
+  			},
+
+  			tick: function(t, dt) {
+				if (document.querySelector("#hiroMarker").object3D.visible == true && playing == false) {
+      				// MARKER IS PRESENT
+     				//alert("MARKER IS PRESENT")
+
+  				scene = document.querySelector('#a-scene');
+  	  			AR-Object01 = document.querySelector('#Object01');
+    				AR-Object02 = document.querySelector('#Object02');
+      				AR-VideoScreen =  document.querySelector('#videoScreen');
+
+      				AR-Object01.addEventListener('click', function () { console.log("object01 clickable in AR") });
+      				AR-Object02.addEventListener('click', function () { console.log("object02 clickable in AR") });
+      				videoScreen.addEventListener('click', function () { playPauseVideo(); console.log("Video Play Toggle") });
+      				playing = true;
+				}
+				} else {
+      				// MARKER IS HIDDEN, do nothing (up to you)
+    			}
+
+		});
+
+		function playPauseVideo(){
+			if (video.paused)
+    				video.play();
+  			else
+    				video.pause();
+		}
+
+	    /*
 	var video1 = document.querySelector("#Video_Asset_0");
 	
 	AFRAME.registerComponent("clickhandler", {
@@ -75,9 +116,7 @@
     			});
   		}
 	});    
-	    
-	    
-	    
+*/ 
 	    
 	    //TODO: condition changing to: when markerIsFound AND clicked
 	    /*
