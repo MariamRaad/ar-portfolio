@@ -104,7 +104,7 @@
 	<input id="scanner" type="image" class="scannerImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneHintergrund_Text.png"/>
     </div>
 	
-    <a-scene vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
+    <a-scene cursor="fuse: false; rayOrigin: mouse" raycaster="objects: [clickhandler]" vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
        
 	<!-- <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .intersectable;"></a-entity> -->
 	
@@ -137,7 +137,7 @@
 	    
 	<!-- static camera that moves according to the device movemenents -->
         <a-entity camera>
-	    <a-entity cursor="rayOrigin: mouse;fuse: false;" raycaster="objects: [clickhandler];"></a-entity>
+	   <!-- <a-entity cursor="rayOrigin: mouse;fuse: false;" raycaster="objects: [clickhandler];"></a-entity> -->
 	</a-entity>
 	    
     </a-scene>
