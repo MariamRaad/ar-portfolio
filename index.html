@@ -39,7 +39,7 @@
     <!-- <script src="https://mariamraad.github.io/ar-portfolio/cursor.js" defer></script> -->
     <!-- the "defer" attribute tells the browser that the script is meant to be executed after the document has been parsed -->
 
-	<!--
+    <!--
     <script>
       //window.addEventListener('videohandler', function () {
       window.onload = function() {
@@ -62,118 +62,14 @@
   	  }
        });
     }
-    </script>
--->
-	
-    <!-- Click-Function to pause and/or start a video -->
-    <!-- this is REQUIRED for iOS -->
-    <script>
-	    var video = document.querySelector("#Video_Asset_0");
-	    
-	    AFRAME.registerComponent('clickhandler', {
-        	init: function() {
-            	   this.el.addEventListener('click', () => {
-                   	//alert('Clicked!')
-               		//window.location="https://www.google.com/"
-			this.video.play();
-               });
-            }});
-	    
-	    
-	    /*
-	    let allow_clicks = false;
-
-	    document.querySelector("#scene1")
-      		.addEventListener('markerFound', (evt) => {
-               		allow_clicks = true
-      		})
-
-	    document.querySelector("#scene1")
-      		.addEventListener('markerLost', (evt) => {
-                	allow_clicks = false
-          	}) 
-
-	    document.querySelector("#Video_Asset_0")
-      		.addEventListener('click', (evt) => {
-           	   if (allow_clicks){
-               		window.location="https://cybersift.io"
-           	   }            
-           })	
-	   */
-	    
-	    /*
-	    	var scene
-		var AR-VideoScreen
-	        var scanner = document.querySelector("#scanner");
-
-		AFRAME.registerComponent('markerhandler', {
-			init: function() {
-
-    			// Set up the tick throttling. Will check if marker is active every 500ms
-   			this.tick = AFRAME.utils.throttleTick(this.tick, 500, this);
-  			},
-
-  			tick: function(t, dt) {
-				if (document.querySelector("#marker").object3D.visible == true && playing == false) {
-      				//MARKER IS PRESENT
-     				//alert("MARKER IS PRESENT")
-       				scanner.hidden = true;
-
-  				scene = document.querySelector('#scene1');
-      				AR-VideoScreen =  document.querySelector('#videoScreen');
-
-      				videoScreen.addEventListener('click', function () { 
-					playPauseVideo(); 
-					console.log("Video Play Toggle") 
-				});
-      				playing = true;
-				}
-				} else {
-      				// MARKER IS HIDDEN, do nothing (up to you)
-       				scanner.hidden = false;
-    			}
-		});
-
-		function playPauseVideo(){
-			if (video.paused)
-    				video.play();
-  			else
-    				video.pause();
-		}
-		*/
-
-	    /*
-	var video1 = document.querySelector("#Video_Asset_0");
-	
-	AFRAME.registerComponent("clickhandler", {
-  		init: function() {
-    			this.el.addEventListener('click', function(evt) {
-    			console.log("CLICK ON");
-			    video1.play();
-    			});
-  		}
-	});    
-*/ 
-	    
-	    //TODO: condition changing to: when markerIsFound AND clicked
-	    /*
-        window.addEventListener('click', function () {
-            var video = document.querySelector('#Video_Asset_0');
-                if (video.paused == true) {
-                    video.play();
-                } else {
-                    video.pause();
-                }
-        }, false);
-	*/
-    </script>
+    </script> -->
 </head>
 
 <body> <!-- style="margin: 0px; overflow: hidden;" -->
     <!-- Logo -->
     <div class="logoWrapper">
-    	    <input id="logo" type="image" class="logoImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/logo/Logo_MandR_Schrift.png"></input>
-  	</div>
+        <input id="logo" type="image" class="logoImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/logo/Logo_MandR_Schrift.png"></input>
+    </div>
 	
     <!-- Scanner Bild 	
     <div class="scannerWrapper">
@@ -211,9 +107,10 @@
 	<!-- scannerhandler markerhandler-->
         <a-marker raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;" emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2" > <!--size="10"-->
 		<!-- clickhandler -->
-		<!-- <a-video clickhandler id="videoScreen" src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" ></a-video> <!-- play="true" -->
+		<a-video gesture-handler id="videoScreen" src="#Video_Asset" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" ></a-video> <!-- play="true" -->
 		<!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
 		
+		<!--
 		<a-entity
       			id="video_id"
       			a-video="#Video_Asset"
@@ -225,6 +122,7 @@
       			gesture-handler
     		>
     		</a-entity>
+		-->
         </a-marker>
 	    
 	<!-- static camera that moves according to the device movemenents -->
