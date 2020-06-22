@@ -58,6 +58,7 @@ AFRAME.registerComponent("gesture-handler", {
       //this.el.play();
       //var video = document.querySelector("#video_id"); //Video_Asset
       this.video.play();
+      this.entityElement.play();
       //this.image.scale.set(5,5,5);
       
       /*
