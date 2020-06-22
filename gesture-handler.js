@@ -23,7 +23,8 @@ AFRAME.registerComponent("gesture-handler", {
     //var sceneEl = document.querySelector('a-scene').querySelector('a-assets');
     //var video = sceneEl.querySelector('video');
     //this.image = document.querySelector("#my-image");
-    var entityElement = document.querySelector("#videoScreen");
+    //var entityElement = document.querySelector("#videoScreen");
+    var entityElement = document.querySelector('a-entity');
     
     this.el.sceneEl.addEventListener("markerFound", (e) => {
       this.isVisible = true;
