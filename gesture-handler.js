@@ -35,19 +35,19 @@ AFRAME.registerComponent("gesture-handler", {
 
   update: function () {
     if (this.data.enabled) {
-      this.el.sceneEl.addEventListener("onefingerstart", this.handleClick);
+      this.el.object3D.addEventListener("onefingerstart", this.handleClick);
       //this.el.sceneEl.addEventListener("onefingerstart", this.handleClick);
       //this.el.sceneEl.addEventListener("onefingermove", this.handleRotation);
       //this.el.sceneEl.addEventListener("twofingermove", this.handleScale);
     } else {
-      this.el.sceneEl.removeEventListener("onefingerstart", this.handleClick);
+      this.el.object3D.removeEventListener("onefingerstart", this.handleClick);
       //this.el.sceneEl.removeEventListener("onefingermove", this.handleRotation);
       //this.el.sceneEl.removeEventListener("twofingermove", this.handleScale);
     }
   },
 
   remove: function () {
-    this.el.sceneEl.removeEventListener("onefingerstart", this.handleClick);
+    this.el.object3D.removeEventListener("onefingerstart", this.handleClick);
     //this.el.sceneEl.removeEventListener("onefingerend", this.handleScale);
   },
 
