@@ -6,8 +6,7 @@ AFRAME.registerComponent("gesture-detector", {
   },
 
   init: function() {
-    this.targetElement =
-      this.data.element && document.querySelector(this.data.element);
+    this.targetElement = this.data.element && document.querySelector(this.data.element);
 
     if (!this.targetElement) {
       this.targetElement = this.el;
@@ -39,18 +38,14 @@ AFRAME.registerComponent("gesture-detector", {
 
     const previousState = this.internalState.previousState;
 
-    const gestureContinues =
-      previousState &&
-      currentState &&
-      currentState.touchCount == previousState.touchCount;
+    const gestureContinues = previousState && currentState && currentState.touchCount == previousState.touchCount;
 
     const gestureEnded = previousState && !gestureContinues;
 
     const gestureStarted = currentState && !gestureContinues;
 
     if (gestureEnded) {
-      const eventName =
-        this.getEventPrefix(previousState.touchCount) + "fingerend";
+      const eventName = this.getEventPrefix(previousState.touchCount) + "fingerend";
 
       this.el.emit(eventName, previousState);
 
@@ -64,8 +59,7 @@ AFRAME.registerComponent("gesture-detector", {
 
       currentState.startSpread = currentState.spread;
 
-      const eventName =
-        this.getEventPrefix(currentState.touchCount) + "fingerstart";
+      const eventName = this.getEventPrefix(currentState.touchCount) + "fingerstart";
 
       this.el.emit(eventName, currentState);
 
@@ -76,7 +70,6 @@ AFRAME.registerComponent("gesture-detector", {
       const eventDetail = {
         positionChange: {
           x: currentState.position.x - previousState.position.x,
-
           y: currentState.position.y - previousState.position.y
         }
       };
@@ -93,8 +86,7 @@ AFRAME.registerComponent("gesture-detector", {
 
       Object.assign(eventDetail, previousState);
 
-      const eventName =
-        this.getEventPrefix(currentState.touchCount) + "fingermove";
+      const eventName = this.getEventPrefix(currentState.touchCount) + "fingermove";
 
       this.el.emit(eventName, eventDetail);
     }
