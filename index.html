@@ -80,13 +80,13 @@
     </div>-->
 	
     <!-- cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;' raycaster="objects: [clickhandler];" -->
-    <a-scene id="scene1" gesture-detector vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
+    <a-scene id="scene1" vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
        
 	<!-- <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .intersectable;"></a-entity> -->
 	
 	<a-assets>
             <!-- <img id="my-image" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Pfeil_Rechts.png"> -->
-            <video id="Video_Asset_0" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
+            <video gesture-detector id="Video_Asset_0" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
 	</a-assets> 
 
         <!-- <a-marker-camera preset='hiro' registerevents cursor="rayOrigin: mouse" -->
