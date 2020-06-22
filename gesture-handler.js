@@ -18,7 +18,7 @@ AFRAME.registerComponent("gesture-handler", {
     //this.initialScale = this.el.object3D.scale.clone();
     //this.scaleFactor = 1;
     
-    this.video = document.querySelector("#videoScreen"); //Video_Asset ////videoScreen
+    this.video = document.querySelector("#Video_Asset"); //Video_Asset ////videoScreen
 
     this.el.sceneEl.addEventListener("markerFound", (e) => {
       this.isVisible = true;
