@@ -23,8 +23,8 @@ AFRAME.registerComponent("gesture-handler", {
     //var sceneEl = document.querySelector('a-scene').querySelector('a-assets');
     //var video = sceneEl.querySelector('video');
     //this.image = document.querySelector("#my-image");
-    //var entityElement = document.querySelector("#videoScreen");
-    var entityElement = document.querySelector('a-entity');
+    var entityElement = document.querySelector("#videoScreen");
+    //var entityElement = document.querySelector('a-entity');
     
     this.el.sceneEl.addEventListener("markerFound", (e) => {
       this.isVisible = true;
@@ -37,19 +37,19 @@ AFRAME.registerComponent("gesture-handler", {
 
   update: function () {
     if (this.data.enabled) {
-      this.el.entityElement.addEventListener("onefingerstart", this.handleClick);
+      this.entityElement.addEventListener("onefingerstart", this.handleClick);
       //this.el.sceneEl.addEventListener("onefingerstart", this.handleClick);
       //this.el.sceneEl.addEventListener("onefingermove", this.handleRotation);
       //this.el.sceneEl.addEventListener("twofingermove", this.handleScale);
     } else {
-      this.el.entityElement.removeEventListener("onefingerstart", this.handleClick);
+      this.entityElement.removeEventListener("onefingerstart", this.handleClick);
       //this.el.sceneEl.removeEventListener("onefingermove", this.handleRotation);
       //this.el.sceneEl.removeEventListener("twofingermove", this.handleScale);
     }
   },
 
   remove: function () {
-    this.el.entityElement.removeEventListener("onefingerstart", this.handleClick);
+    this.entityElement.removeEventListener("onefingerstart", this.handleClick);
     //this.el.sceneEl.removeEventListener("onefingerend", this.handleScale);
   },
 
