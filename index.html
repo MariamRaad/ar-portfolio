@@ -80,12 +80,13 @@
     <a-scene id="scene1" gesture-detector vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
        
 	<!-- <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .intersectable;"></a-entity> -->
-	<!--
+	
 	<a-assets>
-            <!-- <img id="my-image" src="https://mariamraad.github.io/ar-portfolio/assets/images/batman.jpg"> 
-            <video id="Video_Asset_0" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video>
-        </a-assets>  a-asset-item is for 3dmodels/materials-->
-	    
+            <img id="my-image" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Pfeil_Rechts.png"> 
+            <!--<video id="Video_Asset_0" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video>
+	    -->		        
+	</a-assets> 
+	    <!--
 	    <a-assets>
     		<video 
       			id="Video_Asset"
@@ -102,18 +103,29 @@
     		>
     		</video>
   	    </a-assets>
+	    -->
 
         <!-- <a-marker-camera preset='hiro' registerevents   cursor="rayOrigin: mouse" -->
         <!-- cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;" raycaster="objects: [clickhandler]; raycaster="objects: .intersectable" -->
 	<!-- scannerhandler markerhandler-->
         <a-marker raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;" emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2" > <!--size="10"-->
 		<!-- clickhandler -->
-		<a-video gesture-handler class="clickable" id="videoScreen" src="#Video_Asset" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" ></a-video> <!-- play="true" -->
+		<!-- <a-video gesture-handler class="clickable" id="videoScreen" src="#Video_Asset" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" ></a-video> <!-- play="true" -->
 		<!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
 		
+		<a-entity
+			  geometry="primitive: plane"
+			  material="shader: flat; src: #my-image"
+			  position="0 2 0" 
+			  rotation ="0 0 0" 
+			  width="1" 
+			  height="1"
+		>
+		</a-entity>
+								   
 		<!--
 		<a-entity
-      			id="video_id"
+      			id="videoScreen"
       			a-video="#Video_Asset"
       			position="0 0.5 0"
       			rotation="270 0 0"
@@ -124,6 +136,7 @@
     		>
     		</a-entity>
 		-->
+		
         </a-marker>
 	    
 	<!-- static camera that moves according to the device movemenents -->
