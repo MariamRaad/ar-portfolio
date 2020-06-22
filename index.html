@@ -85,10 +85,10 @@
 	<!-- <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .intersectable;"></a-entity> -->
 	
 	<a-assets>
-            <img id="my-image" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Pfeil_Rechts.png"> 
-            <!--<video id="Video_Asset_0" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video>
-	    -->		        
+            <!-- <img id="my-image" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Pfeil_Rechts.png"> -->
+            <video id="Video_Asset_0" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
 	</a-assets> 
+	    
 	    <!--
 	    <a-assets>
     		<video 
@@ -117,11 +117,12 @@
 		<!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
 		
 		<a-entity
+      			  id="videoScreen"
 			  geometry="primitive: plane"
-			  material="shader: flat; src: #my-image; side: double"
-			  position="0 2 0" 
-			  rotation ="0 0 0" 
-			  width="1" 
+			  material="shader: flat; side: double; src: #Video_Asset_0"
+			  position="0 0.5 0" 
+			  rotation ="270 0 0" 
+			  width="2" 
 			  height="1"
 		>
 		</a-entity>
