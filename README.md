@@ -3,10 +3,10 @@
 *This project is currently Work In Progress, so the Application might not work correctly when trying it out*
 ___________
 
-Scan the QR Code and then the Marker with your smartphone camera to discover my Augmented Reality Portfolio :)
+Scan the QR-Code (e.g. with your smartphone camera) to get to the website and then scan it again to discover my Augmented Reality Portfolio :)
 
 If it's not working, open this link in your browser: https://mariamraad.github.io/ar-portfolio </br>
-And then scan the Marker to see the Augmented Reality content.
+And then scan the QR-Code to see the Augmented Reality content.
 
 The application works best with: <br/>
 Android (Version 10) - Google Chrome or Firefox <br/>
