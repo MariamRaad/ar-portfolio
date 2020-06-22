@@ -18,11 +18,11 @@ AFRAME.registerComponent("gesture-handler", {
     //this.initialScale = this.el.object3D.scale.clone();
     //this.scaleFactor = 1;
     
-    //this.video = document.querySelector("#Video_Asset"); //Video_Asset ////videoScreen
+    this.video = document.querySelector("#Video_Asset_0"); //Video_Asset ////videoScreen
     //this.video = this.el.sceneEl.querySelector("#Video_Asset");
     //var sceneEl = document.querySelector('a-scene').querySelector('a-assets');
     //var video = sceneEl.querySelector('video');
-    this.image = document.querySelector("#my-image");
+    //this.image = document.querySelector("#my-image");
     
     this.el.sceneEl.addEventListener("markerFound", (e) => {
       this.isVisible = true;
@@ -55,8 +55,8 @@ AFRAME.registerComponent("gesture-handler", {
     if (this.isVisible) { //isMarkerVisible
       //this.el.play();
       //var video = document.querySelector("#video_id"); //Video_Asset
-      //this.video.play();
-      this.image.scale.set(5,5,5);
+      this.video.play();
+      //this.image.scale.set(5,5,5);
       
       /*
       this.el.object3D.rotation.y += event.detail.positionChange.x * this.data.rotationFactor;
