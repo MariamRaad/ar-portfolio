@@ -18,8 +18,9 @@ AFRAME.registerComponent("gesture-handler", {
     //this.initialScale = this.el.object3D.scale.clone();
     //this.scaleFactor = 1;
     
-    this.video = document.querySelector("#Video_Asset"); //Video_Asset ////videoScreen
-
+    //this.video = document.querySelector("#Video_Asset"); //Video_Asset ////videoScreen
+    var video = this.el.sceneEl.querySelector('#Video_Asset');
+    
     this.el.sceneEl.addEventListener("markerFound", (e) => {
       this.isVisible = true;
     });
@@ -31,19 +32,19 @@ AFRAME.registerComponent("gesture-handler", {
 
   update: function () {
     if (this.data.enabled) {
-      this.el.sceneEl.video.addEventListener("onefingerstart", this.handleClick);
+      this.video.addEventListener("onefingerstart", this.handleClick);
       //this.el.sceneEl.addEventListener("onefingerstart", this.handleClick);
       //this.el.sceneEl.addEventListener("onefingermove", this.handleRotation);
       //this.el.sceneEl.addEventListener("twofingermove", this.handleScale);
     } else {
-      this.el.sceneEl.video.removeEventListener("onefingerstart", this.handleClick);
+      this.video.removeEventListener("onefingerstart", this.handleClick);
       //this.el.sceneEl.removeEventListener("onefingermove", this.handleRotation);
       //this.el.sceneEl.removeEventListener("twofingermove", this.handleScale);
     }
   },
 
   remove: function () {
-    this.el.sceneEl.video.removeEventListener("onefingerstart", this.handleClick);
+    this.video.removeEventListener("onefingerstart", this.handleClick);
     //this.el.sceneEl.removeEventListener("onefingerend", this.handleScale);
   },
 
