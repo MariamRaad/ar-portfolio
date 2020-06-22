@@ -18,13 +18,13 @@ AFRAME.registerComponent("gesture-handler", {
     //this.initialScale = this.el.object3D.scale.clone();
     //this.scaleFactor = 1;
     
-    this.video = document.querySelector("#Video_Asset_0"); //#Video_Asset //#videoScreen
+    //this.video = document.querySelector("#Video_Asset_0"); //#Video_Asset //#videoScreen
     //this.video = this.el.sceneEl.querySelector("#Video_Asset");
-    //var sceneEl = document.querySelector('a-scene').querySelector('a-assets');
-    //var video = sceneEl.querySelector('video');
     //this.image = document.querySelector("#my-image");
     //var entityElement = document.querySelector("#videoScreen");
-    this.entityElement = document.querySelector('a-entity');
+    //this.entityElement = document.querySelector('a-entity');
+    var assetsElem = document.querySelector('a-scene').querySelector('a-assets');
+    var videoElem = assetsElem.querySelector('video');
     
     this.el.sceneEl.addEventListener("markerFound", (e) => {
       this.isVisible = true;
@@ -37,19 +37,19 @@ AFRAME.registerComponent("gesture-handler", {
 
   update: function () {
     if (this.data.enabled) {
-      this.el.entityElement.addEventListener("onefingerstart", this.handleClick);
+      this.videoElem.addEventListener("onefingerstart", this.handleClick);
       //this.el.sceneEl.addEventListener("onefingerstart", this.handleClick);
       //this.el.sceneEl.addEventListener("onefingermove", this.handleRotation);
       //this.el.sceneEl.addEventListener("twofingermove", this.handleScale);
     } else {
-      this.el.entityElement.removeEventListener("onefingerstart", this.handleClick);
+      this.videoElem.removeEventListener("onefingerstart", this.handleClick);
       //this.el.sceneEl.removeEventListener("onefingermove", this.handleRotation);
       //this.el.sceneEl.removeEventListener("twofingermove", this.handleScale);
     }
   },
 
   remove: function () {
-    this.el.entityElement.removeEventListener("onefingerstart", this.handleClick);
+    this.videoElem.removeEventListener("onefingerstart", this.handleClick);
     //this.el.sceneEl.removeEventListener("onefingerend", this.handleScale);
   },
 
