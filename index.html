@@ -34,10 +34,10 @@
     <link rel="stylesheet" href="https://mariamraad.github.io/ar-portfolio/style.css">
     <!-- https://mariamraad.github.io/ar-portfolio/style.css  /style.css -->
 
-    <!-- import Scripts to add functionality -->
+     import Scripts to add functionality -->
     <script src="https://mariamraad.github.io/ar-portfolio/events.js"></script>
-    <script src="https://mariamraad.github.io/ar-portfolio/gesture-detector.js"></script>
-    <script src="https://mariamraad.github.io/ar-portfolio/gesture-handler.js"></script>
+    <!-- <script src="https://mariamraad.github.io/ar-portfolio/gesture-detector.js"></script> -->
+    <!-- <script src="https://mariamraad.github.io/ar-portfolio/gesture-handler.js"></script> -->
     <!-- <script src="https://mariamraad.github.io/ar-portfolio/cursor.js" defer></script> -->
     <!-- the "defer" attribute tells the browser that the script is meant to be executed after the document has been parsed -->
 
@@ -68,7 +68,7 @@
     -->
 </head>
 
-<body> <!-- style="margin: 0px; overflow: hidden;" -->
+<body>
     <!-- Logo -->
     <div class="logoWrapper">
         <input id="logo" type="image" class="logoImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/logo/Logo_MandR_Schrift.png"></input>
@@ -80,9 +80,7 @@
     </div>-->
 	
     <!-- cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;' raycaster="objects: [clickhandler];" -->
-    <a-scene gesture-detector id="scene1" vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
-       
-	<!-- <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .intersectable;"></a-entity> -->
+    <a-scene id="scene1" vr-mode-ui="enabled: false;" renderer="antialias: true; alpha: true; precision: mediump;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
 	
 	<a-assets>
             <!-- <img id="my-image" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Pfeil_Rechts.png"> -->
