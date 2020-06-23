@@ -36,15 +36,15 @@
 
      import Scripts to add functionality -->
     <script src="https://mariamraad.github.io/ar-portfolio/events.js"></script>
+    <script src="https://mariamraad.github.io/ar-portfolio/cursor.js"></script>
     <!-- <script src="https://mariamraad.github.io/ar-portfolio/gesture-detector.js"></script> -->
     <!-- <script src="https://mariamraad.github.io/ar-portfolio/gesture-handler.js"></script> -->
     <!-- <script src="https://mariamraad.github.io/ar-portfolio/cursor.js" defer></script> -->
     <!-- the "defer" attribute tells the browser that the script is meant to be executed after the document has been parsed -->
 
-    <!--
     <script>
       //window.addEventListener('videohandler', function () {
-      window.onload = function() {
+      //window.onload = function() {
 	AFRAME.registerComponent('videohandler', {
   	  init: function () {
     	    var marker = document.querySelector("#marker"); //const
@@ -52,12 +52,12 @@
     	    var video = document.querySelector("#Video_Asset_0"); //this.video
 
     	    marker.addEventListener('markerFound', function () {
-		  scanner.hidden = true;
+		  //scanner.hidden = true;
 	          this.video.play(); //this.vid.play();
     	    }.bind(this));
     
 	    marker.addEventListener('markerLost', function () {
-		  scanner.hidden = false;
+		  //scanner.hidden = false;
 		  this.video.pause(); //this.vid.pause();
 		  // this.vid.currentTime = 0;
             }.bind(this));
@@ -65,7 +65,6 @@
        });
     }
     </script> 
-    -->
 </head>
 
 <body>
@@ -92,9 +91,10 @@
 	<!-- scannerhandler markerhandler-->
         <a-marker raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;" emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2" > <!--size="10"-->
 		<!-- clickhandler -->
-		<!-- <a-video gesture-handler class="clickable" id="videoScreen" src="#Video_Asset" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" ></a-video> <!-- play="true" -->
+		<a-video videohandler class="clickable" id="videoScreen" src="#Video_Asset" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" ></a-video> <!-- play="true" -->
 		<!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
 		
+		<!--
 		<a-entity
       			  id="videoScreen"
 			  geometry="primitive: plane; width: 1.5; height: 1.5"
@@ -105,6 +105,7 @@
 			  gesture-handler
 		>
 		</a-entity>
+		-->
         </a-marker>
 	    
 	<!-- static camera that moves according to the device movemenents -->
