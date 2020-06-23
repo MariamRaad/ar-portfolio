@@ -46,7 +46,7 @@
       AFRAME.registerComponent('videohandler', {
   	init: function () {
     	  var el = this.el; //video
-    	  el.addEventListener('click', (e) => {     
+    	  el.addEventListener('click', function () {     
       	  	this.el.play();
     	  });
   	}
