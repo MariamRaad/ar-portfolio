@@ -55,6 +55,84 @@
   	}
       });
     </script>
+    <script>
+    AFRAME.registerComponent('ar-session-notifier', {
+        init: function() {
+        	var scene = this.el.sceneEl
+            var arSession = null
+            // wait until the arSession is ready
+            var idx = setInterval(function() {
+                arSession = scene.systems["arjs"]._arSession
+                if (!arSession) return;
+                scene.emit("arSessionReady")
+                clearInterval(idx)
+            })
+        }
+    })
+
+    AFRAME.registerComponent('foo', {
+        init: function() {
+            // the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+            this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
+        },
+        addListeners: function() {
+            let toggle = false
+            this.el.addEventListener("click", e => {
+                if (toggle)
+                    this.el.setAttribute('material', 'color', 'blue')
+                else
+                    this.el.setAttribute('material', 'color', 'red')
+                toggle = !toggle
+            })
+        }
+    })
+
+    AFRAME.registerComponent('cursor-hack', {
+        init: function() {
+            var scene = this.el
+
+            // wait until the arSession is ready
+            scene.addEventListener("arSessionReady", function() {
+                var arSession = scene.systems["arjs"]._arSession
+                // helpers
+                var raycaster = new THREE.Raycaster();
+                var mouse = new THREE.Vector2();
+                // useful references
+                var cursorElement = document.querySelector("[cursor]")
+                var arToolkitContext = arSession.arContext
+                var camera = scene.camera
+
+                function mousedown(event) {
+                    // core of this 'hack' - using the arToolkitContext projection matrix
+                    camera.projectionMatrix.copy(arToolkitContext.getProjectionMatrix());
+                    camera.projectionMatrixInverse.getInverse(camera.projectionMatrix);
+
+                    var point
+                    if (event.type === "touchmove" || event.type === "touchstart") {
+                        // Track the first touch for simplicity.
+                        point = event.touches.item(0);
+                    } else {
+                        point = event;
+                    }
+                    // Calculate mouse position based on the canvas element
+                    var rect = scene.renderer.domElement.getBoundingClientRect();
+                    mouse.x = ((point.clientX - rect.left) / rect.width) * 2 - 1
+                    mouse.y = -((point.clientY - rect.top) / rect.height) * 2 + 1
+                    raycaster.setFromCamera(mouse, camera);
+                    // if there are any intersections - send the clicks
+                    var intersects = raycaster.intersectObjects(scene.object3D.children, true);
+                    if (intersects.length > 0) {
+                        // this click is stripped of any info it should have
+                        intersects[0].object.el.emit("click")
+                    }
+                    event.stopPropagation();
+                }
+                window.addEventListener('mousedown', mousedown, false);
+                //window.addEventListener('touchstart', mousedown, false);
+            })
+        }
+    })
+    </script>	
 </head>
 
 <body>
@@ -70,7 +148,7 @@
 	
     <!-- cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;' raycaster="objects: [clickhandler];" -->
     <!-- renderer="antialias: true; alpha: true; precision: mediump;"  embedded arjs="sourceType: webcam;"  -->
-    <a-scene id="scene1" vr-mode-ui="enabled: false;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
+    <a-scene id="scene1" ar-session-notifier cursor-hack vr-mode-ui="enabled: false;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
 	
 	<a-assets>
             <!-- <img id="my-image" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Pfeil_Rechts.png"> -->
@@ -85,7 +163,9 @@
 		<!--<a-video videohandler class="clickable" id="videoScreen" src="#Video_Asset" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" ></a-video> <!-- play="true" -->
 		<!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
 		
-		<a-box position="0 0.5 0" color-randomizer></a-box>
+		<!-- <a-box position="0 0.5 0" color-randomizer></a-box> -->
+		<a-box position="0 0.5 0" scale="0.5 0.5 0.5" rotation="0 0 0" material="color: blue; opacity: 0.5" foo></a-box>
+            	<a-plane width="0.5" height="0.5" position="1 2.5 0" rotation="-45 0 0" material="color: blue; opacity: 0.5" foo></a-plane>
 		
 		<!--
 		<a-entity
