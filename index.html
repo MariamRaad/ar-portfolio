@@ -72,8 +72,9 @@
             this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
         },
         addListeners: function() {
-            this.el.addEventListener("click", e => {
-                this.el.play();
+            	let vid = document.querySelector("Video_Asset_0");
+		this.el.addEventListener("click", e => {
+                     this.vid.play();
             })
         }
     })
