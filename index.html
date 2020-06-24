@@ -148,7 +148,7 @@
     <a-scene id="scene1" ar-session-notifier cursor-hack embedded arjs="trackingMethod: best; sourceType: webcam; patternRatio: 0.8 debugUIEnabled: false;" vr-mode-ui="enabled: false;">
 	
 	<a-assets>
-            <!-- <img id="my-image" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Pfeil_Rechts.png"> -->
+            <img id="description_SafeNetKids" src="https://mariamraad.github.io/ar-portfolio/assets/images/texts/Beschreibung_SafeNetKids.png">
             <video id="Video_Asset_0" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
 	</a-assets> 
 
@@ -160,9 +160,10 @@
 		<!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
 		
 		<!-- <a-box position="0 0.5 0" color-randomizer></a-box> -->
-		<a-box position="2 -1 0" scale="0.5 0.5 0.5" rotation="0 0 0" material="color: red; opacity: 0.5" foo></a-box>
+		<a-box position="1.5 -1 0" scale="0.5 0.5 0.5" rotation="0 0 0" material="color: red; opacity: 0.5" foo></a-box>
             	<!-- <a-plane width="0.5" height="0.5" position="1 2.5 0" rotation="-45 0 0" material="color: blue; opacity: 0.5" foo></a-plane> -->
 		<a-plane material="src: #Video_Asset_0;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2"></a-plane>
+		<a-plane material="src: #Video_Asset_0;" position="0 -3 0" rotation="270 0 0" height="1.5" width="2"></a-plane>
 		
 		<!--
 		<a-entity
