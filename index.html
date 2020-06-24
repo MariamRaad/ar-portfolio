@@ -35,27 +35,6 @@
     <!-- the "defer" attribute tells the browser that the script is meant to be executed after the document has been parsed -->
 
     <script>
-      AFRAME.registerComponent('videohandler', {
-  	init: function () {
-    	  var el = this.el; //video
-    	  el.addEventListener('click', function () {     
-      	  	this.el.play();
-    	  });
-  	}
-      });
-    </script>
-    <script>
-      AFRAME.registerComponent('color-randomizer', {
-  	init: function () {
-    	  let colors = ["red", "green", "blue", "black", "orange"]
-    	  var el = this.el;
-    	  el.addEventListener('click', (e) => {     
-      		this.el.setAttribute('color', colors[Math.floor(Math.random() * colors.length)])
-    	  });
-  	}
-      });
-    </script>
-    <script>
     AFRAME.registerComponent('ar-session-notifier', {
         init: function() {
         	var scene = this.el.sceneEl
@@ -148,17 +127,18 @@
 	
     <!-- cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;' raycaster="objects: [clickhandler];" -->
     <!-- renderer="antialias: true; alpha: true; precision: mediump;"  embedded arjs="sourceType: webcam;"  -->
-    <a-scene id="scene1" ar-session-notifier cursor-hack vr-mode-ui="enabled: false;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8">
-	
+	<!-- vr-mode-ui="enabled: false;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8" -->
+    <a-scene id="scene1" ar-session-notifier cursor-hack embedded arjs="sourceType: webcam; patternRatio: 0.8">
+	<!--
 	<a-assets>
             <!-- <img id="my-image" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Pfeil_Rechts.png"> -->
-            <video id="Video_Asset_0" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
+            <!-- <video id="Video_Asset_0" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
 	</a-assets> 
 
         <!-- <a-marker-camera preset='hiro' registerevents cursor="rayOrigin: mouse" -->
         <!-- cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;" raycaster="objects: [clickhandler]; raycaster="objects: .intersectable" -->
 	<!-- scannerhandler markerhandler-->
-        <a-marker cursor="rayOrigin: mouse;" emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2"> <!--size="10"-->
+        <a-marker emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2"> <!--size="10"-->
 		<!-- clickhandler -->
 		<!--<a-video videohandler class="clickable" id="videoScreen" src="#Video_Asset" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" ></a-video> <!-- play="true" -->
 		<!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
