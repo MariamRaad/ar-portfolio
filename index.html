@@ -56,14 +56,14 @@
         },
         addListeners: function() {
             let toggle = false
-	    let vid = document.querySelector("#Video_Asset_0");
+	    //let vid = document.querySelector("#Video_Asset_0");
             this.el.addEventListener("click", e => {
                 if (toggle)
                     this.el.setAttribute('material', 'color', 'blue')
-		    this.vid.play();
+		    //this.vid.play();
                 else
                     this.el.setAttribute('material', 'color', 'red')
-		    this.vid.play();
+		    //this.vid.play();
                 toggle = !toggle
             })
         }
