@@ -65,6 +65,18 @@
             })
         }
     })
+	     
+    AFRAME.registerComponent('videohandler', {
+        init: function() {
+            // the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+            this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
+        },
+        addListeners: function() {
+            this.el.addEventListener("click", e => {
+                this.el.play();
+            })
+        }
+    })
 
     AFRAME.registerComponent('cursor-hack', {
         init: function() {
@@ -129,10 +141,10 @@
     <!-- renderer="antialias: true; alpha: true; precision: mediump;"  embedded arjs="sourceType: webcam;"  -->
 	<!-- vr-mode-ui="enabled: false;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8" -->
     <a-scene id="scene1" ar-session-notifier cursor-hack embedded arjs="trackingMethod: best; sourceType: webcam; patternRatio: 0.8 debugUIEnabled: false;" vr-mode-ui="enabled: false;">
-	<!--
+	
 	<a-assets>
             <!-- <img id="my-image" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Pfeil_Rechts.png"> -->
-            <!-- <video id="Video_Asset_0" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
+            <video id="Video_Asset_0" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
 	</a-assets> 
 
         <!-- <a-marker-camera preset='hiro' registerevents cursor="rayOrigin: mouse" -->
@@ -140,12 +152,12 @@
 	<!-- scannerhandler markerhandler-->
         <a-marker emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2"> <!--size="10"-->
 		<!-- clickhandler -->
-		<!--<a-video videohandler class="clickable" id="videoScreen" src="#Video_Asset" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5" ></a-video> <!-- play="true" -->
+		<a-video videohandler id="videoScreen" src="#Video_Asset" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5"></a-video> <!-- play="true" -->
 		<!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
 		
 		<!-- <a-box position="0 0.5 0" color-randomizer></a-box> -->
-		<a-box position="0 0.5 0" scale="0.5 0.5 0.5" rotation="0 0 0" material="color: blue; opacity: 0.5" foo></a-box>
-            	<a-plane width="0.5" height="0.5" position="1 2.5 0" rotation="-45 0 0" material="color: blue; opacity: 0.5" foo></a-plane>
+		<!-- <a-box position="0 0.5 0" scale="0.5 0.5 0.5" rotation="0 0 0" material="color: blue; opacity: 0.5" foo></a-box> -->
+            	<!-- <a-plane width="0.5" height="0.5" position="1 2.5 0" rotation="-45 0 0" material="color: blue; opacity: 0.5" foo></a-plane> -->
 		
 		<!--
 		<a-entity
