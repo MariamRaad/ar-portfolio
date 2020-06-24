@@ -56,7 +56,7 @@
         },
         addListeners: function() {
             let toggle = false
-	    const vid = document.querySelector("#videoScreen"); //videoScreen Video_Asset_0
+	    this.vid = document.querySelector("#Video_Asset_0"); //videoScreen Video_Asset_0
 		
             this.el.addEventListener("click", e => {
                 if (toggle)
@@ -65,7 +65,7 @@
                     this.el.setAttribute('material', 'color', 'green')
 		    
                 toggle = !toggle
-		vid.play();
+		this.vid.play();
             })
         }
     })
@@ -156,13 +156,13 @@
         <!-- cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;" raycaster="objects: [clickhandler]; raycaster="objects: .intersectable" -->
 	<!-- scannerhandler markerhandler-->
         <a-marker emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2"> <!--size="10"-->
-		<a-video id="videoScreen" src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5"></a-video> <!-- play="true" -->
+		<!-- <a-video id="videoScreen" src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5"></a-video> <!-- play="true" -->
 		<!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
 		
-		<!-- <a-plane videohandler id="videoScreen" material="src: #Video_Asset_0;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2"></a-plane> -->
 		<!-- <a-box position="0 0.5 0" color-randomizer></a-box> -->
 		<a-box position="2 -1 0" scale="0.5 0.5 0.5" rotation="0 0 0" material="color: red; opacity: 0.5" foo></a-box>
             	<!-- <a-plane width="0.5" height="0.5" position="1 2.5 0" rotation="-45 0 0" material="color: blue; opacity: 0.5" foo></a-plane> -->
+		<a-plane material="src: #Video_Asset_0;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2"></a-plane>
 		
 		<!--
 		<a-entity
