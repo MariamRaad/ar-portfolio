@@ -36,8 +36,9 @@ AFRAME.registerComponent('foo', {
 			*/
 			this.vid.play();
 			//this.btn.setAttribute("material", "#btn_pause_1");
-			this.btn.visible = false;
+			//this.btn.visible = false;
 			//btn.hidden = true;
+			btn.setAttribute("visible", false);
 		})
 	}
 })
