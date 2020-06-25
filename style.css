@@ -14,7 +14,7 @@ body {
     top: 5px; 
     left: 5px; 
     width: 100%; 
-    z-index: -1; /* needs to be in the back so that it doesn't overlay the title */
+    z-index: -1; /* needs to be in the background so that it doesn't overlay the title */
 }
 
 .logoImage {
