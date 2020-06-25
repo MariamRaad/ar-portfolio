@@ -21,7 +21,7 @@ AFRAME.registerComponent('foo', {
 	addListeners: function() {
 		let toggle = false
 		let isMarkerVisible = false
-		this.vid = document.querySelector("#Video_Asset_1");
+		this.vid = document.querySelector("#video_asset_1");
 		const btn = document.querySelector("#button"); //plane button
 		//const btnPause = document.querySelector("#btn_pause_1");
 		//const btnPauseMaterial = btnPause.getAttribute("material", "src", this.btnPause);
