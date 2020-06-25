@@ -23,6 +23,7 @@ AFRAME.registerComponent('foo', {
 		let isMarkerVisible = false
 		this.vid = document.querySelector("#Video_Asset_1");
 		const btn = document.querySelector("#button"); //plane button
+		const btnPauseMaterial = document.querySelector("#btn_pause_1"); //plane button
 		//this.btnPlay = document.querySelector("#btn_play_1");
 	
 		this.el.addEventListener("click", e => {
@@ -35,10 +36,8 @@ AFRAME.registerComponent('foo', {
 			toggle = !toggle
 			*/
 			this.vid.play();
-			//this.btn.setAttribute("material", "#btn_pause_1");
-			//this.btn.visible = false;
-			//btn.hidden = true;
-			btn.setAttribute("visible", false);
+			this.btn.setAttribute("material", btnPauseMaterial);
+			//btn.setAttribute("visible", false);
 		})
 	}
 })
