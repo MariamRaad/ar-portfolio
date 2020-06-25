@@ -23,7 +23,7 @@ AFRAME.registerComponent('foo', {
 	this.vid = document.querySelector("#Video_Asset_1");
 	this.btn = document.querySelector("#button");
 	
-		this.el.addEventListener("click", e => {
+	this.el.addEventListener("click", e => {
 			/*
 	if (toggle)
 				this.el.setAttribute('material', 'color', 'red')
@@ -33,8 +33,8 @@ AFRAME.registerComponent('foo', {
 			toggle = !toggle
 	*/
 	this.vid.play();
-	this.btn.material.src="#btn_pause_1";
-		})
+	this.btn.setAttribute("material", "#btn_pause_1");
+	})
 	}
 })
 
