@@ -36,7 +36,8 @@ AFRAME.registerComponent('foo', {
 			toggle = !toggle
 			*/
 			this.vid.play();
-			this.btn.setAttribute("material", btnPauseMaterial);
+			//this.btn.setAttribute("material", btnPauseMaterial);
+			this.btnPauseMaterial = this.btn.src;
 			//btn.setAttribute("visible", false);
 		})
 	}
