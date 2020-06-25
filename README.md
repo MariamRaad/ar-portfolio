@@ -19,6 +19,6 @@ The application works best with: <br/>
 ___________
 
 Project is made with A-Frame and AR.js </br>
-Videos were made with Adobe Premiere and the music is from: Bensound.com </br>
+Videos were made with Adobe Premiere and the music is from: https://www.bensound.com/ </br>
 Assets were made with Adobe Illustrator </br>
 Font is from: https://fonts.google.com/specimen/Lexend+Deca (OFL Licence) </br>
