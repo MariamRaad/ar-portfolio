@@ -8,7 +8,7 @@ Scan the QR-Code (e.g. with your smartphone camera) to get to the website and th
 If it's not working, open this link in your browser: https://mariamraad.github.io/ar-portfolio </br>
 And then scan the QR-Code to see the Augmented Reality content.
 
-The application works best with: <br/>
+The application works best with:
 <UL>
 <LI>Android (Version 10) - Google Chrome or Firefox
 <LI>iOS (Version 13.5) - Safari
