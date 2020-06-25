@@ -13,7 +13,7 @@ AFRAME.registerComponent('ar-session-notifier', {
 	}
 })
 
-AFRAME.registerComponent('foo', {
+AFRAME.registerComponent('videohandler_1', {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
@@ -44,6 +44,21 @@ AFRAME.registerComponent('foo', {
 		})
 	}
 })
+
+AFRAME.registerComponent('scannerhandler', {
+  init: function () {
+    const marker = document.querySelector("#marker");
+    const scanner = document.querySelector("#scanner");
+
+    marker.addEventListener('markerFound', function () {
+       scanner.hidden = true;
+    }.bind(this));
+    
+    marker.addEventListener('markerLost', function () {
+       scanner.hidden = false;
+    }.bind(this));
+  }
+});
 
 AFRAME.registerComponent('cursor-hack', {
 	init: function() {
