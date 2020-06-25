@@ -50,8 +50,8 @@
 	<a-assets>
             <img id="btn_play_1" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Play.png">
             <img id="btn_pause_1" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Pfeil_Links.png">
-            <img id="description_SafeNetKids" src="https://mariamraad.github.io/ar-portfolio/assets/images/texts/Beschreibung_SafeNetKids.png">
-            <video id="Video_Asset_1" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed3.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
+            <img id="description_video_1" src="https://mariamraad.github.io/ar-portfolio/assets/images/texts/Beschreibung_SafeNetKids.png">
+            <video id="video_asset_1" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed3.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
 	</a-assets> 
 
         <!-- <a-marker-camera preset='hiro' registerevents cursor="rayOrigin: mouse" -->
@@ -63,8 +63,8 @@
 		
 		<!-- position="1.5 0.5 0" -->
 		<a-plane id="button" material="src: #btn_play_1;" position="0 0.5 1" rotation="270 0 0" height="0.7" width="0.7" foo render-order="layer1"></a-plane>
-		<a-plane id="description" material="src: #description_SafeNetKids;" position="0 0 2" rotation="270 0 0" height="2" width="2.2" render-order="layer3"></a-plane>
-		<a-plane id="video" material="src: #Video_Asset_1;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2" render-order="layer3"></a-plane>
+		<a-plane id="video" material="src: #video_asset_1;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2" render-order="layer3"></a-plane>
+		<a-plane id="description" material="src: #description_video_1;" position="0 0 2" rotation="270 0 0" height="2" width="2.2" render-order="layer3"></a-plane>
         </a-marker>
 	    
 	<!-- static camera that moves according to the device movemenents -->
