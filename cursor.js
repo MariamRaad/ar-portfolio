@@ -23,7 +23,8 @@ AFRAME.registerComponent('foo', {
 		let isMarkerVisible = false
 		this.vid = document.querySelector("#Video_Asset_1");
 		const btn = document.querySelector("#button"); //plane button
-		const btnPauseMaterial = document.querySelector("#btn_pause_1"); //plane button
+		const btnPause = document.querySelector("#btn_pause_1");
+		const btnPauseMaterial = getAttribute("material", "src", this.btnPause);
 		//this.btnPlay = document.querySelector("#btn_play_1");
 	
 		this.el.addEventListener("click", e => {
