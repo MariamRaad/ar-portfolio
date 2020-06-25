@@ -10,7 +10,7 @@ And then scan the QR-Code to see the Augmented Reality content.
 
 The application works best with: <br/>
 Android (Version 10) - Google Chrome or Firefox <br/>
-<nbsp><nbsp><nbsp>iOS (Version 13.5) - Safari
+  <&nbsp> iOS (Version 13.5) - Safari
 ___________
 
 <img src="/assets/images/markers/fullMarker_blue.svg" data-canonical-src="/assets/images/markers/fullMarker_blue.svg" width="254" height="305" />
