@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title> AR Portfolio - Mariam Raad </title>
     <meta charset="utf-8">
@@ -14,12 +13,10 @@
     <meta name="viewport" content="width=device-width, user-scalable=no"> <!-- , minimum-scale=1.0, maximum-scale=2.0 -->
 
     <!-- AFrame -->
-    <!-- <script src="https://aframe.io/releases/0.9.2/aframe.min.js    https://cdn.jsdelivr.net/gh/aframevr/aframe@cd01cec35a01e03eb2d6a9272500a53de31d3828/dist/aframe-master.min.js"></script> -->
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 
     <!-- ARjs -->
     <!-- Version without NFT/image tracking but with marker + location based support -->
-    <!-- <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.2/aframe/build/aframe-ar.min.js   https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js   https://raw.githack.com/AR-js-org/AR.js/3.1.0/aframe/build/aframe-ar.js"></script> -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/3.1.0/aframe/build/aframe-ar.js"></script>
 
     <!-- import the webpage's stylesheet -->
@@ -28,7 +25,6 @@
     <!-- import Scripts to add functionality -->
     <script src="https://mariamraad.github.io/ar-portfolio/cursor.js"></script>
     <script src="https://unpkg.com/aframe-render-order-component@1.1.0/dist/aframe-render-order-component.min.js"></script>
-
 </head>
 
 <body>
@@ -37,35 +33,32 @@
         <input id="logo" type="image" class="logoImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/logo/Logo_MandR_Schrift.png"></input>
     </div> 
 	
-    <!-- Scanner Bild 	
+    <!-- Scanner Bild -->	
     <div class="scannerWrapper">
 	<input id="scanner" type="image" class="scannerImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneHintergrund_Text.png"/>
-    </div>-->
+    </div>
 	
-    <!-- cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;' raycaster="objects: [clickhandler];" -->
-    <!-- renderer="antialias: true; alpha: true; precision: mediump;"  embedded arjs="sourceType: webcam;"  -->
-    <!-- vr-mode-ui="enabled: false;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8" -->
     <a-scene id="scene_1" renderer="sortObjects: true; antialias: true; alpha: true; precision: mediump;" render-order="layer1, layer2, layer3" ar-session-notifier cursor-hack embedded arjs="trackingMethod: best; sourceType: webcam; patternRatio: 0.8 debugUIEnabled: false;" vr-mode-ui="enabled: false;">
 	
 	<a-assets>
-            <img id="btn_play_1" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Play.png">
-            <img id="btn_pause_1" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Pfeil_Links.png">
-            <img id="description_video_1" src="https://mariamraad.github.io/ar-portfolio/assets/images/texts/Beschreibung_SafeNetKids.png">
-            <video id="video_asset_1" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed3.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
+            <img id="asset_btn_play_1" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Play.png">
+            <img id="asset_descr_1" src="https://mariamraad.github.io/ar-portfolio/assets/images/texts/Beschreibung_SafeNetKids.png">
+            <img id="asset_btn_continue_1" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Pfeil_Rechts_Text.png">
+		
+            <video id="asset_video_1" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed3.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
+	    <video id="asset_video_2" src="https://mariamraad.github.io/ar-portfolio/assets/videos/Zauberwald_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
+	    <video id="asset_video_3" src="https://mariamraad.github.io/ar-portfolio/assets/videos/FlyingEagle_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
 	</a-assets> 
 
-        <!-- <a-marker-camera preset='hiro' registerevents cursor="rayOrigin: mouse" -->
-        <!-- cursor="rayOrigin: mouse; fuse: true; fuseTimeout: 0;" raycaster="objects: [clickhandler]; raycaster="objects: .intersectable" -->
-	<!-- scannerhandler markerhandler-->
+	<!-- scannerhandler -->
         <a-marker emitevents="true" id="marker" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2">
-		<!-- <a-video id="videoScreen" src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5"></a-video> <!-- play="true" -->
-		<!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
 		
-		<!-- position="1.5 0.5 0" -->
-		<a-plane foo id="button" material="src: #btn_play_1; transparent:true; alpha-test:0.5" position="0 0.5 0" rotation="270 0 0" height="0.7" width="0.7" render-order="layer3"></a-plane>
-		<a-plane id="video" material="src: #video_asset_1;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2" render-order="layer1"></a-plane>
-		<a-plane id="description" material="src: #description_video_1;" position="0 0 2" rotation="270 0 0" height="2" width="2.2" render-order="layer1"></a-plane>
-        </a-marker>
+		<a-plane foo id="button_play_1" material="src: #asset_btn_play_1; transparent:true; alpha-test:0.5" position="0 0.5 0" rotation="270 0 0" height="0.7" width="0.7" render-order="layer3"></a-plane>
+		<a-plane id="video_1" material="src: #asset_video_1;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2" render-order="layer1"></a-plane>
+		<a-plane id="description_1" material="src: #asset_descr_1;" position="0 0 2" rotation="270 0 0" height="2" width="2.2" render-order="layer1"></a-plane>
+                <a-plane id="button_continue_1" material="src: #asset_btn_continue_1; transparent:true; alpha-test:0.5" position="1.5 0 -3" rotation="270 0 0" height="0.7" width="0.7" render-order="layer3"></a-plane>
+		
+	    </a-marker>
 	    
 	<!-- static camera that moves according to the device movemenents -->
         <a-entity camera></a-entity>
