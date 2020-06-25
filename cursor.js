@@ -19,25 +19,26 @@ AFRAME.registerComponent('foo', {
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
-	let toggle = false
-	this.vid = document.querySelector("#Video_Asset_1");
-	this.btn = document.querySelector("#button"); //plane button
-	//this.btnPlay = document.querySelector("#btn_play_1");
+		let toggle = false
+		let isMarkerVisible = false
+		this.vid = document.querySelector("#Video_Asset_1");
+		const btn = document.querySelector("#button"); //plane button
+		//this.btnPlay = document.querySelector("#btn_play_1");
 	
-	this.el.addEventListener("click", e => {
+		this.el.addEventListener("click", e => {
 			/*
-	if (toggle)
+			if (toggle)
 				this.el.setAttribute('material', 'color', 'red')
 			else
 				this.el.setAttribute('material', 'color', 'green')
 		
 			toggle = !toggle
-	*/
-	this.vid.play();
-	//this.btn.setAttribute("material", "#btn_pause_1");
-	//this.btn.visible = false;
-	this.btn.hidden = true;
-	})
+			*/
+			this.vid.play();
+			//this.btn.setAttribute("material", "#btn_pause_1");
+			//this.btn.visible = false;
+			btn.hidden = true;
+		})
 	}
 })
 
