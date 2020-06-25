@@ -27,6 +27,7 @@
 
     <!-- import Scripts to add functionality -->
     <script src="https://mariamraad.github.io/ar-portfolio/cursor.js"></script>
+    <script src="https://unpkg.com/aframe-render-order-component@1.1.0/dist/aframe-render-order-component.min.js"></script>
 
 </head>
 
@@ -44,7 +45,7 @@
     <!-- cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;' raycaster="objects: [clickhandler];" -->
     <!-- renderer="antialias: true; alpha: true; precision: mediump;"  embedded arjs="sourceType: webcam;"  -->
     <!-- vr-mode-ui="enabled: false;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8" -->
-    <a-scene id="scene_1" ar-session-notifier cursor-hack embedded arjs="trackingMethod: best; sourceType: webcam; patternRatio: 0.8 debugUIEnabled: false;" vr-mode-ui="enabled: false;">
+    <a-scene id="scene_1" render-order="layer1, layer2, layer3" ar-session-notifier cursor-hack embedded arjs="trackingMethod: best; sourceType: webcam; patternRatio: 0.8 debugUIEnabled: false;" vr-mode-ui="enabled: false;">
 	
 	<a-assets>
             <img id="btn_play_1" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Play.png">
@@ -60,9 +61,9 @@
 		<!-- <a-video id="videoScreen" src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5"></a-video> <!-- play="true" -->
 		<!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
 		
-		<a-plane id="button" material="src: #btn_play_1;" position="1.5 0.5 0" rotation="270 0 0" height="0.7" width="0.7" foo></a-plane>
-		<a-plane id="description" material="src: #description_SafeNetKids;" position="0 0 2" rotation="270 0 0" height="2" width="2.2"></a-plane>
-		<a-plane id="video" material="src: #Video_Asset_1;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2"></a-plane>
+		<a-plane id="button" material="src: #btn_play_1;" position="1.5 0.5 0" rotation="270 0 0" height="0.7" width="0.7" foo render-order="layer1"></a-plane>
+		<a-plane id="description" material="src: #description_SafeNetKids;" position="0 0 2" rotation="270 0 0" height="2" width="2.2" render-order="layer3"></a-plane>
+		<a-plane id="video" material="src: #Video_Asset_1;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2" render-order="layer3"></a-plane>
         </a-marker>
 	    
 	<!-- static camera that moves according to the device movemenents -->
