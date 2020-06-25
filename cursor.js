@@ -19,7 +19,7 @@ AFRAME.registerComponent('foo', {
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
-		let toggle = false
+	let toggle = false
 	this.vid = document.querySelector("#Video_Asset_1");
 	this.btn = document.querySelector("#button");
 	
