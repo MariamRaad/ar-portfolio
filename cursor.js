@@ -1,18 +1,6 @@
+/* To add interactivity to the site with Javascript */
 
-AFRAME.registerComponent('ar-session-notifier', {
-	init: function() {
-		var scene = this.el.sceneEl
-		var arSession = null
-		// wait until the arSession is ready
-		var idx = setInterval(function() {
-			arSession = scene.systems["arjs"]._arSession
-			if (!arSession) return;
-			scene.emit("arSessionReady")
-			clearInterval(idx)
-		})
-	}
-})
-
+/* Vcannerhandler Function: to let the video play when the arSession is ready */
 AFRAME.registerComponent('videohandler_1', {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
@@ -45,21 +33,38 @@ AFRAME.registerComponent('videohandler_1', {
 	}
 })
 
+/* Scannerhandler Function: to let the image of the scanner show or hide when marker is tracked or not tracked */
 AFRAME.registerComponent('scannerhandler', {
-  init: function () {
-    const marker = document.querySelector("#marker");
-    const scanner = document.querySelector("#scanner");
+	init: function () {
+    		const marker = document.querySelector("#marker");
+    		const scanner = document.querySelector("#scanner");
 
-    marker.addEventListener('markerFound', function () {
-       scanner.hidden = true;
-    }.bind(this));
+    		marker.addEventListener('markerFound', function () {
+       			scanner.hidden = true;
+    		}.bind(this));
     
-    marker.addEventListener('markerLost', function () {
-       scanner.hidden = false;
-    }.bind(this));
-  }
+    		marker.addEventListener('markerLost', function () {
+       			scanner.hidden = false;
+    		}.bind(this));
+  	}
 });
 
+/* Ar-session-notifier Function: to set a flag when the arSession is ready */
+AFRAME.registerComponent('ar-session-notifier', {
+	init: function() {
+		var scene = this.el.sceneEl
+		var arSession = null
+		// wait until the arSession is ready
+		var idx = setInterval(function() {
+			arSession = scene.systems["arjs"]._arSession
+			if (!arSession) return;
+			scene.emit("arSessionReady")
+			clearInterval(idx)
+		})
+	}
+})
+
+/* Cursor-hack Function: */
 AFRAME.registerComponent('cursor-hack', {
 	init: function() {
 		var scene = this.el
