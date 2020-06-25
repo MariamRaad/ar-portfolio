@@ -20,7 +20,7 @@ body {
 .logoImage {
     width: 104px; 
     height: 40px; 
-    visibility: visible;
+    visibility: visible; /* needs to be added, so that the image is always visible. Otherwise it could flicker during click-events or even be hidden */
 }
 
 .scannerWrapper {
