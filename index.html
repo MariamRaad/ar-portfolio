@@ -71,19 +71,6 @@
             })
         }
     })
-	    
-    AFRAME.registerComponent('videohandler', {
-        init: function() {
-            // the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
-            this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
-        },
-        addListeners: function() {
-            //let vid = document.querySelector("#Video_Asset_0");
-	    this.el.addEventListener("click", e => {
-                 this.el.play();
-            })
-        }
-    })
 
     AFRAME.registerComponent('cursor-hack', {
         init: function() {
@@ -146,13 +133,13 @@
 	
     <!-- cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;' raycaster="objects: [clickhandler];" -->
     <!-- renderer="antialias: true; alpha: true; precision: mediump;"  embedded arjs="sourceType: webcam;"  -->
-	<!-- vr-mode-ui="enabled: false;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8" -->
-    <a-scene id="scene1" ar-session-notifier cursor-hack embedded arjs="trackingMethod: best; sourceType: webcam; patternRatio: 0.8 debugUIEnabled: false;" vr-mode-ui="enabled: false;">
+    <!-- vr-mode-ui="enabled: false;" embedded arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.8" -->
+    <a-scene id="scene_1" ar-session-notifier cursor-hack embedded arjs="trackingMethod: best; sourceType: webcam; patternRatio: 0.8 debugUIEnabled: false;" vr-mode-ui="enabled: false;">
 	
 	<a-assets>
-            <img id="play_btn" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Play.png">
+            <img id="btn_play_1" src="https://mariamraad.github.io/ar-portfolio/assets/images/buttons/Play.png">
             <img id="description_SafeNetKids" src="https://mariamraad.github.io/ar-portfolio/assets/images/texts/Beschreibung_SafeNetKids.png">
-            <video id="Video_Asset_0" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed3.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
+            <video id="Video_Asset_1" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed3.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
 	</a-assets> 
 
         <!-- <a-marker-camera preset='hiro' registerevents cursor="rayOrigin: mouse" -->
@@ -162,24 +149,9 @@
 		<!-- <a-video id="videoScreen" src="#Video_Asset_0" position="0 0.5 0" rotation="270 0 0" width="2" height="1.5"></a-video> <!-- play="true" -->
 		<!-- <a-image position="0 2 0" rotation ="0 0 0" width="2" height="1" src="#my-image"></a-image> -->
 		
-		<!-- <a-box position="0 0.5 0" color-randomizer></a-box> -->
-		<!-- <a-box position="1.5 0 0" scale="0.5 0.5 0.5" rotation="0 0 0" material="color: red; opacity: 0.5" foo></a-box> -->
-            	<!-- <a-plane width="0.5" height="0.5" position="1 2.5 0" rotation="-45 0 0" material="color: blue; opacity: 0.5" foo></a-plane> -->
-		<a-plane material="src: #play_btn;" position="1.5 0 0" rotation="270 0 0" height="0.75" width="0.75" foo></a-plane>
+		<a-plane material="src: #btn_play_1;" position="0 0.5 0" rotation="270 0 0" height="0.75" width="0.75" foo></a-plane>
 		<a-plane material="src: #description_SafeNetKids;" position="0 0 2" rotation="270 0 0" height="2" width="2.2"></a-plane>
-		<a-plane material="src: #Video_Asset_0;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2"></a-plane>
-		
-		<!--
-		<a-entity
-      			  id="videoScreen"
-			  geometry="primitive: plane; width: 1.5; height: 1.5"
-			  material="shader: flat; side: double; src: #Video_Asset_0"
-			  position="0 0.5 0" 
-			  rotation="270 0 0"
-			  videohandler
-		>
-		</a-entity>
-		-->
+		<a-plane material="src: #Video_Asset_1;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2"></a-plane>
         </a-marker>
 	    
 	<!-- static camera that moves according to the device movemenents -->
