@@ -1,81 +1,85 @@
-/* a-frames bind */
 
-var bind = function bind(fn, ctx /* , arg1, arg2 */) {
-  return (function(prependedArgs) {
-    return function bound() {
-      // Concat the bound function arguments with those passed to original bind
-      var args = prependedArgs.concat(Array.prototype.slice.call(arguments, 0));
-      return fn.apply(ctx, args);
-    };
-  })(Array.prototype.slice.call(arguments, 2));
-};
+AFRAME.registerComponent('ar-session-notifier', {
+	init: function() {
+		var scene = this.el.sceneEl
+		var arSession = null
+		// wait until the arSession is ready
+		var idx = setInterval(function() {
+			arSession = scene.systems["arjs"]._arSession
+			if (!arSession) return;
+			scene.emit("arSessionReady")
+			clearInterval(idx)
+		})
+	}
+})
 
-/* * * * * * * * * * * * * * * * * * * * * *
-   wait until the cursor is ready and accessible
-* * * * * * * * * * * * * * * * * * * * * * */
-let marker = document.querySelector("[cursor]");
-console.log(marker.hasLoaded);
+AFRAME.registerComponent('foo', {
+	init: function() {
+		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
+	},
+	addListeners: function() {
+		let toggle = false
+	this.vid = document.querySelector("#Video_Asset_1");
+	this.btn = document.querySelector("#button");
+	
+		this.el.addEventListener("click", e => {
+			/*
+	if (toggle)
+				this.el.setAttribute('material', 'color', 'red')
+			else
+				this.el.setAttribute('material', 'color', 'green')
+		
+			toggle = !toggle
+	*/
+	this.vid.play();
+	this.btn.material.src="#btn_pause_1";
+		})
+	}
+})
 
-/* * * * * * * * * * * * * * * * * * * * * *
-  replace the curosr.onMouseMove function
-* * * * * * * * * * * * * * * * * * * * * * */
-let cursorComponent = marker.components.cursor;
-cursorComponent.onMouseMove = (function() {
-  console.warn("Cursor.onMouseMove is modified");
-  var direction = new THREE.Vector3();
-  var mouse = new THREE.Vector2();
-  var origin = new THREE.Vector3();
-  var rayCasterConfig = { origin: origin, direction: direction };
-  return function(evt) {
-    var bounds = this.canvasBounds;
-    var camera = this.el.sceneEl.camera;
-    var left;
-    var point;
-    var top;
+AFRAME.registerComponent('cursor-hack', {
+	init: function() {
+		var scene = this.el
 
-    camera.parent.updateMatrixWorld();
+		// wait until the arSession is ready
+		scene.addEventListener("arSessionReady", function() {
+			var arSession = scene.systems["arjs"]._arSession
+			// helpers
+			var raycaster = new THREE.Raycaster();
+			var mouse = new THREE.Vector2();
+			// useful references
+			var cursorElement = document.querySelector("[cursor]")
+			var arToolkitContext = arSession.arContext
+			var camera = scene.camera
 
-    // Calculate mouse position based on the canvas element
-    if (evt.type === "touchmove" || evt.type === "touchstart") {
-      // Track the first touch for simplicity.
-      point = evt.touches.item(0);
-    } else {
-      point = evt;
-    }
+			function mousedown(event) {
+				// core of this 'hack' - using the arToolkitContext projection matrix
+				camera.projectionMatrix.copy(arToolkitContext.getProjectionMatrix());
+				camera.projectionMatrixInverse.getInverse(camera.projectionMatrix);
 
-    left = point.clientX - bounds.left;
-    top = point.clientY - bounds.top;
-    mouse.x = (left / bounds.width) * 2 - 1;
-    mouse.y = -(top / bounds.height) * 2 + 1;
-    origin.setFromMatrixPosition(camera.matrixWorld);
-    let matrix = new THREE.Matrix4();
-
-    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-      The only part we want to modify is the direction calculations
-    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-    direction
-      .set(mouse.x, mouse.y, 0.5)
-      .applyMatrix4(matrix.getInverse(camera.projectionMatrix))
-      .applyMatrix4(camera.matrixWorld)
-      .sub(origin)
-      .normalize();
-
-    this.el.setAttribute("raycaster", rayCasterConfig);
-    if (evt.type === "touchmove") {
-      evt.preventDefault();
-    }
-  };
-})();
-
-/* * * * * * * * * * * * * * * * * * * * * *
-               bind the context
-* * * * * * * * * * * * * * * * * * * * * * */
-cursorComponent.onMouseMove = bind(
-  cursorComponent.onMouseMove,
-  cursorComponent
-);
-
-/* * * * * * * * * * * * * * * * * * * * * *
-  Update the components event listeners
-* * * * * * * * * * * * * * * * * * * * * * */
-cursorComponent.updateMouseEventListeners();
+				var point
+				if (event.type === "touchmove" || event.type === "touchstart") {
+					// Track the first touch for simplicity.
+					point = event.touches.item(0);
+				} else {
+					point = event;
+				}
+				// Calculate mouse position based on the canvas element
+				var rect = scene.renderer.domElement.getBoundingClientRect();
+				mouse.x = ((point.clientX - rect.left) / rect.width) * 2 - 1
+				mouse.y = -((point.clientY - rect.top) / rect.height) * 2 + 1
+				raycaster.setFromCamera(mouse, camera);
+				// if there are any intersections - send the clicks
+				var intersects = raycaster.intersectObjects(scene.object3D.children, true);
+				if (intersects.length > 0) {
+					// this click is stripped of any info it should have
+					intersects[0].object.el.emit("click")
+				}
+				event.stopPropagation();
+			}
+			window.addEventListener('mousedown', mousedown, false);
+			//window.addEventListener('touchstart', mousedown, false);
+		})
+	}
+})
