@@ -1,9 +1,10 @@
 /* CSS files add styling rules to the content */
 
 @import url(https://fonts.googleapis.com/css?family=Lexend+Deca);
+
 body {
     font-family: "Lexend Deca", sans-serif;
-    margin: 0;
+    margin: 0px;
     overflow: hidden;
     /*"hidden" means overflow is clipped, and the rest of the content will be invisible*/
 }
@@ -19,6 +20,7 @@ body {
 .logoImage {
     width: 104px; 
     height: 40px; 
+    visibility: visible;
 }
 
 .scannerWrapper {
@@ -30,7 +32,4 @@ body {
 
 .scannerImage {
     width: 75%;
-}
-
-.intersectable {
 }
