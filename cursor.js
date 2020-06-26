@@ -27,7 +27,7 @@ AFRAME.registerComponent("continuehandler_1", {
 	},
 	addListeners: function() {
 		this.button_play_1 = document.querySelector("#button_play_1");
-		this.video_1 = document.querySelector("#asset_vid_1");
+		this.video_1 = document.querySelector("#video_1");
 		this.description_1 = document.querySelector("#description_1");
 		this.button_continue_1 = document.querySelector("#button_continue_1");
 		
