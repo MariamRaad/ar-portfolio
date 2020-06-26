@@ -1,7 +1,7 @@
 /* To add interactivity to the site with Javascript */
 
 /* Vcannerhandler Function: to let the video play when the arSession is ready */
-AFRAME.registerComponent('videohandler_1', {
+AFRAME.registerComponent("videohandler_1", {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
 		// TODO: is there any disadvantage that it fires prematurely?
@@ -34,8 +34,24 @@ AFRAME.registerComponent('videohandler_1', {
 	}
 })
 
+/* Logohandler Function: to let the image of the logo show. Otherwise it would start to flicker or hide when the user clicks somewhere*/
+AFRAME.registerComponent("logohandler", {
+	init: function () {
+    		const marker = document.querySelector("#marker");
+    		const logo = document.querySelector("#logo");
+
+    		marker.addEventListener('markerFound', function () {
+       			logo.hidden = false;
+    		}.bind(this));
+    
+    		marker.addEventListener('markerLost', function () {
+       			logo.hidden = false;
+    		}.bind(this));
+  	}
+});
+
 /* Scannerhandler Function: to let the image of the scanner show or hide when marker is tracked or not tracked */
-AFRAME.registerComponent('scannerhandler', {
+AFRAME.registerComponent("scannerhandler", {
 	init: function () {
     		const marker = document.querySelector("#marker");
     		const scanner = document.querySelector("#scanner");
@@ -52,7 +68,7 @@ AFRAME.registerComponent('scannerhandler', {
 
 /* Ar-session-notifier Function: to set a flag when the arSession is ready 
    "ready"-state means: when other components can access the system, and use the ar.js core. */
-AFRAME.registerComponent('ar-session-notifier', {
+AFRAME.registerComponent("ar-session-notifier", {
 	init: function() {
 		var scene = this.el.sceneEl
 		var arSession = null
@@ -67,7 +83,7 @@ AFRAME.registerComponent('ar-session-notifier', {
 })
 
 /* Cursor-hack Function: */
-AFRAME.registerComponent('cursor-hack', {
+AFRAME.registerComponent("cursor-hack", {
 	init: function() {
 		var scene = this.el
 
