@@ -9,17 +9,17 @@ AFRAME.registerComponent("videohandler_1", {
 	},
 	addListeners: function() {
 		this.vid = document.querySelector("#asset_video_1");
-		const btn = document.querySelector("#button_play_1"); //a-plane button
+		this.btn = document.querySelector("#button_play_1"); //a-plane button
 	
 		this.el.addEventListener("click", e => {
-			btn.setAttribute("visible", false);
+			this.btn.setAttribute("visible", false);
 			this.vid.play();
 		})
 	}
 })
 
 /* Continue Function: to arrange new objects in the scene */
-AFRAME.registerComponent("continue_1", {
+AFRAME.registerComponent("continuehandler_1", {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
 		// TODO: is there any disadvantage that it fires prematurely?
