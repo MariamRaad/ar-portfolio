@@ -27,15 +27,17 @@ AFRAME.registerComponent("continuehandler_1", {
 	},
 	addListeners: function() {
 		const button_play_1 = document.querySelector("#button_play_1");
-		const video_1 = document.querySelector("#video_1");
+		const video_1 = document.querySelector("#asset_vid_1"); //video_1
 		const description_1 = document.querySelector("#description_1");
 		const button_continue_1 = document.querySelector("#button_continue_1");
 		
+		/*
 		const button_play_2 = document.querySelector("#button_play_2");
 		const video_2 = document.querySelector("#video_2");
 		const description_2 = document.querySelector("#description_2");
 		const button_continue_2 = document.querySelector("#button_continue_2");
 		const button_back_1 = document.querySelector("#button_back_1");
+		*/
 	
 		this.el.addEventListener("click", e => {
 			this.video_1.pause();
@@ -45,11 +47,13 @@ AFRAME.registerComponent("continuehandler_1", {
 			description_1.setAttribute("visible", false);
 			button_continue_1.setAttribute("visible", false);
 			
+			/*
 			button_play_2.setAttribute("visible", true);
 			video_2.setAttribute("visible", true);
 			description_2.setAttribute("visible", true);
 			button_continue_2.setAttribute("visible", true);
 			button_back_1.setAttribute("visible", true);
+			*/
 		})
 	}
 })
