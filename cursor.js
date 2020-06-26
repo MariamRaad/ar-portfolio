@@ -8,7 +8,7 @@ AFRAME.registerComponent("videohandler_1", {
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
-		this.vid = document.querySelector("#asset_video_1");
+		this.vid = document.querySelector("#asset_vid_1");
 		this.btn = document.querySelector("#button_play_1"); //a-plane button
 	
 		this.el.addEventListener("click", e => {
