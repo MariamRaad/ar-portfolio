@@ -55,7 +55,7 @@ AFRAME.registerComponent("videohandler_3", {
 })
 
 /* Continuehandler Function: to arrange new objects in the scene */
-AFRAME.registerComponent("continuehandler_1", {
+AFRAME.registerComponent("forwardhandler_1", {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
 		// TODO: is there any disadvantage that it fires prematurely?
@@ -95,7 +95,7 @@ AFRAME.registerComponent("continuehandler_1", {
 })
 
 /* Continuehandler Function: to arrange new objects in the scene */
-AFRAME.registerComponent("continuehandler_2", {
+AFRAME.registerComponent("forwardhandler_2", {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
 		// TODO: is there any disadvantage that it fires prematurely?
@@ -107,6 +107,7 @@ AFRAME.registerComponent("continuehandler_2", {
 		this.video_plane_2 = document.querySelector("#video_2");
 		this.description_2 = document.querySelector("#description_2");
 		this.button_forward_2 = document.querySelector("#button_forward_2");
+		this.button_backward_1 = document.querySelector("#button_backward_1");
 		
 		
 		this.button_play_3 = document.querySelector("#button_play_3");
@@ -123,6 +124,7 @@ AFRAME.registerComponent("continuehandler_2", {
 			this.video_plane_2.setAttribute("visible", false);
 			this.description_2.setAttribute("visible", false);
 			this.button_forward_2.setAttribute("visible", false);
+			this.button_backward_1.setAttribute("visible", false);
 			
 			
 			this.button_play_3.setAttribute("visible", true);
