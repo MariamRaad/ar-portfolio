@@ -8,7 +8,7 @@ AFRAME.registerComponent("videohandler_1", {
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
-		this.vid = document.querySelector("#asset_vid_1"); //asset_vid_1
+		this.vid = document.querySelector("#asset_vid_1");
 		this.btn = document.querySelector("#button_play_1"); //a-plane button
 	
 		this.el.addEventListener("click", e => {
@@ -26,10 +26,10 @@ AFRAME.registerComponent("continuehandler_1", {
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
-		const button_play_1 = document.querySelector("#button_play_1");
-		const video_1 = document.querySelector("#asset_vid_1"); //video_1
-		const description_1 = document.querySelector("#description_1");
-		const button_continue_1 = document.querySelector("#button_continue_1");
+		this.button_play_1 = document.querySelector("#button_play_1");
+		this.video_1 = document.querySelector("#asset_vid_1");
+		this.description_1 = document.querySelector("#description_1");
+		this.button_continue_1 = document.querySelector("#button_continue_1");
 		
 		/*
 		const button_play_2 = document.querySelector("#button_play_2");
@@ -42,10 +42,10 @@ AFRAME.registerComponent("continuehandler_1", {
 		this.el.addEventListener("click", e => {
 			this.video_1.pause();
 			
-			button_play_1.setAttribute("visible", false);
-			video_1.setAttribute("visible", false);
-			description_1.setAttribute("visible", false);
-			button_continue_1.setAttribute("visible", false);
+			this.button_play_1.setAttribute("visible", false);
+			this.video_1.setAttribute("visible", false);
+			this.description_1.setAttribute("visible", false);
+			this.button_continue_1.setAttribute("visible", false);
 			
 			/*
 			button_play_2.setAttribute("visible", true);
