@@ -36,6 +36,24 @@ AFRAME.registerComponent("videohandler_2", {
 	}
 })
 
+/* Videohandler Function: to let the video play when the arSession is ready */
+AFRAME.registerComponent("videohandler_3", {
+	init: function() {
+		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+		// TODO: is there any disadvantage that it fires prematurely?
+		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
+	},
+	addListeners: function() {
+		this.video_src_3 = document.querySelector("#asset_vid_3");
+		this.button_play_3 = document.querySelector("#button_play_3");
+	
+		this.el.addEventListener("click", e => {
+			this.button_play_3.setAttribute("visible", false);
+			this.video_src_3.play();
+		})
+	}
+})
+
 /* Continuehandler Function: to arrange new objects in the scene */
 AFRAME.registerComponent("continuehandler_1", {
 	init: function() {
@@ -72,6 +90,46 @@ AFRAME.registerComponent("continuehandler_1", {
 			this.description_2.setAttribute("visible", true);
 			this.button_continue_2.setAttribute("visible", true);
 			this.button_back_1.setAttribute("visible", true);
+		})
+	}
+})
+
+/* Continuehandler Function: to arrange new objects in the scene */
+AFRAME.registerComponent("continuehandler_2", {
+	init: function() {
+		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+		// TODO: is there any disadvantage that it fires prematurely?
+		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
+	},
+	addListeners: function() {
+		this.button_play_2 = document.querySelector("#button_play_2");
+		this.video_src_2 = document.querySelector("#asset_vid_2");
+		this.video_plane_2 = document.querySelector("#video_2");
+		this.description_2 = document.querySelector("#description_2");
+		this.button_continue_2 = document.querySelector("#button_continue_2");
+		
+		
+		this.button_play_3 = document.querySelector("#button_play_3");
+		this.video_plane_3 = document.querySelector("#video_3");
+		this.description_3 = document.querySelector("#description_3");
+		this.button_continue_3 = document.querySelector("#button_continue_3");
+		this.button_back_2 = document.querySelector("#button_back_2");
+		
+	
+		this.el.addEventListener("click", e => {
+			this.video_src_2.pause();
+			
+			this.button_play_2.setAttribute("visible", false);
+			this.video_plane_2.setAttribute("visible", false);
+			this.description_2.setAttribute("visible", false);
+			this.button_continue_2.setAttribute("visible", false);
+			
+			
+			this.button_play_3.setAttribute("visible", true);
+			this.video_plane_3.setAttribute("visible", true);
+			this.description_3.setAttribute("visible", true);
+			this.button_continue_3.setAttribute("visible", true);
+			this.button_back_2.setAttribute("visible", true);
 		})
 	}
 })
