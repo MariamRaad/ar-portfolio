@@ -50,9 +50,9 @@
             <img id="asset_descr_2" src="https://mariamraad.github.io/ar-portfolio/assets/images/texts/Beschreibung_Zauberwald.png">
             <img id="asset_descr_3" src="https://mariamraad.github.io/ar-portfolio/assets/images/texts/Beschreibung_FlyingEagle.png">
 		
-            <video id="asset_video_1" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed3.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
-	    <video id="asset_video_2" src="https://mariamraad.github.io/ar-portfolio/assets/videos/Zauberwald_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
-	    <video id="asset_video_3" src="https://mariamraad.github.io/ar-portfolio/assets/videos/FlyingEagle_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
+            <video id="asset_vid_1" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed3.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
+	    <video id="asset_vid_2" src="https://mariamraad.github.io/ar-portfolio/assets/videos/Zauberwald_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
+	    <video id="asset_vid_3" src="https://mariamraad.github.io/ar-portfolio/assets/videos/FlyingEagle_compressed.mp4" type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
 	</a-assets> 
 
 	<!-- scannerhandler -->
@@ -60,13 +60,13 @@
 		
 		<!-- Scene 1 -->
 		<a-plane videohandler_1 id="button_play_1" material="src: #asset_btn_play; transparent:true; alpha-test:0.5" position="0 0.5 0" rotation="270 0 0" height="0.7" width="0.7" render-order="layer3"></a-plane>
-		<a-plane id="video_1" material="src: #asset_video_1;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2" render-order="layer1"></a-plane>
+		<a-plane id="video_1" material="src: #asset_vid_1;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2" render-order="layer1"></a-plane>
 		<a-plane id="description_1" material="src: #asset_descr_1;" position="0 0 2" rotation="270 0 0" height="2" width="2.2" render-order="layer1"></a-plane>
                 <a-plane continuehandler_1 id="button_continue_1" material="src: #asset_btn_continue; transparent:true; alpha-test:0.5" position="1.5 0 3.5" rotation="270 0 0" height="0.7" width="0.7" render-order="layer3"></a-plane>
 		
 		<!-- Scene 2 -->
 		<a-plane visible="false" id="button_play_2" material="src: #asset_btn_play; transparent:true; alpha-test:0.5" position="0 0.5 0" rotation="270 0 0" height="0.7" width="0.7" render-order="layer3"></a-plane>
-		<a-plane visible="false" id="video_2" material="src: #asset_video_2;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2" render-order="layer1"></a-plane>
+		<a-plane visible="false" id="video_2" material="src: #asset_vid_2;" position="0 0.5 0" rotation="270 0 0" height="1.5" width="2" render-order="layer1"></a-plane>
 		<a-plane visible="false" id="description_2" material="src: #asset_descr_2;" position="0 0 2" rotation="270 0 0" height="2" width="2.2" render-order="layer1"></a-plane>
                 <a-plane visible="false" id="button_continue_2" material="src: #asset_btn_continue; transparent:true; alpha-test:0.5" position="1.5 0 3.5" rotation="270 0 0" height="0.7" width="0.7" render-order="layer3"></a-plane>
 		<a-plane visible="false" id="button_back_1" material="src: #asset_btn_back; transparent:true; alpha-test:0.5" position="0 0 3.5" rotation="270 0 0" height="0.7" width="0.7" render-order="layer3"></a-plane>
