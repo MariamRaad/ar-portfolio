@@ -18,6 +18,24 @@ AFRAME.registerComponent("videohandler_1", {
 	}
 })
 
+/* Videohandler Function: to let the video play when the arSession is ready */
+AFRAME.registerComponent("videohandler_2", {
+	init: function() {
+		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+		// TODO: is there any disadvantage that it fires prematurely?
+		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
+	},
+	addListeners: function() {
+		this.video_src_2 = document.querySelector("#asset_vid_2");
+		this.button_play_2 = document.querySelector("#button_play_2");
+	
+		this.el.addEventListener("click", e => {
+			this.button_play_2.setAttribute("visible", false);
+			this.video_src_2.play();
+		})
+	}
+})
+
 /* Continue Function: to arrange new objects in the scene */
 AFRAME.registerComponent("continuehandler_1", {
 	init: function() {
