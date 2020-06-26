@@ -1,6 +1,6 @@
 /* To add interactivity to the site with Javascript */
 
-/* Vcannerhandler Function: to let the video play when the arSession is ready */
+/* Videohandler Function: to let the video play when the arSession is ready */
 AFRAME.registerComponent("videohandler_1", {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
@@ -8,28 +8,46 @@ AFRAME.registerComponent("videohandler_1", {
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
-		let toggle = false
-		let isMarkerVisible = false
 		this.vid = document.querySelector("#asset_video_1");
 		const btn = document.querySelector("#button_play_1"); //a-plane button
-		//const btnPause = document.querySelector("#btn_pause_1");
-		//const btnPauseMaterial = btnPause.getAttribute("material", "src", this.btnPause);
-		//this.btnPlay = document.querySelector("#btn_play_1");
 	
 		this.el.addEventListener("click", e => {
-			/*
-			if (toggle)
-				this.el.setAttribute('material', 'color', 'red')
-			else
-				this.el.setAttribute('material', 'color', 'green')
-		
-			toggle = !toggle
-			*/
-			
-			//this.btn.setAttribute("material", btnPauseMaterial);
-  			//this.btn.setAttribute("material", "src", this.btnPauseMaterial);
 			btn.setAttribute("visible", false);
 			this.vid.play();
+		})
+	}
+})
+
+/* Continue Function: to arrange new objects in the scene */
+AFRAME.registerComponent("continue_1", {
+	init: function() {
+		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+		// TODO: is there any disadvantage that it fires prematurely?
+		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
+	},
+	addListeners: function() {
+		const button_play_1 = document.querySelector("#button_play_1");
+		const video_1 = document.querySelector("#video_1");
+		const description_1 = document.querySelector("#description_1");
+		const button_continue_1 = document.querySelector("#dbutton_continue_1");
+		
+		const button_play_2 = document.querySelector("#button_play_2");
+		const video_2 = document.querySelector("#video_2");
+		const description_2 = document.querySelector("#description_2");
+		const button_continue_2 = document.querySelector("#dbutton_continue_2");
+		const button_back_1 = document.querySelector("#dbutton_back_1");
+	
+		this.el.addEventListener("click", e => {
+			button_play_1.setAttribute("visible", false);
+			video_1.setAttribute("visible", false);
+			description_1.setAttribute("visible", false);
+			button_continue_1.setAttribute("visible", false);
+			
+			button_play_2.setAttribute("visible", true);
+			video_2.setAttribute("visible", true);
+			description_2.setAttribute("visible", true);
+			button_continue_2.setAttribute("visible", true);
+			button_back_1.setAttribute("visible", true);
 		})
 	}
 })
