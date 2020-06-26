@@ -29,15 +29,17 @@ AFRAME.registerComponent("continue_1", {
 		const button_play_1 = document.querySelector("#button_play_1");
 		const video_1 = document.querySelector("#video_1");
 		const description_1 = document.querySelector("#description_1");
-		const button_continue_1 = document.querySelector("#dbutton_continue_1");
+		const button_continue_1 = document.querySelector("#button_continue_1");
 		
 		const button_play_2 = document.querySelector("#button_play_2");
 		const video_2 = document.querySelector("#video_2");
 		const description_2 = document.querySelector("#description_2");
-		const button_continue_2 = document.querySelector("#dbutton_continue_2");
-		const button_back_1 = document.querySelector("#dbutton_back_1");
+		const button_continue_2 = document.querySelector("#button_continue_2");
+		const button_back_1 = document.querySelector("#button_back_1");
 	
 		this.el.addEventListener("click", e => {
+			this.video_1.pause();
+			
 			button_play_1.setAttribute("visible", false);
 			video_1.setAttribute("visible", false);
 			description_1.setAttribute("visible", false);
