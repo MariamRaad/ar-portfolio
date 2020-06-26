@@ -36,7 +36,7 @@ AFRAME.registerComponent("videohandler_2", {
 	}
 })
 
-/* Continue Function: to arrange new objects in the scene */
+/* Continuehandler Function: to arrange new objects in the scene */
 AFRAME.registerComponent("continuehandler_1", {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
