@@ -159,20 +159,19 @@ AFRAME.registerComponent("forwardhandler_3", {
 		
 	
 		this.el.addEventListener("click", e => {
-			this.video_src_2.pause();
+			this.video_src_3.pause();
 			
-			this.button_play_2.setAttribute("visible", false);
-			this.video_plane_2.setAttribute("visible", false);
-			this.description_2.setAttribute("visible", false);
-			this.button_forward_2.setAttribute("visible", false);
-			this.button_backward_1.setAttribute("visible", false);
+			this.button_play_3.setAttribute("visible", false);
+			this.video_plane_3.setAttribute("visible", false);
+			this.description_3.setAttribute("visible", false);
+			this.button_forward_3.setAttribute("visible", false);
+			this.button_backward_2.setAttribute("visible", false);
 			
-			
-			this.button_play_3.setAttribute("visible", true);
-			this.video_plane_3.setAttribute("visible", true);
-			this.description_3.setAttribute("visible", true);
-			this.button_forward_3.setAttribute("visible", true);
-			this.button_backward_2.setAttribute("visible", true);
+			this.description_4.setAttribute("visible", true);
+			this.button_linkedin.setAttribute("visible", true);
+			this.button_xing.setAttribute("visible", true);
+			this.button_website.setAttribute("visible", true);
+			this.button_backward_3.setAttribute("visible", true);
 		})
 	}
 })
