@@ -60,7 +60,7 @@ AFRAME.registerComponent("forwardhandler", {
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
-		/* Scene 1 */
+		/* Transition from scene 1(SafeNetKids) to scene 2(Zauberwald) */
 		this.button_play_1 = document.querySelector("#button_play_1");
 		this.video_src_1 = document.querySelector("#asset_vid_1");
 		this.video_plane_1 = document.querySelector("#video_1");
@@ -74,7 +74,7 @@ AFRAME.registerComponent("forwardhandler", {
 		this.button_backward_1 = document.querySelector("#button_backward_1");
 		
 		
-		/* Scene 2 */
+		/* Transition from scene 2(Zauberwald) to scene 3(FlyingEagle) */
 		this.button_play_2 = document.querySelector("#button_play_2");
 		this.video_src_2 = document.querySelector("#asset_vid_2");
 		this.video_plane_2 = document.querySelector("#video_2");
@@ -89,7 +89,7 @@ AFRAME.registerComponent("forwardhandler", {
 		this.button_backward_2 = document.querySelector("#button_backward_2");
 		
 		
-		/* Scene 3 */
+		/* Transition from scene 3(FlyingEagle) to scene 4(Offboarding) */
 		this.button_play_3 = document.querySelector("#button_play_3");
 		this.video_src_3 = document.querySelector("#asset_vid_3");
 		this.video_plane_3 = document.querySelector("#video_3");
