@@ -68,7 +68,6 @@ AFRAME.registerComponent("forwardhandler_1", {
 		this.description_1 = document.querySelector("#description_1");
 		this.button_forward_1 = document.querySelector("#button_forward_1");
 		
-		
 		this.button_play_2 = document.querySelector("#button_play_2");
 		this.video_plane_2 = document.querySelector("#video_2");
 		this.description_2 = document.querySelector("#description_2");
@@ -83,7 +82,6 @@ AFRAME.registerComponent("forwardhandler_1", {
 			this.video_plane_1.setAttribute("visible", false);
 			this.description_1.setAttribute("visible", false);
 			this.button_forward_1.setAttribute("visible", false);
-			
 			
 			this.button_play_2.setAttribute("visible", true);
 			this.video_plane_2.setAttribute("visible", true);
@@ -109,7 +107,6 @@ AFRAME.registerComponent("forwardhandler_2", {
 		this.button_forward_2 = document.querySelector("#button_forward_2");
 		this.button_backward_1 = document.querySelector("#button_backward_1");
 		
-		
 		this.button_play_3 = document.querySelector("#button_play_3");
 		this.video_plane_3 = document.querySelector("#video_3");
 		this.description_3 = document.querySelector("#description_3");
@@ -125,7 +122,6 @@ AFRAME.registerComponent("forwardhandler_2", {
 			this.description_2.setAttribute("visible", false);
 			this.button_forward_2.setAttribute("visible", false);
 			this.button_backward_1.setAttribute("visible", false);
-			
 			
 			this.button_play_3.setAttribute("visible", true);
 			this.video_plane_3.setAttribute("visible", true);
