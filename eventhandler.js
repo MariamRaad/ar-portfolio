@@ -25,6 +25,7 @@ AFRAME.registerComponent("videohandler", {
        			 //if ( (this.video_plane_1.getAttribute("visible") == true) && (this.button_play_1.getAttribute("visible") == false) && (!isVideoPlaying) )
 			if (this.video_plane_1.getAttribute("visible") == true && !isVideoPlaying)
 				this.video_src_1.play();
+			 	isVideoPlaying = true;
 				
     		}.bind(this));
     
