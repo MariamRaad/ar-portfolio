@@ -19,6 +19,8 @@ AFRAME.registerComponent("videohandler", {
 		
 	    	const marker = document.querySelector("#marker");
 		this.video_plane_1 = document.querySelector("#video_1");
+		this.video_plane_2 = document.querySelector("#video_2");
+		this.video_plane_3 = document.querySelector("#video_3");
 			
 		marker.addEventListener("markerFound", function () {
 			this.video_src_1.pause(); //needs to be set or otherwise the video will start automatically
