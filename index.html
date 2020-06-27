@@ -13,18 +13,18 @@
     <meta name="viewport" content="width=device-width, user-scalable=no"> <!-- , minimum-scale=1.0, maximum-scale=2.0 -->
 
     <!-- AFrame -->
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-
+    <script src="lib/aframe-v1.0.4.js"></script> <!-- https://aframe.io/releases/1.0.4/aframe.min.js -->
+	
     <!-- ARjs -->
     <!-- Version without NFT/image tracking but with marker + location based support -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/3.1.0/aframe/build/aframe-ar.js"></script>
-
+    <script src="lib/aframe-ar.3.1.0.js"></script> <!-- https://raw.githack.com/AR-js-org/AR.js/3.1.0/aframe/build/aframe-ar.js -->
+    
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="https://mariamraad.github.io/ar-portfolio/style.css">
 
     <!-- import Scripts to add functionality -->
-    <script src="https://mariamraad.github.io/ar-portfolio/cursor.js"></script>
-    <script src="https://unpkg.com/aframe-render-order-component@1.1.0/dist/aframe-render-order-component.min.js"></script>
+    <script src="https://mariamraad.github.io/ar-portfolio/functions.js"></script>
+    <script src="https://mariamraad.github.io/ar-portfolio/aframe-render-order-component.js"></script> <!-- https://unpkg.com/aframe-render-order-component@1.1.0/dist/aframe-render-order-component.min.js -->
     <!-- <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script> -->
 </head>
 
@@ -34,7 +34,7 @@
         <input id="logo" type="image" class="logoImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/logo/Logo_MandR_Schrift.png"></input>
     </div> 
 	
-    <!-- Scanner Bild -->	
+    <!-- Scanner -->	
     <div class="scannerWrapper">
 	<input id="scanner" type="image" class="scannerImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneHintergrund_Text.png"/>
     </div>
@@ -54,9 +54,9 @@
             <img id="asset_descr_3" src="https://mariamraad.github.io/ar-portfolio/assets/images/texts/Beschreibung_FlyingEagle.png">
             <img id="asset_descr_4" src="https://mariamraad.github.io/ar-portfolio/assets/images/texts/Offboarding.png">
 		
-            <video id="asset_vid_1" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4"  type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline></video> 	        
-	    <video id="asset_vid_2" src="https://mariamraad.github.io/ar-portfolio/assets/videos/Zauberwald_compressed.mp4"   type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline play="false"></video> 	        
-	    <video id="asset_vid_3" src="https://mariamraad.github.io/ar-portfolio/assets/videos/FlyingEagle_compressed.mp4"  type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline play="false"></video> 	        
+            <video id="asset_vid_1" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4"  type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline play="false"></video> 	        
+			<video id="asset_vid_2" src="https://mariamraad.github.io/ar-portfolio/assets/videos/Zauberwald_compressed.mp4"   type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline play="false"></video> 	        
+			<video id="asset_vid_3" src="https://mariamraad.github.io/ar-portfolio/assets/videos/FlyingEagle_compressed.mp4"  type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline play="false"></video> 	        
 		
 	</a-assets> 
 
@@ -91,7 +91,7 @@
 		
 	    </a-marker>
 	    
-	<!-- static camera that moves according to the device movemenents -->
+		<!-- static camera that moves according to the device movemenents -->
         <a-entity camera></a-entity>
     </a-scene>
 </body>
