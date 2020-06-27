@@ -22,12 +22,20 @@ AFRAME.registerComponent("videohandler", {
 			
 		marker.addEventListener("markerFound", function () {
 			this.video_src_1.pause(); //needs to be set or otherwise the video will start automatically
+			this.video_src_2.pause(); //needs to be set or otherwise the video will start automatically
+			this.video_src_3.pause(); //needs to be set or otherwise the video will start automatically
 			isVideoPlaying = false;
 			
-			//wenn wir in Szene 1 sind (bei Video1) und das Video vom User bereits abgespielt wurde und das Video zwischenzeitlich pausiert hat (weil Marker verloren)
-       			if ( ((this.video_plane_1.getAttribute("visible") == true) && (this.button_play_1.getAttribute("visible") == false)) && (isVideoPlaying == false) ) {
-			// if (this.video_plane_1.getAttribute("visible") == true && !isVideoPlaying)
+			//wenn gewünschte Szene vorliegt und das Video vom User bereits abgespielt wurde und das Video zwischenzeitlich pausiert hat (weil Marker verloren)
+       			//when specific scene is shown and video was already startet from the user (so the play button should be hidden) and the video paused in between (e.g. marker was lost)
+			if ( ((this.video_plane_1.getAttribute("visible") == true) && (this.button_play_1.getAttribute("visible") == false)) && (isVideoPlaying == false) ) {
 				this.video_src_1.play();
+			 	isVideoPlaying = true;
+			} else if ( ((this.video_plane_2.getAttribute("visible") == true) && (this.button_play_2.getAttribute("visible") == false)) && (isVideoPlaying == false) ) {
+				this.video_src_2.play();
+			 	isVideoPlaying = true;
+			}else if ( ((this.video_plane_3.getAttribute("visible") == true) && (this.button_play_3.getAttribute("visible") == false)) && (isVideoPlaying == false) ) {
+				this.video_src_3.play();
 			 	isVideoPlaying = true;
 			}
     		}.bind(this));
@@ -36,14 +44,14 @@ AFRAME.registerComponent("videohandler", {
 			 if (this.video_plane_1.getAttribute("visible") == true && isVideoPlaying) {
 				this.video_src_1.pause();
 			 	isVideoPlaying = false;
-			 }
-			 /*
-			 else if (this.button_play_2.getAttribute("visible") === false)
+			 } else if (this.video_plane_2.getAttribute("visible") == true && isVideoPlaying) {
 				this.video_src_2.pause();
-			 
-			 else if (this.button_play_3.getAttribute("visible") === false)
+			 	isVideoPlaying = false;
+			 } else if (this.video_plane_3.getAttribute("visible") == true && isVideoPlaying) {
 				this.video_src_3.pause();
-			*/
+			 	isVideoPlaying = false;
+			 }
+			
     		}.bind(this));
 			
 		this.el.addEventListener("click", e => {
