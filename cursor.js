@@ -54,7 +54,7 @@ AFRAME.registerComponent("videohandler_3", {
 	}
 })
 
-/* Continuehandler Function: to arrange new objects in the scene */
+/* Forwardhandler Function: to arrange new objects in the scene */
 AFRAME.registerComponent("forwardhandler_1", {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
@@ -92,7 +92,7 @@ AFRAME.registerComponent("forwardhandler_1", {
 	}
 })
 
-/* Continuehandler Function: to arrange new objects in the scene */
+/* Forwardhandler Function: to arrange new objects in the scene */
 AFRAME.registerComponent("forwardhandler_2", {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
@@ -132,7 +132,7 @@ AFRAME.registerComponent("forwardhandler_2", {
 	}
 })
 
-/* Continuehandler Function: to arrange new objects in the scene */
+/* Forwardhandler Function: to arrange new objects in the scene */
 AFRAME.registerComponent("forwardhandler_3", {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
@@ -168,6 +168,44 @@ AFRAME.registerComponent("forwardhandler_3", {
 			this.button_xing.setAttribute("visible", true);
 			this.button_website.setAttribute("visible", true);
 			this.button_backward_3.setAttribute("visible", true);
+		})
+	}
+})
+
+/* Backwardhandler Function: to arrange new objects in the scene */
+AFRAME.registerComponent("backwardhandler_1", {
+	init: function() {
+		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+		// TODO: is there any disadvantage that it fires prematurely?
+		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
+	},
+	addListeners: function() {
+		this.button_play_2 = document.querySelector("#button_play_2");
+		this.video_src_2 = document.querySelector("#asset_vid_2");
+		this.video_plane_2 = document.querySelector("#video_2");
+		this.description_2 = document.querySelector("#description_2");
+		this.button_forward_2 = document.querySelector("#button_forward_2");
+		this.button_backward_1 = document.querySelector("#button_backward_2");
+		
+		this.button_play_1 = document.querySelector("#button_play_1");
+		this.video_plane_1 = document.querySelector("#video_1");
+		this.description_1 = document.querySelector("#description_1");
+		this.button_forward_1 = document.querySelector("#button_forward_1");
+		
+	
+		this.el.addEventListener("click", e => {
+			this.video_src_2.pause();
+			
+			this.button_play_2.setAttribute("visible", false);
+			this.video_plane_2.setAttribute("visible", false);
+			this.description_2.setAttribute("visible", false);
+			this.button_forward_2.setAttribute("visible", false);
+			this.button_backward_1.setAttribute("visible", false);
+			
+			this.button_play_1.setAttribute("visible", true);
+			this.video_plane_1.setAttribute("visible", true);
+			this.description_1.setAttribute("visible", true);
+			this.button_forward_1.setAttribute("visible", true);
 		})
 	}
 })
