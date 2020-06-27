@@ -21,8 +21,8 @@ AFRAME.registerComponent("videohandler", {
 		this.video_plane_1 = document.querySelector("#video_1");
 			
 		marker.addEventListener('markerFound', function () {
-       			//if (this.button_play_1.getAttribute("visible") === false)
-				//wenn playButton nicht sichtbar --> Video wird abgespielt
+       			 if (this.video_plane_1.getAttribute("visible") == true && !isVideoPlaying)
+				this.video_src_1.play();
 				
     		}.bind(this));
     
