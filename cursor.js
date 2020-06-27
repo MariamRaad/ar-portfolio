@@ -308,7 +308,11 @@ AFRAME.registerComponent("linkhandler", {
 		this.el.addEventListener("click", e => {
 			if (e === this.button_linkedin) {
 				window.open("https://www.linkedin.com/in/mariam-raad", "_blank", true);
-			}
+			} else if (e === this.button_xing) {
+				window.open("https://www.xing.com/profile/Mariam_Raad/cv", "_blank", true);
+			} else if (e === this.button_website) {
+				window.open("https://github.com/MariamRaad", "_blank", true);
+			} 
 		})
 	}
 })
