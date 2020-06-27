@@ -306,9 +306,9 @@ AFRAME.registerComponent("linkhandler", {
 		this.button_website = document.querySelector("#button_website");
 		
 		this.el.addEventListener("click", e => {
-			if (this.el === this.button_linkedin) {
+			//if (this.el === this.button_linkedin) {
 				window.open("www.linkedin.com/in/mariam-raad");
-			}
+			//}
 		})
 	}
 })
