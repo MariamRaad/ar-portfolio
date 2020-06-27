@@ -307,7 +307,7 @@ AFRAME.registerComponent("linkhandler", {
 		
 		this.el.addEventListener("click", e => {
 			//if (this.el === this.button_linkedin) {
-				window.open("https://www.linkedin.com/in/mariam-raad");
+				window.open("https://www.linkedin.com/in/mariam-raad", "_blank", true);
 			//}
 		})
 	}
