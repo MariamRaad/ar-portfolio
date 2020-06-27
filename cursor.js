@@ -293,6 +293,26 @@ AFRAME.registerComponent("backwardhandler_3", {
 	}
 })
 
+/* Linkhandler Function: to arrange new objects in the scene */
+AFRAME.registerComponent("linkhandler", {
+	init: function() {
+		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+		// TODO: is there any disadvantage that it fires prematurely?
+		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
+	},
+	addListeners: function() {
+		this.button_linkedin = document.querySelector("#button_linkedin");
+		this.button_xing = document.querySelector("#button_xing");
+		this.button_website = document.querySelector("#button_website");
+		
+		this.el.addEventListener("click", e => {
+			if (this.el === this.button_linkedin) {
+				window.open("www.linkedin.com/in/mariam-raad");
+			}
+		})
+	}
+})
+
 /* Logohandler Function: to let the image of the logo show. Otherwise it would start to flicker or hide when the user clicks somewhere*/
 AFRAME.registerComponent("logohandler", {
 	init: function () {
