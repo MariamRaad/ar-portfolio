@@ -20,13 +20,13 @@ AFRAME.registerComponent("videohandler", {
 	    	const marker = document.querySelector("#marker");
 		this.video_plane_1 = document.querySelector("#video_1");
 			
-		marker.addEventListener('markerFound', function () {
+		marker.addEventListener("markerFound", function () {
        			 if (this.video_plane_1.getAttribute("visible") == true && !isVideoPlaying)
 				this.video_src_1.play();
 				
     		}.bind(this));
     
-   		 marker.addEventListener('markerLost', function () {
+   		 marker.addEventListener("markerLost", function () {
 			 if (this.video_plane_1.getAttribute("visible") == true && isVideoPlaying)
 				this.video_src_1.pause();
 			 /*
