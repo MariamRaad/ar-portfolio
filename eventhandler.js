@@ -89,7 +89,7 @@ AFRAME.registerComponent("forwardhandler", {
 		this.button_backward_2 = document.querySelector("#button_backward_2");
 		
 		
-		/* Transition from scene 3(FlyingEagle) to scene 4(Offboarding) */
+		/* Transition from scene 3(FlyingEagle) to scene 4(Offboarding/Weblinks) */
 		this.button_play_3 = document.querySelector("#button_play_3");
 		this.video_src_3 = document.querySelector("#asset_vid_3");
 		this.video_plane_3 = document.querySelector("#video_3");
@@ -154,13 +154,14 @@ AFRAME.registerComponent("forwardhandler", {
 })
 
 /* Backwardhandler Function: to arrange new objects in the scene */
-AFRAME.registerComponent("backwardhandler_1", {
+AFRAME.registerComponent("backwardhandler", {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
 		// TODO: is there any disadvantage that it fires prematurely?
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
+		/* Transition from scene 2(Zauberwald) to scene 1(SafeNetKids)  */
 		this.button_play_2 = document.querySelector("#button_play_2");
 		this.video_src_2 = document.querySelector("#asset_vid_2");
 		this.video_plane_2 = document.querySelector("#video_2");
@@ -174,32 +175,7 @@ AFRAME.registerComponent("backwardhandler_1", {
 		this.button_forward_1 = document.querySelector("#button_forward_1");
 		
 	
-		this.el.addEventListener("click", e => {
-			this.video_src_2.pause();
-			this.video_src_2.currentTime = 0;
-			
-			this.button_play_2.setAttribute("visible", false);
-			this.video_plane_2.setAttribute("visible", false);
-			this.description_2.setAttribute("visible", false);
-			this.button_forward_2.setAttribute("visible", false);
-			this.button_backward_1.setAttribute("visible", false);
-			
-			this.button_play_1.setAttribute("visible", true);
-			this.video_plane_1.setAttribute("visible", true);
-			this.description_1.setAttribute("visible", true);
-			this.button_forward_1.setAttribute("visible", true);
-		})
-	}
-})
-
-/* Backwardhandler Function: to arrange new objects in the scene */
-AFRAME.registerComponent("backwardhandler_2", {
-	init: function() {
-		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
-		// TODO: is there any disadvantage that it fires prematurely?
-		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
-	},
-	addListeners: function() {
+		/* Transition from scene 3(FlyingEagle) to scene 2(Zauberwald)  */
 		this.button_play_3 = document.querySelector("#button_play_3");
 		this.video_src_3 = document.querySelector("#asset_vid_3");
 		this.video_plane_3 = document.querySelector("#video_3");
@@ -213,35 +189,8 @@ AFRAME.registerComponent("backwardhandler_2", {
 		this.button_forward_2 = document.querySelector("#button_forward_2");
 		this.button_backward_1 = document.querySelector("#button_backward_1");
 		
-	
-		this.el.addEventListener("click", e => {
-			this.video_src_3.pause();
-			this.video_src_3.currentTime = 0;
-			
-			this.button_play_3.setAttribute("visible", false);
-			this.video_plane_3.setAttribute("visible", false);
-			this.description_3.setAttribute("visible", false);
-			this.button_forward_3.setAttribute("visible", false);
-			this.button_backward_2.setAttribute("visible", false);
-			
-			this.button_play_2.setAttribute("visible", true);
-			this.video_plane_2.setAttribute("visible", true);
-			this.description_2.setAttribute("visible", true);
-			this.button_forward_2.setAttribute("visible", true);
-			this.button_backward_1.setAttribute("visible", true);
-		})
-	}
-})
-
-
-/* Backwardhandler Function: to arrange new objects in the scene */
-AFRAME.registerComponent("backwardhandler_3", {
-	init: function() {
-		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
-		// TODO: is there any disadvantage that it fires prematurely?
-		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
-	},
-	addListeners: function() {
+		
+		/* Transition from scene 4(Offboarding/Weblinks) to scene 3(FlyingEagle)  */
 		this.description_4 = document.querySelector("#description_4");
 		this.button_linkedin = document.querySelector("#button_linkedin");
 		this.button_xing = document.querySelector("#button_xing");
@@ -253,20 +202,50 @@ AFRAME.registerComponent("backwardhandler_3", {
 		this.description_3 = document.querySelector("#description_3");
 		this.button_forward_3 = document.querySelector("#button_forward_3");
 		this.button_backward_2 = document.querySelector("#button_backward_2");
-		
 	
 		this.el.addEventListener("click", e => {
-			this.description_4.setAttribute("visible", false);
-			this.button_linkedin.setAttribute("visible", false);
-			this.button_xing.setAttribute("visible", false);
-			this.button_website.setAttribute("visible", false);
-			this.button_backward_3.setAttribute("visible", false);
+			if (this.el === this.button_backward_1) {
+				this.video_src_2.pause();
+				this.video_src_2.currentTime = 0;
 			
-			this.button_play_3.setAttribute("visible", true);
-			this.video_plane_3.setAttribute("visible", true);
-			this.description_3.setAttribute("visible", true);
-			this.button_forward_3.setAttribute("visible", true);
-			this.button_backward_2.setAttribute("visible", true);
+				this.button_play_2.setAttribute("visible", false);
+				this.video_plane_2.setAttribute("visible", false);
+				this.description_2.setAttribute("visible", false);
+				this.button_forward_2.setAttribute("visible", false);
+				this.button_backward_1.setAttribute("visible", false);
+			
+				this.button_play_1.setAttribute("visible", true);
+				this.video_plane_1.setAttribute("visible", true);
+				this.description_1.setAttribute("visible", true);
+				this.button_forward_1.setAttribute("visible", true);
+			} else if (this.el === this.button_backward_2) {
+				this.video_src_3.pause();
+				this.video_src_3.currentTime = 0;
+			
+				this.button_play_3.setAttribute("visible", false);
+				this.video_plane_3.setAttribute("visible", false);
+				this.description_3.setAttribute("visible", false);
+				this.button_forward_3.setAttribute("visible", false);
+				this.button_backward_2.setAttribute("visible", false);
+			
+				this.button_play_2.setAttribute("visible", true);
+				this.video_plane_2.setAttribute("visible", true);
+				this.description_2.setAttribute("visible", true);
+				this.button_forward_2.setAttribute("visible", true);
+				this.button_backward_1.setAttribute("visible", true);
+			} else if (this.el === this.button_backward_3) {
+				this.description_4.setAttribute("visible", false);
+				this.button_linkedin.setAttribute("visible", false);
+				this.button_xing.setAttribute("visible", false);
+				this.button_website.setAttribute("visible", false);
+				this.button_backward_3.setAttribute("visible", false);
+			
+				this.button_play_3.setAttribute("visible", true);
+				this.video_plane_3.setAttribute("visible", true);
+				this.description_3.setAttribute("visible", true);
+				this.button_forward_3.setAttribute("visible", true);
+				this.button_backward_2.setAttribute("visible", true);
+			}
 		})
 	}
 })
@@ -295,7 +274,8 @@ AFRAME.registerComponent("linkhandler", {
 	}
 })
 
-/* Logohandler Function: to let the image of the logo show. Otherwise it would start to flicker or hide when the user clicks somewhere*/
+/* Logohandler Function: to let the image of the logo show. Otherwise it would start to flicker or hide when the user clicks somewhere
+   It still disappears sometimes on iOS (Vers. 13.5.1, Safari) */
 AFRAME.registerComponent("logohandler", {
 	init: function () {
     		const marker = document.querySelector("#marker");
