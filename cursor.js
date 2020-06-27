@@ -136,6 +136,47 @@ AFRAME.registerComponent("forwardhandler_2", {
 	}
 })
 
+/* Continuehandler Function: to arrange new objects in the scene */
+AFRAME.registerComponent("forwardhandler_3", {
+	init: function() {
+		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+		// TODO: is there any disadvantage that it fires prematurely?
+		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
+	},
+	addListeners: function() {
+		this.button_play_3 = document.querySelector("#button_play_3");
+		this.video_src_3 = document.querySelector("#asset_vid_3");
+		this.video_plane_3 = document.querySelector("#video_3");
+		this.description_3 = document.querySelector("#description_3");
+		this.button_forward_3 = document.querySelector("#button_forward_3");
+		this.button_backward_2 = document.querySelector("#button_backward_2");
+		
+		this.description_4 = document.querySelector("#description_4");
+		this.button_linkedin = document.querySelector("#button_linkedin");
+		this.button_xing = document.querySelector("#button_xing");
+		this.button_website = document.querySelector("#button_website");
+		this.button_backward_3 = document.querySelector("#button_backward_3");
+		
+	
+		this.el.addEventListener("click", e => {
+			this.video_src_2.pause();
+			
+			this.button_play_2.setAttribute("visible", false);
+			this.video_plane_2.setAttribute("visible", false);
+			this.description_2.setAttribute("visible", false);
+			this.button_forward_2.setAttribute("visible", false);
+			this.button_backward_1.setAttribute("visible", false);
+			
+			
+			this.button_play_3.setAttribute("visible", true);
+			this.video_plane_3.setAttribute("visible", true);
+			this.description_3.setAttribute("visible", true);
+			this.button_forward_3.setAttribute("visible", true);
+			this.button_backward_2.setAttribute("visible", true);
+		})
+	}
+})
+
 /* Logohandler Function: to let the image of the logo show. Otherwise it would start to flicker or hide when the user clicks somewhere*/
 AFRAME.registerComponent("logohandler", {
 	init: function () {
