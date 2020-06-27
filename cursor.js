@@ -87,7 +87,7 @@ AFRAME.registerComponent("forwardhandler_1", {
 			this.button_play_2.setAttribute("visible", true);
 			this.video_plane_2.setAttribute("visible", true);
 			this.description_2.setAttribute("visible", true);
-			this.button_forward_1.setAttribute("visible", true);
+			this.button_forward_2.setAttribute("visible", true);
 			this.button_backward_1.setAttribute("visible", true);
 		})
 	}
