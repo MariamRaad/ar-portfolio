@@ -51,7 +51,6 @@ AFRAME.registerComponent("videohandler", {
 				this.video_src_3.pause();
 			 	isVideoPlaying = false;
 			 }
-			
     		}.bind(this));
 			
 		this.el.addEventListener("click", e => {
