@@ -22,7 +22,8 @@ AFRAME.registerComponent("videohandler", {
 			
 		marker.addEventListener("markerFound", function () {
 			//wenn wir in Szene 1 sind (bei Video1) und das Video vom User bereits abgespielt wurde und das Video zwischenzeitlich pausiert hat (weil Marker verloren)
-       			 if ( (this.video_plane_1.getAttribute("visible") == true) && (this.button_play_1.getAttribute("visible") == false) && (!isVideoPlaying) )
+       			 //if ( (this.video_plane_1.getAttribute("visible") == true) && (this.button_play_1.getAttribute("visible") == false) && (!isVideoPlaying) )
+			if (this.video_plane_1.getAttribute("visible") == true && !isVideoPlaying)
 				this.video_src_1.play();
 				
     		}.bind(this));
