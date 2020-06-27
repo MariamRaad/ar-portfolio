@@ -1,5 +1,7 @@
 /* To add interactivity to the site with Javascript */
 
+let isVideoPlaying = false;
+
 /* Videohandler Function: to let the video play when the arSession is ready */
 AFRAME.registerComponent("videohandler", {
 	init: function() {
@@ -15,36 +17,43 @@ AFRAME.registerComponent("videohandler", {
 		this.video_src_3 = document.querySelector("#asset_vid_3");
 		this.button_play_3 = document.querySelector("#button_play_3");
 		
-		/*
 	    	const marker = document.querySelector("#marker");
-		let toggle = false;
+		this.video_plane_1 = document.querySelector("#video_1");
 			
 		marker.addEventListener('markerFound', function () {
-       			if (this.button_play_1.getAttribute("visible") === false)
+       			//if (this.button_play_1.getAttribute("visible") === false)
 				//wenn playButton nicht sichtbar --> Video wird abgespielt
 				
     		}.bind(this));
     
    		 marker.addEventListener('markerLost', function () {
-			 if (this.button_play_1.getAttribute("visible") === false)
+			 if (this.video_plane_1.getAttribute("visible") == true && isVideoPlaying)
 				this.video_src_1.pause();
+			 /*
 			 else if (this.button_play_2.getAttribute("visible") === false)
 				this.video_src_2.pause();
+			 
 			 else if (this.button_play_3.getAttribute("visible") === false)
 				this.video_src_3.pause();
+			*/
     		}.bind(this));
-		*/		
+			
 		
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_play_1) {
 				this.button_play_1.setAttribute("visible", false);
 				this.video_src_1.play();
+				isVideoPlaying = true;
+				
 			} else if (this.el === this.button_play_2) {
 				this.button_play_2.setAttribute("visible", false);
 				this.video_src_2.play();
+				isVideoPlaying = true;
+				
 			} else if (this.el === this.button_play_3) {
 				this.button_play_3.setAttribute("visible", false);
 				this.video_src_3.play();
+				isVideoPlaying = true;
 			}
 			
 			
@@ -107,7 +116,8 @@ AFRAME.registerComponent("forwardhandler", {
 			if (this.el === this.button_forward_1) {
 				this.video_src_1.pause();
 				this.video_src_1.currentTime = 0;
-			
+				isVideoPlaying = false;
+				
 				this.button_play_1.setAttribute("visible", false);
 				this.video_plane_1.setAttribute("visible", false);
 				this.description_1.setAttribute("visible", false);
@@ -118,10 +128,12 @@ AFRAME.registerComponent("forwardhandler", {
 				this.description_2.setAttribute("visible", true);
 				this.button_forward_2.setAttribute("visible", true);
 				this.button_backward_1.setAttribute("visible", true);
+				
 			} else if (this.el === this.button_forward_2) {
 				this.video_src_2.pause();
 				this.video_src_2.currentTime = 0;
-			
+				isVideoPlaying = false;
+				
 				this.button_play_2.setAttribute("visible", false);
 				this.video_plane_2.setAttribute("visible", false);
 				this.description_2.setAttribute("visible", false);
@@ -133,10 +145,12 @@ AFRAME.registerComponent("forwardhandler", {
 				this.description_3.setAttribute("visible", true);
 				this.button_forward_3.setAttribute("visible", true);
 				this.button_backward_2.setAttribute("visible", true);
+				
 			} else if (this.el === this.button_forward_3) {
 				this.video_src_3.pause();
 				this.video_src_3.currentTime = 0;
-			
+				isVideoPlaying = false;
+				
 				this.button_play_3.setAttribute("visible", false);
 				this.video_plane_3.setAttribute("visible", false);
 				this.description_3.setAttribute("visible", false);
@@ -207,7 +221,8 @@ AFRAME.registerComponent("backwardhandler", {
 			if (this.el === this.button_backward_1) {
 				this.video_src_2.pause();
 				this.video_src_2.currentTime = 0;
-			
+				isVideoPlaying = false;
+				
 				this.button_play_2.setAttribute("visible", false);
 				this.video_plane_2.setAttribute("visible", false);
 				this.description_2.setAttribute("visible", false);
@@ -218,10 +233,12 @@ AFRAME.registerComponent("backwardhandler", {
 				this.video_plane_1.setAttribute("visible", true);
 				this.description_1.setAttribute("visible", true);
 				this.button_forward_1.setAttribute("visible", true);
+				
 			} else if (this.el === this.button_backward_2) {
 				this.video_src_3.pause();
 				this.video_src_3.currentTime = 0;
-			
+				isVideoPlaying = false;
+				
 				this.button_play_3.setAttribute("visible", false);
 				this.video_plane_3.setAttribute("visible", false);
 				this.description_3.setAttribute("visible", false);
@@ -233,6 +250,7 @@ AFRAME.registerComponent("backwardhandler", {
 				this.description_2.setAttribute("visible", true);
 				this.button_forward_2.setAttribute("visible", true);
 				this.button_backward_1.setAttribute("visible", true);
+				
 			} else if (this.el === this.button_backward_3) {
 				this.description_4.setAttribute("visible", false);
 				this.button_linkedin.setAttribute("visible", false);
