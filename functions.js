@@ -1,7 +1,7 @@
 /* To add interactivity to the site with Javascript */
 
 /* Videohandler Function: to let the video play when the arSession is ready */
-AFRAME.registerComponent("videohandler_1", {
+AFRAME.registerComponent("videohandler", {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
 		// TODO: is there any disadvantage that it fires prematurely?
@@ -10,46 +10,24 @@ AFRAME.registerComponent("videohandler_1", {
 	addListeners: function() {
 		this.video_src_1 = document.querySelector("#asset_vid_1");
 		this.button_play_1 = document.querySelector("#button_play_1");
-	
-		this.el.addEventListener("click", e => {
-			this.button_play_1.setAttribute("visible", false);
-			this.video_src_1.play();
-		})
-	}
-})
-
-/* Videohandler Function: to let the video play when the arSession is ready */
-AFRAME.registerComponent("videohandler_2", {
-	init: function() {
-		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
-		// TODO: is there any disadvantage that it fires prematurely?
-		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
-	},
-	addListeners: function() {
 		this.video_src_2 = document.querySelector("#asset_vid_2");
 		this.button_play_2 = document.querySelector("#button_play_2");
-	
-		this.el.addEventListener("click", e => {
-			this.button_play_2.setAttribute("visible", false);
-			this.video_src_2.play();
-		})
-	}
-})
-
-/* Videohandler Function: to let the video play when the arSession is ready */
-AFRAME.registerComponent("videohandler_3", {
-	init: function() {
-		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
-		// TODO: is there any disadvantage that it fires prematurely?
-		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
-	},
-	addListeners: function() {
 		this.video_src_3 = document.querySelector("#asset_vid_3");
 		this.button_play_3 = document.querySelector("#button_play_3");
 	
 		this.el.addEventListener("click", e => {
-			this.button_play_3.setAttribute("visible", false);
-			this.video_src_3.play();
+			if (this.el === this.button_play_1) {
+				this.button_play_1.setAttribute("visible", false);
+				this.video_src_1.play();
+			} else if (this.el === this.button_play_2) {
+				this.button_play_2.setAttribute("visible", false);
+				this.video_src_2.play();
+			} else if (this.el === this.button_play_3) {
+				this.button_play_3.setAttribute("visible", false);
+				this.video_src_3.play();
+			}
+			
+			
 		})
 	}
 })
