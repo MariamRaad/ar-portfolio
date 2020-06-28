@@ -1,6 +1,6 @@
 # Augmented Reality Portfolio
 
- :warning: *This project is currently Work In Progress, so the Application might not work correctly when trying it out* :warning:
+<!-- :warning: *This project is currently Work In Progress, so the Application might not work correctly when trying it out* :warning: -->
 ___________
 
 Scan the QR-Code (e.g. with your smartphone camera) to get to the website and then scan it again to discover my Augmented Reality Portfolio </br>
