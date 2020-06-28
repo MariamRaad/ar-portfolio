@@ -5,8 +5,7 @@
 body {
     font-family: "Lexend Deca", sans-serif;
     margin: 0px;
-    overflow: hidden;
-    /*"hidden" means overflow is clipped, and the rest of the content will be invisible*/
+    overflow: hidden; /*"hidden" means overflow is clipped, and the rest of the content will be invisible*/
 }
 
 .logoWrapper {
@@ -14,7 +13,7 @@ body {
     top: 5px; 
     left: 5px; 
     width: 100%; 
-    z-index: -1; /* needs to be in the background so that it doesn't overlay the title */
+    z-index: -1; /* needs to be in the background so that it doesn't overlay the title (from html) */
 }
 
 .logoImage {
