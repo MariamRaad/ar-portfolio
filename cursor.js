@@ -16,6 +16,7 @@ AFRAME.registerComponent("videohandler", {
 		this.button_play_2 = document.querySelector("#button_play_2");
 		this.video_src_3 = document.querySelector("#asset_vid_3");
 		this.button_play_3 = document.querySelector("#button_play_3");
+		this.audio = document.querySelector("#asset_audio_click");
 		
 	    	const marker = document.querySelector("#marker");
 		this.video_plane_1 = document.querySelector("#video_1");
@@ -26,6 +27,7 @@ AFRAME.registerComponent("videohandler", {
 			this.video_src_1.pause(); //needs to be set or otherwise the video will start automatically
 			this.video_src_2.pause(); //needs to be set or otherwise the video will start automatically
 			this.video_src_3.pause(); //needs to be set or otherwise the video will start automatically
+			//this.audio.pause(); 	  //needs to be set or otherwise the audio will play automatically
 			isVideoPlaying = false;
 			
 			//wenn gewünschte Szene vorliegt und das Video vom User bereits abgespielt wurde und das Video zwischenzeitlich pausiert hat (weil Marker verloren)
@@ -58,16 +60,19 @@ AFRAME.registerComponent("videohandler", {
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_play_1) {
 				this.button_play_1.setAttribute("visible", false);
+				this.audio.play(); 
 				this.video_src_1.play();
 				isVideoPlaying = true;
 				
 			} else if (this.el === this.button_play_2) {
 				this.button_play_2.setAttribute("visible", false);
+				this.audio.play(); 
 				this.video_src_2.play();
 				isVideoPlaying = true;
 				
 			} else if (this.el === this.button_play_3) {
 				this.button_play_3.setAttribute("visible", false);
+				this.audio.play(); 
 				this.video_src_3.play();
 				isVideoPlaying = true;
 			}
