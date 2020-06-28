@@ -13,11 +13,12 @@ AFRAME.registerComponent("linkhandler", {
 		this.button_linkedin = document.querySelector("#button_linkedin");
 		this.button_xing = document.querySelector("#button_xing");
 		this.button_website = document.querySelector("#button_website");
-		this.audio = document.querySelector("#asset_audio_click"); //#soundeffect #asset_audio_click
+		let audioEl = document.querySelector("#soundeffect"); //#soundeffect #asset_audio_click
+		var audio = audioEl.components.sound;
 		
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_linkedin) {
-			        this.audio.playSound();
+				this.audio.playSound();
 				//this.audio.components.sound.playSound();
 				//this.audio.play();
 				window.open("https://www.linkedin.com/in/mariam-raad", "_blank", true);
