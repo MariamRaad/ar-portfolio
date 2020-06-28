@@ -17,7 +17,7 @@ AFRAME.registerComponent("linkhandler", {
 		
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_linkedin) {
-				this.audio.component.playSound();
+				this.audio.components.sound.playSound();
 				window.open("https://www.linkedin.com/in/mariam-raad", "_blank", true);
 			} else if (this.el === this.button_xing) {
 				window.open("https://www.xing.com/profile/Mariam_Raad/cv", "_blank", true);
