@@ -10,11 +10,11 @@ AFRAME.registerComponent("linkhandler", {
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
-		this.button_linkedin = document.querySelector("#button_linkedin");
-		this.button_xing = document.querySelector("#button_xing");
-		this.button_website = document.querySelector("#button_website");
+		var button_linkedin = document.querySelector("#button_linkedin");
+		var button_xing = document.querySelector("#button_xing");
+		var button_website = document.querySelector("#button_website");
 		
-		this.audio = document.querySelector("#asset_audio_click");
+		var audio = document.querySelector("#asset_audio_click");
 		
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_linkedin) {
