@@ -13,14 +13,9 @@ AFRAME.registerComponent("linkhandler", {
 		this.button_linkedin = document.querySelector("#button_linkedin");
 		this.button_xing = document.querySelector("#button_xing");
 		this.button_website = document.querySelector("#button_website");
-		let audioEl = document.querySelector("#soundeffect"); //#soundeffect #asset_audio_click
-		var audio = audioEl.components.sound;
 		
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_linkedin) {
-				this.audio.playSound();
-				//this.audio.components.sound.playSound();
-				//this.audio.play();
 				window.open("https://www.linkedin.com/in/mariam-raad", "_blank", true);
 			} else if (this.el === this.button_xing) {
 				window.open("https://www.xing.com/profile/Mariam_Raad/cv", "_blank", true);
@@ -161,12 +156,15 @@ AFRAME.registerComponent("forwardhandler", {
 		this.button_xing = document.querySelector("#button_xing");
 		this.button_website = document.querySelector("#button_website");
 		this.button_backward_3 = document.querySelector("#button_backward_3");
+		
+		this.audio = document.querySelector("#asset_audio_click");
 	
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_forward_1) {
 				this.video_src_1.pause();
 				this.video_src_1.currentTime = 0;
 				isVideoPlaying = false;
+				this.audio.play();
 				
 				this.button_play_1.setAttribute("visible", false);
 				this.video_plane_1.setAttribute("visible", false);
