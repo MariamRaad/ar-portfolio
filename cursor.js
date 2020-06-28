@@ -60,7 +60,7 @@ AFRAME.registerComponent("videohandler", {
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_play_1) {
 				this.button_play_1.setAttribute("visible", false);
-				this.audio.play();
+				//this.audio.play();
 				//this.audio.playSound();				
 				/***************************************************************************/			
 				this.video_src_1.play();
