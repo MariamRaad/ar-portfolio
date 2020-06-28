@@ -14,12 +14,17 @@ AFRAME.registerComponent("linkhandler", {
 		this.button_xing = document.querySelector("#button_xing");
 		this.button_website = document.querySelector("#button_website");
 		
+		this.audio = document.querySelector("#asset_audio_click");
+		
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_linkedin) {
+				this.audio.play();
 				window.open("https://www.linkedin.com/in/mariam-raad", "_blank", true);
 			} else if (this.el === this.button_xing) {
+				this.audio.play();
 				window.open("https://www.xing.com/profile/Mariam_Raad/cv", "_blank", true);
 			} else if (this.el === this.button_website) {
+				this.audio.play();
 				window.open("https://github.com/MariamRaad", "_blank", true);
 			} 
 		})
