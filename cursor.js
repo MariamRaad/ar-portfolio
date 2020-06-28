@@ -13,7 +13,7 @@ AFRAME.registerComponent("linkhandler", {
 		this.button_linkedin = document.querySelector("#button_linkedin");
 		this.button_xing = document.querySelector("#button_xing");
 		this.button_website = document.querySelector("#button_website");
-		this.audio = document.querySelector("#soundeffect");
+		this.audio = document.querySelector("#asset_audio_click"); //#soundeffect #asset_audio_click
 		
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_linkedin) {
