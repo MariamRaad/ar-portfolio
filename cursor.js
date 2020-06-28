@@ -2,6 +2,32 @@
 
 let isVideoPlaying = false;
 
+/* Linkhandler Function: to arrange new objects in the scene */
+AFRAME.registerComponent("linkhandler", {
+	init: function() {
+		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+		// TODO: is there any disadvantage that it fires prematurely?
+		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
+	},
+	addListeners: function() {
+		this.button_linkedin = document.querySelector("#button_linkedin");
+		this.button_xing = document.querySelector("#button_xing");
+		this.button_website = document.querySelector("#button_website");
+		this.audio = document.querySelector("#soundeffect");
+		
+		this.el.addEventListener("click", e => {
+			if (this.el === this.button_linkedin) {
+				this.audio.component.playSound();
+				window.open("https://www.linkedin.com/in/mariam-raad", "_blank", true);
+			} else if (this.el === this.button_xing) {
+				window.open("https://www.xing.com/profile/Mariam_Raad/cv", "_blank", true);
+			} else if (this.el === this.button_website) {
+				window.open("https://github.com/MariamRaad", "_blank", true);
+			} 
+		})
+	}
+})
+
 /* Videohandler Function: to let the video play when the arSession is ready */
 AFRAME.registerComponent("videohandler", {
 	init: function() {
@@ -285,30 +311,6 @@ AFRAME.registerComponent("backwardhandler", {
 				this.button_forward_3.setAttribute("visible", true);
 				this.button_backward_2.setAttribute("visible", true);
 			}
-		})
-	}
-})
-
-/* Linkhandler Function: to arrange new objects in the scene */
-AFRAME.registerComponent("linkhandler", {
-	init: function() {
-		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
-		// TODO: is there any disadvantage that it fires prematurely?
-		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
-	},
-	addListeners: function() {
-		this.button_linkedin = document.querySelector("#button_linkedin");
-		this.button_xing = document.querySelector("#button_xing");
-		this.button_website = document.querySelector("#button_website");
-		
-		this.el.addEventListener("click", e => {
-			if (this.el === this.button_linkedin) {
-				window.open("https://www.linkedin.com/in/mariam-raad", "_blank", true);
-			} else if (this.el === this.button_xing) {
-				window.open("https://www.xing.com/profile/Mariam_Raad/cv", "_blank", true);
-			} else if (this.el === this.button_website) {
-				window.open("https://github.com/MariamRaad", "_blank", true);
-			} 
 		})
 	}
 })
