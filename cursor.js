@@ -10,11 +10,11 @@ AFRAME.registerComponent("linkhandler", {
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
-		var button_linkedin = document.querySelector("#button_linkedin");
-		var button_xing = document.querySelector("#button_xing");
-		var button_website = document.querySelector("#button_website");
+		this.button_linkedin = document.querySelector("#button_linkedin");
+		this.button_xing = document.querySelector("#button_xing");
+		this.button_website = document.querySelector("#button_website");
 		
-		var audio = document.querySelector("#asset_audio_click");
+		this.audio = document.querySelector("#asset_audio_click");
 		
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_linkedin) {
@@ -35,7 +35,6 @@ AFRAME.registerComponent("linkhandler", {
 AFRAME.registerComponent("videohandler", {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
-		// TODO: is there any disadvantage that it fires prematurely?
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
@@ -115,7 +114,6 @@ AFRAME.registerComponent("videohandler", {
 AFRAME.registerComponent("forwardhandler", {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
-		// TODO: is there any disadvantage that it fires prematurely?
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
@@ -226,7 +224,6 @@ AFRAME.registerComponent("forwardhandler", {
 AFRAME.registerComponent("backwardhandler", {
 	init: function() {
 		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
-		// TODO: is there any disadvantage that it fires prematurely?
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
