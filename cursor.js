@@ -2,35 +2,6 @@
 
 let isVideoPlaying = false;
 
-/* Linkhandler Function: to arrange new objects in the scene */
-AFRAME.registerComponent("linkhandler", {
-	init: function() {
-		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
-		// TODO: is there any disadvantage that it fires prematurely?
-		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
-	},
-	addListeners: function() {
-		this.button_linkedin = document.querySelector("#button_linkedin");
-		this.button_xing = document.querySelector("#button_xing");
-		this.button_website = document.querySelector("#button_website");
-		
-		this.audio = document.querySelector("#asset_audio_click");
-		
-		this.el.addEventListener("click", e => {
-			if (this.el === this.button_linkedin) {
-				this.audio.play();
-				window.open("https://www.linkedin.com/in/mariam-raad", "_blank", true);
-			} else if (this.el === this.button_xing) {
-				this.audio.play();
-				window.open("https://www.xing.com/profile/Mariam_Raad/cv", "_blank", true);
-			} else if (this.el === this.button_website) {
-				this.audio.play();
-				window.open("https://github.com/MariamRaad", "_blank", true);
-			} 
-		})
-	}
-})
-
 /* Videohandler Function: to let the video play when the arSession is ready */
 AFRAME.registerComponent("videohandler", {
 	init: function() {
@@ -326,6 +297,35 @@ AFRAME.registerComponent("backwardhandler", {
 	}
 })
 
+/* Linkhandler Function: to arrange new objects in the scene */
+AFRAME.registerComponent("linkhandler", {
+	init: function() {
+		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+		// TODO: is there any disadvantage that it fires prematurely?
+		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
+	},
+	addListeners: function() {
+		this.button_linkedin = document.querySelector("#button_linkedin");
+		this.button_xing = document.querySelector("#button_xing");
+		this.button_website = document.querySelector("#button_website");
+		
+		this.audio = document.querySelector("#asset_audio_click");
+		
+		this.el.addEventListener("click", e => {
+			if (this.el === this.button_linkedin) {
+				this.audio.play();
+				window.open("https://www.linkedin.com/in/mariam-raad", "_blank", true);
+			} else if (this.el === this.button_xing) {
+				this.audio.play();
+				window.open("https://www.xing.com/profile/Mariam_Raad/cv", "_blank", true);
+			} else if (this.el === this.button_website) {
+				this.audio.play();
+				window.open("https://github.com/MariamRaad", "_blank", true);
+			} 
+		})
+	}
+})
+
 /* Logohandler Function: to let the image of the logo show. Otherwise it would start to flicker or hide when the user clicks somewhere
    It still disappears sometimes on iOS (Vers. 13.5.1, Safari) */
 AFRAME.registerComponent("logohandler", {
@@ -375,7 +375,7 @@ AFRAME.registerComponent("ar-session-notifier", {
 	}
 })
 
-/* Cursor-hack Function: */
+/* Cursor-hack Function: to adjust the jsartoolkit5 projection matrix and the threejs projection matrix and emitting click-events */
 AFRAME.registerComponent("cursor-hack", {
 	init: function() {
 		var scene = this.el
