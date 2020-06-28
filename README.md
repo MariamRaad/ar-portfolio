@@ -21,5 +21,6 @@ ___________
 Project is made with A-Frame and AR.js </br>
 Videos were made with Adobe Premiere and the music is from: https://www.bensound.com/ </br>
 Assets were made with Adobe Illustrator </br>
-Font is from: https://fonts.google.com/specimen/Lexend+Deca (OFL Licence) </br>
+Font is from: https://fonts.google.com/specimen/Lexend+Deca (OFL License) </br>
 Icons (for the buttons) are made by Roundicons, srip, Freepik and Pixel perfect from www.flaticon.com </br>
+Soundeffect is from: https://freesound.org/people/baidonovan/sounds/187335/ (CC0 License)
