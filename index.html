@@ -96,7 +96,8 @@
 		
 		<!-- Scene 4 -->
 		<a-plane 		   id="description_4" 	  material="src: #asset_descr_4;" 					position="0 0 1.25" 	  rotation="-90 0 0" height="1"   width="2.2" render-order="layer1" visible="false"></a-plane>
-                <a-plane linkhandler	   id="button_linkedin"   material="src: #asset_btn_linkedin; transparent:true; alpha-test:0.5" position="-1 0.2 1.8" 	  rotation="-90 0 0" height="0.7" width="0.7" render-order="layer3" visible="false"></a-plane>
+                <a-plane linkhandler	   id="button_linkedin"   material="src: #asset_btn_linkedin; transparent:true; alpha-test:0.5" position="-1 0.2 1.8" 	  rotation="-90 0 0" height="0.7" width="0.7" render-order="layer3" visible="false"> 
+			<a-animation attribute="rotation" dur="7000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation></a-plane>
 		<a-plane linkhandler	   id="button_xing"       material="src: #asset_btn_xing;     transparent:true; alpha-test:0.5" position="0 0.2 1.8" 	  rotation="-90 0 0" height="0.7" width="0.7" render-order="layer3" visible="false"></a-plane>
 		<a-plane linkhandler	   id="button_website"    material="src: #asset_btn_website;  transparent:true; alpha-test:0.5" position="1 0.2 1.8" 	  rotation="-90 0 0" height="0.7" width="0.7" render-order="layer3" visible="false"></a-plane>
 		<a-plane backwardhandler   id="button_backward_3" material="src: #asset_btn_backward; transparent:true; alpha-test:0.5" position="-1.25 0.25 3.5" rotation="-90 0 0" height="0.7" width="0.7" render-order="layer3" visible="false"></a-plane>
