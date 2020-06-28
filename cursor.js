@@ -27,7 +27,7 @@ AFRAME.registerComponent("videohandler", {
 			this.video_src_1.pause(); //needs to be set or otherwise the video will start automatically
 			this.video_src_2.pause(); //needs to be set or otherwise the video will start automatically
 			this.video_src_3.pause(); //needs to be set or otherwise the video will start automatically
-			//this.audio.pause(); 	  //needs to be set or otherwise the audio will play automatically
+			this.audio.pause(); 	  //needs to be set or otherwise the audio will play automatically
 			isVideoPlaying = false;
 			
 			//wenn gewünschte Szene vorliegt und das Video vom User bereits abgespielt wurde und das Video zwischenzeitlich pausiert hat (weil Marker verloren)
