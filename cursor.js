@@ -40,7 +40,7 @@ AFRAME.registerComponent("videohandler", {
 		this.button_play_2 = document.querySelector("#button_play_2");
 		this.video_src_3 = document.querySelector("#asset_vid_3");
 		this.button_play_3 = document.querySelector("#button_play_3");
-		this.audio = document.querySelector("#soundeffect");
+		//this.audio = document.querySelector("#soundeffect");
 		
 	    	const marker = document.querySelector("#marker");
 		this.video_plane_1 = document.querySelector("#video_1");
