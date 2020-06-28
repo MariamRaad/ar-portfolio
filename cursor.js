@@ -45,18 +45,18 @@ AFRAME.registerComponent("videohandler", {
 		this.button_play_2 = document.querySelector("#button_play_2");
 		this.video_src_3 = document.querySelector("#asset_vid_3");
 		this.button_play_3 = document.querySelector("#button_play_3");
-		//this.audio = document.querySelector("#soundeffect");
 		
 	    	const marker = document.querySelector("#marker");
 		this.video_plane_1 = document.querySelector("#video_1");
 		this.video_plane_2 = document.querySelector("#video_2");
 		this.video_plane_3 = document.querySelector("#video_3");
+		
+		this.audio = document.querySelector("#asset_audio_click");
 			
 		marker.addEventListener("markerFound", function () {
 			this.video_src_1.pause(); //needs to be set or otherwise the video will start automatically
 			this.video_src_2.pause(); //needs to be set or otherwise the video will start automatically
 			this.video_src_3.pause(); //needs to be set or otherwise the video will start automatically
-			this.audio.pause(); 	  //needs to be set or otherwise the audio will play automatically
 			isVideoPlaying = false;
 			
 			//wenn gewünschte Szene vorliegt und das Video vom User bereits abgespielt wurde und das Video zwischenzeitlich pausiert hat (weil Marker verloren)
@@ -89,19 +89,20 @@ AFRAME.registerComponent("videohandler", {
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_play_1) {
 				this.button_play_1.setAttribute("visible", false);
-				//this.audio.play();
-				//this.audio.playSound();				
+				this.audio.play();			
 				/***************************************************************************/			
 				this.video_src_1.play();
 				isVideoPlaying = true;
 				
 			} else if (this.el === this.button_play_2) {
 				this.button_play_2.setAttribute("visible", false);
+				this.audio.play();
 				this.video_src_2.play();
 				isVideoPlaying = true;
 				
 			} else if (this.el === this.button_play_3) {
 				this.button_play_3.setAttribute("visible", false);
+				this.audio.play();
 				this.video_src_3.play();
 				isVideoPlaying = true;
 			}
@@ -186,6 +187,7 @@ AFRAME.registerComponent("forwardhandler", {
 				this.video_src_2.pause();
 				this.video_src_2.currentTime = 0;
 				isVideoPlaying = false;
+				this.audio.play();
 				
 				this.button_play_2.setAttribute("visible", false);
 				this.video_plane_2.setAttribute("visible", false);
@@ -203,6 +205,7 @@ AFRAME.registerComponent("forwardhandler", {
 				this.video_src_3.pause();
 				this.video_src_3.currentTime = 0;
 				isVideoPlaying = false;
+				this.audio.play();
 				
 				this.button_play_3.setAttribute("visible", false);
 				this.video_plane_3.setAttribute("visible", false);
@@ -269,12 +272,15 @@ AFRAME.registerComponent("backwardhandler", {
 		this.description_3 = document.querySelector("#description_3");
 		this.button_forward_3 = document.querySelector("#button_forward_3");
 		this.button_backward_2 = document.querySelector("#button_backward_2");
+		
+		this.audio = document.querySelector("#asset_audio_click");
 	
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_backward_1) {
 				this.video_src_2.pause();
 				this.video_src_2.currentTime = 0;
 				isVideoPlaying = false;
+				this.audio.play();
 				
 				this.button_play_2.setAttribute("visible", false);
 				this.video_plane_2.setAttribute("visible", false);
@@ -291,6 +297,7 @@ AFRAME.registerComponent("backwardhandler", {
 				this.video_src_3.pause();
 				this.video_src_3.currentTime = 0;
 				isVideoPlaying = false;
+				this.audio.play();
 				
 				this.button_play_3.setAttribute("visible", false);
 				this.video_plane_3.setAttribute("visible", false);
@@ -305,6 +312,8 @@ AFRAME.registerComponent("backwardhandler", {
 				this.button_backward_1.setAttribute("visible", true);
 				
 			} else if (this.el === this.button_backward_3) {
+				this.audio.play();
+				
 				this.description_4.setAttribute("visible", false);
 				this.button_linkedin.setAttribute("visible", false);
 				this.button_xing.setAttribute("visible", false);
