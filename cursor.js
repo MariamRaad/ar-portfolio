@@ -16,7 +16,7 @@ AFRAME.registerComponent("videohandler", {
 		this.button_play_2 = document.querySelector("#button_play_2");
 		this.video_src_3 = document.querySelector("#asset_vid_3");
 		this.button_play_3 = document.querySelector("#button_play_3");
-		//this.audio = document.querySelector("#asset_audio_click");
+		this.audio = document.querySelector("#soundeffect");
 		
 	    	const marker = document.querySelector("#marker");
 		this.video_plane_1 = document.querySelector("#video_1");
@@ -60,7 +60,8 @@ AFRAME.registerComponent("videohandler", {
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_play_1) {
 				this.button_play_1.setAttribute("visible", false);
-				//this.audio.play(); 
+				//this.audio.play();
+				this.audio.playSound();
 				this.video_src_1.play();
 				isVideoPlaying = true;
 				
