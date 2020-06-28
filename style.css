@@ -18,9 +18,11 @@ body {
 }
 
 .logoImage {
-    width: 104px; 
-    height: 40px; 
-    visibility: visible; /* needs to be added, so that the image is always visible. Otherwise it could flicker during click-events or even be hidden */
+    /*width: 104px; 
+    height: 40px; */
+    width: 3.5%;
+    height: 3.5%;
+    visibility: visible; /* needs to be added, so that the image is always visible. Otherwise it could flicker during click-events or even be hidden (on iOS (Vers.13.5.1, Safari)) */
 }
 
 .scannerWrapper {
