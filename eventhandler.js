@@ -5,7 +5,7 @@ let isVideoPlaying = false;
 /* Videohandler Function: to let the video play when the arSession is ready */
 AFRAME.registerComponent("videohandler", {
 	init: function() {
-		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+		// the clicks may fire prematurely for some reason
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
@@ -84,7 +84,7 @@ AFRAME.registerComponent("videohandler", {
 /* Forwardhandler Function: to arrange new objects in the scene */
 AFRAME.registerComponent("forwardhandler", {
 	init: function() {
-		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+		// the clicks may fire prematurely for some reason
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
@@ -194,7 +194,7 @@ AFRAME.registerComponent("forwardhandler", {
 /* Backwardhandler Function: to arrange new objects in the scene */
 AFRAME.registerComponent("backwardhandler", {
 	init: function() {
-		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
+		// the clicks may fire prematurely for some reason
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
@@ -300,8 +300,7 @@ AFRAME.registerComponent("backwardhandler", {
 /* Linkhandler Function: to arrange new objects in the scene */
 AFRAME.registerComponent("linkhandler", {
 	init: function() {
-		// the clicks may fire prematurely for some reason ¯\_(ツ)_/¯
-		// TODO: is there any disadvantage that it fires prematurely?
+		// the clicks may fire prematurely for some reason
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
@@ -400,23 +399,22 @@ AFRAME.registerComponent("cursor-hack", {
 				var point
 				if (event.type === "touchmove" || event.type === "touchstart") {
 					// Track the first touch for simplicity.
-					// TODO: why does it need to be tracked? to align the matrices?
 					point = event.touches.item(0);
 				} else {
 					point = event;
 				}
 				// Calculate mouse position based on the canvas element
-				var rect = scene.renderer.domElement.getBoundingClientRect(); // TODO: are that just the boundaries/borders of the canvas?
-				mouse.x = ((point.clientX - rect.left) / rect.width) * 2 - 1  // TODO: what does this do?
-				mouse.y = -((point.clientY - rect.top) / rect.height) * 2 + 1 // TODO: what does this do?
-				raycaster.setFromCamera(mouse, camera); 		      // TODO: what does this do?
+				var rect = scene.renderer.domElement.getBoundingClientRect();
+				mouse.x = ((point.clientX - rect.left) / rect.width) * 2 - 1  
+				mouse.y = -((point.clientY - rect.top) / rect.height) * 2 + 1 
+				raycaster.setFromCamera(mouse, camera); 		     
 				// if there are any intersections - send the clicks
 				var intersects = raycaster.intersectObjects(scene.object3D.children, true);
 				if (intersects.length > 0) {
 					// this click is stripped of any info it should have
-					intersects[0].object.el.emit("click") // TODO: what other info would it have?
+					intersects[0].object.el.emit("click")
 				}
-				event.stopPropagation(); // TODO: why does it need to stop?
+				event.stopPropagation();
 			}
 			window.addEventListener('mousedown', mousedown, false);
 			//window.addEventListener('touchstart', mousedown, false);
