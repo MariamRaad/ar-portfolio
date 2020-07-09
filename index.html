@@ -59,6 +59,7 @@
 		
 	    <audio id="asset_audio_click" src="https://mariamraad.github.io/ar-portfolio/assets/audio/click_1.aac" type="audio/aac" preload="auto" crossorigin playsinline></audio>
  		
+            <img id="asset_descr_0" src="https://mariamraad.github.io/ar-portfolio/assets/images/texts/Onboarding.png"></img>
             <img id="asset_descr_1" src="https://mariamraad.github.io/ar-portfolio/assets/images/texts/Beschreibung_SafeNetKids.png"></img>
             <img id="asset_descr_2" src="https://mariamraad.github.io/ar-portfolio/assets/images/texts/Beschreibung_Zauberwald.png"></img>
             <img id="asset_descr_3" src="https://mariamraad.github.io/ar-portfolio/assets/images/texts/Beschreibung_FlyingEagle.png"></img>
@@ -72,6 +73,9 @@
 	</a-assets> 
 
         <a-marker logohandler scannerhandler videohandler id="marker" emitevents="true" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern_black.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2">
+		<!-- Scene 0 -->
+		<a-plane 		   id="description_0" 	  material="src: #asset_descr_0;" 					 position="0 0 1.25" 	  rotation="-90 0 0" height="1"   width="2.2" render-order="layer1" visible="false"></a-plane>
+                <a-plane forwardhandler    id="button_forward_0"  material="src: #asset_btn_forward;   transparent:true; alpha-test:0.5" position="1.25 0.25 3.5" rotation="-90 0 0" height="0.7" width="0.7" render-order="layer3"></a-plane>
 		
 		<!-- Scene 1 -->
 		<a-plane videohandler      id="button_play_1"     material="src: #asset_btn_play;      transparent:true; alpha-test:0.5" position="0 0.2 2" 	  rotation="-90 0 0" height="0.7" width="0.7" render-order="layer3"></a-plane>
