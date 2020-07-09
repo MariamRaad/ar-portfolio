@@ -88,18 +88,23 @@ AFRAME.registerComponent("forwardhandler", {
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
+		/* Transition from scene 0(Onboarding) to scene 1(SafeNetKids) */
+		this.description_0 = document.querySelector("#description_0");
+		this.button_forward_0 = document.querySelector("#button_forward_0");
+		
 		/* Transition from scene 1(SafeNetKids) to scene 2(Zauberwald) */
 		this.button_play_1 = document.querySelector("#button_play_1");
 		this.video_src_1 = document.querySelector("#asset_vid_1");
 		this.video_plane_1 = document.querySelector("#video_1");
 		this.description_1 = document.querySelector("#description_1");
 		this.button_forward_1 = document.querySelector("#button_forward_1");
+		this.button_backward_1 = document.querySelector("#button_forward_1");
 		
 		this.button_play_2 = document.querySelector("#button_play_2");
 		this.video_plane_2 = document.querySelector("#video_2");
 		this.description_2 = document.querySelector("#description_2");
 		this.button_forward_2 = document.querySelector("#button_forward_2");
-		this.button_backward_1 = document.querySelector("#button_backward_1");
+		this.button_backward_2 = document.querySelector("#button_backward_2");
 		
 		
 		/* Transition from scene 2(Zauberwald) to scene 3(FlyingEagle) */
@@ -108,13 +113,13 @@ AFRAME.registerComponent("forwardhandler", {
 		this.video_plane_2 = document.querySelector("#video_2");
 		this.description_2 = document.querySelector("#description_2");
 		this.button_forward_2 = document.querySelector("#button_forward_2");
-		this.button_backward_1 = document.querySelector("#button_backward_1");
+		this.button_backward_2 = document.querySelector("#button_backward_2");
 		
 		this.button_play_3 = document.querySelector("#button_play_3");
 		this.video_plane_3 = document.querySelector("#video_3");
 		this.description_3 = document.querySelector("#description_3");
 		this.button_forward_3 = document.querySelector("#button_forward_3");
-		this.button_backward_2 = document.querySelector("#button_backward_2");
+		this.button_backward_3 = document.querySelector("#button_backward_3");
 		
 		
 		/* Transition from scene 3(FlyingEagle) to scene 4(Offboarding/Weblinks) */
@@ -123,18 +128,30 @@ AFRAME.registerComponent("forwardhandler", {
 		this.video_plane_3 = document.querySelector("#video_3");
 		this.description_3 = document.querySelector("#description_3");
 		this.button_forward_3 = document.querySelector("#button_forward_3");
-		this.button_backward_2 = document.querySelector("#button_backward_2");
+		this.button_backward_3 = document.querySelector("#button_backward_3");
 		
 		this.description_4 = document.querySelector("#description_4");
 		this.button_linkedin = document.querySelector("#button_linkedin");
 		this.button_xing = document.querySelector("#button_xing");
 		this.button_website = document.querySelector("#button_website");
-		this.button_backward_3 = document.querySelector("#button_backward_3");
+		this.button_backward_4 = document.querySelector("#button_backward_4");
 		
 		this.audio = document.querySelector("#asset_audio_click");
 	
 		this.el.addEventListener("click", e => {
-			if (this.el === this.button_forward_1) {
+			if (this.el === this.button_forward_0) {
+				this.audio.play();
+				
+				this.description_0.setAttribute("visible", false);
+				this.button_forward_0.setAttribute("visible", false);
+				
+				this.button_play_1.setAttribute("visible", true);
+				this.video_plane_1.setAttribute("visible", true);
+				this.description_1.setAttribute("visible", true);
+				this.button_forward_1.setAttribute("visible", true);
+				this.button_backward_1.setAttribute("visible", true);
+				
+			} else if (this.el === this.button_forward_1) {
 				this.video_src_1.pause();
 				this.video_src_1.currentTime = 0;
 				isVideoPlaying = false;
@@ -144,12 +161,13 @@ AFRAME.registerComponent("forwardhandler", {
 				this.video_plane_1.setAttribute("visible", false);
 				this.description_1.setAttribute("visible", false);
 				this.button_forward_1.setAttribute("visible", false);
+				this.button_backward_1.setAttribute("visible", false);
 			
 				this.button_play_2.setAttribute("visible", true);
 				this.video_plane_2.setAttribute("visible", true);
 				this.description_2.setAttribute("visible", true);
 				this.button_forward_2.setAttribute("visible", true);
-				this.button_backward_1.setAttribute("visible", true);
+				this.button_backward_2.setAttribute("visible", true);
 				
 			} else if (this.el === this.button_forward_2) {
 				this.video_src_2.pause();
@@ -161,13 +179,13 @@ AFRAME.registerComponent("forwardhandler", {
 				this.video_plane_2.setAttribute("visible", false);
 				this.description_2.setAttribute("visible", false);
 				this.button_forward_2.setAttribute("visible", false);
-				this.button_backward_1.setAttribute("visible", false);
+				this.button_backward_2.setAttribute("visible", false);
 			
 				this.button_play_3.setAttribute("visible", true);
 				this.video_plane_3.setAttribute("visible", true);
 				this.description_3.setAttribute("visible", true);
 				this.button_forward_3.setAttribute("visible", true);
-				this.button_backward_2.setAttribute("visible", true);
+				this.button_backward_3.setAttribute("visible", true);
 				
 			} else if (this.el === this.button_forward_3) {
 				this.video_src_3.pause();
@@ -179,13 +197,13 @@ AFRAME.registerComponent("forwardhandler", {
 				this.video_plane_3.setAttribute("visible", false);
 				this.description_3.setAttribute("visible", false);
 				this.button_forward_3.setAttribute("visible", false);
-				this.button_backward_2.setAttribute("visible", false);
+				this.button_backward_3.setAttribute("visible", false);
 			
 				this.description_4.setAttribute("visible", true);
 				this.button_linkedin.setAttribute("visible", true);
 				this.button_xing.setAttribute("visible", true);
 				this.button_website.setAttribute("visible", true);
-				this.button_backward_3.setAttribute("visible", true);
+				this.button_backward_4.setAttribute("visible", true);
 			}
 		})
 	}
@@ -198,18 +216,29 @@ AFRAME.registerComponent("backwardhandler", {
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
+		/* Transition from scene 1(SafeNetKids) to scene 0(Onboarding)  */
+		this.button_play_1 = document.querySelector("#button_play_1");
+		this.video_plane_1 = document.querySelector("#video_1");
+		this.description_1 = document.querySelector("#description_1");
+		this.button_forward_1 = document.querySelector("#button_forward_1");
+		this.button_backward_1 = document.querySelector("#button_backward_1");
+		
+		this.description_0 = document.querySelector("#description_0");
+		this.button_forward_0 = document.querySelector("#button_forward_0");
+		
 		/* Transition from scene 2(Zauberwald) to scene 1(SafeNetKids)  */
 		this.button_play_2 = document.querySelector("#button_play_2");
 		this.video_src_2 = document.querySelector("#asset_vid_2");
 		this.video_plane_2 = document.querySelector("#video_2");
 		this.description_2 = document.querySelector("#description_2");
 		this.button_forward_2 = document.querySelector("#button_forward_2");
-		this.button_backward_1 = document.querySelector("#button_backward_1");
+		this.button_backward_2 = document.querySelector("#button_backward_2");
 		
 		this.button_play_1 = document.querySelector("#button_play_1");
 		this.video_plane_1 = document.querySelector("#video_1");
 		this.description_1 = document.querySelector("#description_1");
 		this.button_forward_1 = document.querySelector("#button_forward_1");
+		this.button_backward_1 = document.querySelector("#button_backward_1");
 		
 	
 		/* Transition from scene 3(FlyingEagle) to scene 2(Zauberwald)  */
@@ -218,13 +247,13 @@ AFRAME.registerComponent("backwardhandler", {
 		this.video_plane_3 = document.querySelector("#video_3");
 		this.description_3 = document.querySelector("#description_3");
 		this.button_forward_3 = document.querySelector("#button_forward_3");
-		this.button_backward_2 = document.querySelector("#button_backward_2");
+		this.button_backward_3 = document.querySelector("#button_backward_3");
 		
 		this.button_play_2 = document.querySelector("#button_play_2");
 		this.video_plane_2 = document.querySelector("#video_2");
 		this.description_2 = document.querySelector("#description_2");
 		this.button_forward_2 = document.querySelector("#button_forward_2");
-		this.button_backward_1 = document.querySelector("#button_backward_1");
+		this.button_backward_2 = document.querySelector("#button_backward_2");
 		
 		
 		/* Transition from scene 4(Offboarding/Weblinks) to scene 3(FlyingEagle)  */
@@ -232,18 +261,31 @@ AFRAME.registerComponent("backwardhandler", {
 		this.button_linkedin = document.querySelector("#button_linkedin");
 		this.button_xing = document.querySelector("#button_xing");
 		this.button_website = document.querySelector("#button_website");
-		this.button_backward_3 = document.querySelector("#button_backward_3");
+		this.button_backward_4 = document.querySelector("#button_backward_4");
 		
 		this.button_play_3 = document.querySelector("#button_play_3");
 		this.video_plane_3 = document.querySelector("#video_3");
 		this.description_3 = document.querySelector("#description_3");
 		this.button_forward_3 = document.querySelector("#button_forward_3");
-		this.button_backward_2 = document.querySelector("#button_backward_2");
+		this.button_backward_3 = document.querySelector("#button_backward_3");
 		
 		this.audio = document.querySelector("#asset_audio_click");
 	
 		this.el.addEventListener("click", e => {
 			if (this.el === this.button_backward_1) {
+				this.audio.play();
+				
+				this.button_play_1.setAttribute("visible", false);
+				this.video_plane_1.setAttribute("visible", false);
+				this.description_1.setAttribute("visible", false);
+				this.button_forward_1.setAttribute("visible", false);
+				this.button_backward_1.setAttribute("visible", false);
+				
+				this.description_0.setAttribute("visible", true);
+				this.button_forward_0.setAttribute("visible", true);
+				
+				
+			} else if (this.el === this.button_backward_2) {
 				this.video_src_2.pause();
 				this.video_src_2.currentTime = 0;
 				isVideoPlaying = false;
@@ -253,14 +295,15 @@ AFRAME.registerComponent("backwardhandler", {
 				this.video_plane_2.setAttribute("visible", false);
 				this.description_2.setAttribute("visible", false);
 				this.button_forward_2.setAttribute("visible", false);
-				this.button_backward_1.setAttribute("visible", false);
+				this.button_backward_2.setAttribute("visible", false);
 			
 				this.button_play_1.setAttribute("visible", true);
 				this.video_plane_1.setAttribute("visible", true);
 				this.description_1.setAttribute("visible", true);
 				this.button_forward_1.setAttribute("visible", true);
+				this.button_backward_1.setAttribute("visible", true);
 				
-			} else if (this.el === this.button_backward_2) {
+			} else if (this.el === this.button_backward_3) {
 				this.video_src_3.pause();
 				this.video_src_3.currentTime = 0;
 				isVideoPlaying = false;
@@ -270,28 +313,28 @@ AFRAME.registerComponent("backwardhandler", {
 				this.video_plane_3.setAttribute("visible", false);
 				this.description_3.setAttribute("visible", false);
 				this.button_forward_3.setAttribute("visible", false);
-				this.button_backward_2.setAttribute("visible", false);
+				this.button_backward_3.setAttribute("visible", false);
 			
 				this.button_play_2.setAttribute("visible", true);
 				this.video_plane_2.setAttribute("visible", true);
 				this.description_2.setAttribute("visible", true);
 				this.button_forward_2.setAttribute("visible", true);
-				this.button_backward_1.setAttribute("visible", true);
+				this.button_backward_2.setAttribute("visible", true);
 				
-			} else if (this.el === this.button_backward_3) {
+			} else if (this.el === this.button_backward_4) {
 				this.audio.play();
 				
 				this.description_4.setAttribute("visible", false);
 				this.button_linkedin.setAttribute("visible", false);
 				this.button_xing.setAttribute("visible", false);
 				this.button_website.setAttribute("visible", false);
-				this.button_backward_3.setAttribute("visible", false);
+				this.button_backward_4.setAttribute("visible", false);
 			
 				this.button_play_3.setAttribute("visible", true);
 				this.video_plane_3.setAttribute("visible", true);
 				this.description_3.setAttribute("visible", true);
 				this.button_forward_3.setAttribute("visible", true);
-				this.button_backward_2.setAttribute("visible", true);
+				this.button_backward_3.setAttribute("visible", true);
 			}
 		})
 	}
