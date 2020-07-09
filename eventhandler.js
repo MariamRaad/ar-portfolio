@@ -1,12 +1,6 @@
 /* To add interactivity to the site with Javascript */
 
 let isVideoPlaying = false;
-let video_src_1 = document.querySelector("#asset_vid_1");
-let button_play_1 = document.querySelector("#button_play_1");
-let video_src_2 = document.querySelector("#asset_vid_2");
-let button_play_2 = document.querySelector("#button_play_2");
-let video_src_3 = document.querySelector("#asset_vid_3");
-let button_play_3 = document.querySelector("#button_play_3");
 
 /* Videohandler Function: to let the video play when the arSession is ready */
 AFRAME.registerComponent("videohandler", {
@@ -15,14 +9,12 @@ AFRAME.registerComponent("videohandler", {
 		this.el.sceneEl.addEventListener("arSessionReady", this.addListeners.call(this));
 	},
 	addListeners: function() {
-		/*
 		this.video_src_1 = document.querySelector("#asset_vid_1");
 		this.button_play_1 = document.querySelector("#button_play_1");
 		this.video_src_2 = document.querySelector("#asset_vid_2");
 		this.button_play_2 = document.querySelector("#button_play_2");
 		this.video_src_3 = document.querySelector("#asset_vid_3");
 		this.button_play_3 = document.querySelector("#button_play_3");
-		*/
 		
 	    	const marker = document.querySelector("#marker");
 		this.video_plane_1 = document.querySelector("#video_1");
