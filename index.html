@@ -44,7 +44,7 @@
 	
     <!-- Scanner -->	
     <div class="scannerWrapper">
-	<input id="scanner" type="image" class="scannerImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneHintergrund_Text.png"/>
+	<input id="scanner" type="image" class="scannerImage" src="https://mariamraad.github.io/ar-portfolio/assets/images/scanner/Scanner_ohneHintergrund_Text.png"></input>
     </div>
 	
     <a-scene ar-session-notifier cursor-hack id="scene" renderer="sortObjects: true; antialias: true; alpha: true; precision: mediump;" render-order="layer1, layer2, layer3" embedded arjs="trackingMethod: best; sourceType: webcam; patternRatio: 0.8 debugUIEnabled: false;" vr-mode-ui="enabled: false;">
@@ -105,7 +105,7 @@
 		<a-plane backwardhandler   id="button_backward_4" material="src: #asset_btn_backward; transparent:true; alpha-test:0.5" position="-1.25 0.25 3.5" rotation="-90 0 0" height="0.7" width="0.7" render-order="layer3" visible="false"></a-plane>
 	    </a-marker>
 	    
-		<!-- static camera that moves according to the device movemenents -->
+	<!-- static camera that moves according to the device movemenents -->
         <a-entity camera></a-entity>
     </a-scene>
 </body>
