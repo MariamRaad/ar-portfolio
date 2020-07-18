@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="description" content="Augmented Reality Portfolio">
     <meta name="author" content="Mariam Raad">
+    <meta name="viewport" content="width=device-width, user-scalable=no"> <!-- , minimum-scale=1.0, maximum-scale=2.0 -->
 	
     <!-- settings for favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://mariamraad.github.io/ar-portfolio/assets/images/favicon/apple-touch-icon.png">
@@ -19,7 +20,6 @@
 
     <!--  this is REQUIRED for iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, user-scalable=no"> <!-- , minimum-scale=1.0, maximum-scale=2.0 -->
 
     <!-- AFrame -->
     <script src="lib/aframe-v1.0.4.js"></script> <!-- https://aframe.io/releases/1.0.4/aframe.min.js -->
@@ -68,8 +68,7 @@
 	    <!-- the second and thrid video can't/shouldn't be preloaded because then it will sometimes start randomly playing (at the beginning of the app) (with Android (Vers.10, Chrome/Firefox)) -->
             <video id="asset_vid_1" src="https://mariamraad.github.io/ar-portfolio/assets/videos/SafeNetKids_compressed.mp4"  type="video/mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline play="false"></video> 	        
 	    <video id="asset_vid_2" src="https://mariamraad.github.io/ar-portfolio/assets/videos/Zauberwald_compressed.mp4"   type="video/mp4" 		      response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline play="false"></video> 	        
-	    <video id="asset_vid_3" src="https://mariamraad.github.io/ar-portfolio/assets/videos/FlyingEagle_compressed.mp4"  type="video/mp4" 		      response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline play="false"></video> 	        
-		
+	    <video id="asset_vid_3" src="https://mariamraad.github.io/ar-portfolio/assets/videos/FlyingEagle_compressed.mp4"  type="video/mp4" 		      response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay playsinline play="false"></video> 	        	
 	</a-assets> 
 
         <a-marker logohandler scannerhandler videohandler id="marker" emitevents="true" preset="custom" type="pattern" url="https://mariamraad.github.io/ar-portfolio/assets/images/markers/pattern_black.patt" smooth="true" smoothCount="10" smoothTolerance="0.02" smoothThreshold="2">
@@ -104,7 +103,6 @@
 		<a-plane linkhandler	   id="button_xing"       material="src: #asset_btn_xing;     transparent:true; alpha-test:0.5" position="0 0.2 1.8" 	  rotation="-90 0 0" height="0.7" width="0.7" render-order="layer3" visible="false"></a-plane>
 		<a-plane linkhandler	   id="button_website"    material="src: #asset_btn_website;  transparent:true; alpha-test:0.5" position="1 0.2 1.8" 	  rotation="-90 0 0" height="0.7" width="0.7" render-order="layer3" visible="false"></a-plane>
 		<a-plane backwardhandler   id="button_backward_4" material="src: #asset_btn_backward; transparent:true; alpha-test:0.5" position="-1.25 0.25 3.5" rotation="-90 0 0" height="0.7" width="0.7" render-order="layer3" visible="false"></a-plane>
-		
 	    </a-marker>
 	    
 		<!-- static camera that moves according to the device movemenents -->
