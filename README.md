@@ -28,4 +28,4 @@ Soundeffect is from: https://freesound.org/people/baidonovan/sounds/187335/ (CC0
 ___________
 
 
-<img src="Android.gif" width="450" height="350"/>
+<img src="Android.gif" width="550" height="350"/>
