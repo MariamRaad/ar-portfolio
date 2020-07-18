@@ -24,3 +24,8 @@ Assets were made with Adobe Illustrator </br>
 Font is from: https://fonts.google.com/specimen/Lexend+Deca (OFL License) </br>
 Icons (for the buttons) are made by Roundicons, srip, Freepik and Pixel perfect from www.flaticon.com </br>
 Soundeffect is from: https://freesound.org/people/baidonovan/sounds/187335/ (CC0 License)
+
+___________
+
+
+<img src="Android.gif" width="427" height="240"/>
