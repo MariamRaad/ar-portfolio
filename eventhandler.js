@@ -418,7 +418,7 @@ AFRAME.registerComponent("ar-session-notifier", {
 })
 
 /* Cursor-hack Function: to adjust the jsartoolkit5 projection matrix and the threejs projection matrix and emitting click-events */
-AFRAME.registerComponent("cursor-hack", {
+AFRAME.registerComponent("cursor-modifier", {
 	init: function() {
 		var scene = this.el
 
