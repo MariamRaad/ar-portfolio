@@ -25,9 +25,4 @@ Font is from: https://fonts.google.com/specimen/Lexend+Deca (OFL License) </br>
 Icons (for the buttons) are made by Roundicons, srip, Freepik and Pixel perfect from www.flaticon.com </br>
 Soundeffect is from: https://freesound.org/people/baidonovan/sounds/187335/ (CC0 License)
 
-___________
-
-
-<img src="Android.gif" width="550" height="350"/>
-
-More videos are here to see: https://drive.google.com/drive/folders/198N0-Yb3H89norcSUQTSEYfusMVdA14v?usp=sharing
+<video src="https://github.com/user-attachments/assets/206536cc-41cc-4fce-8a36-b92d528a22ae.mp4"></video>
