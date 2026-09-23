@@ -3,7 +3,7 @@
 <!-- :warning: *This project is currently Work In Progress, so the Application might not work correctly when trying it out* :warning: -->
 
 ## Summary
-This project was created as part of my Master's degree in Computer Science (in summer semester 2020) and combines a personal portfolio with some interactive Augmented Reality content.
+This project was created as part of my Master's thesis in summer semester of 2020 and combines a personal portfolio with some interactive Augmented Reality content.
 
 ## 📸 Showcase
 <video src="https://github.com/user-attachments/assets/206536cc-41cc-4fce-8a36-b92d528a22ae.mp4"></video>
@@ -15,10 +15,8 @@ If it's not working, open this link in your browser: https://mariamraad.github.i
 and then scan the QR-Code to see the Augmented Reality content.
 
 The application works best with:
-<UL>
-<LI>Android (Version 10 or higher) - Google Chrome or Firefox
-<LI>iOS (Version 13.5 or higher) - Safari
-</UL>  
+- Android (Version 10 or higher) - Google Chrome or Firefox
+- iOS (Version 13.5 or higher) - Safari  
   
 <img src="/assets/images/markers/fullMarker_blue.svg" data-canonical-src="/assets/images/markers/fullMarker_blue.svg" width="254" height="305" />
 
