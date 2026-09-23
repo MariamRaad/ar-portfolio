@@ -3,7 +3,7 @@
 <!-- :warning: *This project is currently Work In Progress, so the Application might not work correctly when trying it out* :warning: -->
 
 ## Summary
-This project was created as part of my Master's degree in Computer Science (~2020) and combines a personal portfolio with some interactive Augmented Reality content.
+This project was created as part of my Master's degree in Computer Science (in summer semester 2020) and combines a personal portfolio with some interactive Augmented Reality content.
 
 ## 📸 Showcase
 <video src="https://github.com/user-attachments/assets/206536cc-41cc-4fce-8a36-b92d528a22ae.mp4"></video>
