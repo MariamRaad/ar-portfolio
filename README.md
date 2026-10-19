@@ -6,7 +6,8 @@
 This project was created as part of my Master's thesis in summer semester of 2020 and combines a personal portfolio with some interactive Augmented Reality content.
 
 ## 📸 Showcase
-<video src="https://github.com/user-attachments/assets/206536cc-41cc-4fce-8a36-b92d528a22ae.mp4"></video>
+<!-- <video src="https://github.com/user-attachments/assets/206536cc-41cc-4fce-8a36-b92d528a22ae.mp4"></video> -->
+https://github.com/user-attachments/assets/206536cc-41cc-4fce-8a36-b92d528a22ae
 
 ## 🚀 How to Run / Start
 Scan the QR-Code (e.g. with your smartphone camera) to get to the website and then scan it again to discover my Augmented Reality Portfolio. </br>
